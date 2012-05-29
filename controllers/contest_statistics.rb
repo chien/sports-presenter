@@ -1,7 +1,6 @@
-
-
-
-get '/contests/:id/statistics' do
-  @object = FootballContestStatistics.fetch(params[:id])
-  haml :football_statistics
+class ContestStatistics < Sinatra::Base
+  get '/contests/:id/statistics' do
+    @object = FootballContestStatistics.fetch(params[:id])
+    haml :football_statistics
+  end
 end
