@@ -1,13 +1,13 @@
-class FootballContestStatistics
+class SportsPresentation::FootballContestStatistics
 
   def initialize(contest_data, event_data)
     @contest_data, @event_data = contest_data, event_data
   end
 
-  def self.fetch(contest_id, headers)
-    contest_data = SportsApiClient.fetch("/contests/#{contest_id}")
+  def self.fetch(contest_id)
+    contest_data = SportsApiClient.fetch("/contest_details/#{contest_id}")
     events = SportsApiClient.fetch("/contests/#{contest_id}/events")
-
+        haml "contests/show"  
     new(contest_data, events)
   end
 
@@ -22,4 +22,5 @@ class FootballContestStatistics
   def goal_rundown
     
   end
+
 end

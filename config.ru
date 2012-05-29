@@ -1,6 +1,5 @@
 require 'rubygems'
 require 'bundler'
-
 Bundler.require
 
 Dir.glob("lib/*.rb").each { |r| require "./#{r}" }
