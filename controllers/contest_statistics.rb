@@ -1,4 +1,4 @@
-class ContestStatistics < Sinatra::Base
+class SportsPresentation < Sinatra::Base
   get '/contests/:id/statistics' do
     @object = FootballContestStatistics.fetch(params[:id])
     haml :football_statistics

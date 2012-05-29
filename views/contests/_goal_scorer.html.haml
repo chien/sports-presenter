@@ -1,0 +1,10 @@
+%span.name
+  =goal[:player_last_name]
+-goal[:goal_times].each do |goal_time|
+  %span.time
+    - time_string = "#{goal_time[:minutes]}'"
+    -unless goal_time[:type].to_sym == :goal
+      - time_string += I18n.translate( goal_time[:type].to_s, :scope => @scope) 
+    -if goal_time != goal[:goal_times].last
+      - time_string += ", "
+    =time_string 

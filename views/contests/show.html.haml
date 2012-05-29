@@ -1,0 +1,120 @@
+%div#round
+  ="#{@hash[:round_label]} #{@hash[:round_name]}"
+%div#stadium
+  =@hash[:stadium_name]
+%h1
+  =@hash[:competition_name]
+%h2
+  =@hash[:region]
+-home_scores = @hash[:scores][0]
+-away_scores = @hash[:scores][1]
+%table
+  %tr
+    %th.home
+      =home_scores[:team][:display_name]
+    %th.stat
+    %th.away
+      =away_scores[:display_name]
+  %tr.score
+    %td.home
+      =home_scores[:total]
+    %td.stat
+      = I18n.translate(:score, :scope => @scope)
+    %td.away
+      =@hash[:scores][1][:total]
+  -@goals.each do |goal|
+    %tr.player
+      %td.home
+        =render :partial => "goal_scorer", :locals => {:goal => goal} if goal[:team] == home_scores[:team][:short_name]
+      %td.stat
+        
+      %td.away
+        =render :partial => "goal_scorer", :locals => {:goal => goal} if goal[:team] == @hash[:scores][1][:team][:short_name]
+  -unless home_scores[:possession_percentage].blank?
+    %tr.possession_percentage
+      %td.home
+        =number_to_percentage((home_scores[:possession_percentage].presence || 0) * 100, :precision => 0)
+      %td.stat
+        = I18n.translate(:possession_percentage, :scope => @scope)
+      %td.away
+        =number_to_percentage((@hash[:scores][1][:possession_percentage].presence || 0) * 100, :precision => 0)
+  -unless home_scores[:shot_statistics].blank?
+    %tr.shot_statistics 
+      %td.home
+        =home_scores[:shot_statistics]
+      %td.stat
+        = I18n.translate(:shot_statistics, :scope => @scope)
+      %td.away
+        =@hash[:scores][1][:shot_statistics]
+  -unless home_scores[:saves].blank?
+    %tr.saves
+      %td.home
+        =home_scores[:saves]
+      %td.stat
+        = I18n.translate(:saves, :scope => @scope)
+      %td.away
+        =@hash[:scores][1][:saves]
+  -unless home_scores[:yellow_cards].blank?        
+    %tr.yellow_cards
+      %td.home
+        =home_scores[:yellow_cards]
+      %td.stat
+        = I18n.translate(:yellow_cards, :scope => @scope)
+      %td.away
+        =@hash[:scores][1][:yellow_cards]
+  -unless @hash[:scores][1][:red_cards].blank?
+    %tr.red_cards
+      %td.home
+        =home_scores[:red_cards]
+      %td.stat
+        = I18n.translate(:red_cards, :scope => @scope)
+      %td.away
+        =@hash[:scores][1][:red_cards]
+  -unless @hash[:scores][1][:crosses].blank?
+    %tr.crosses
+      %td.home
+        =home_scores[:crosses]
+      %td.stat
+        = I18n.translate(:crosses, :scope => @scope)
+      %td.away
+        =@hash[:scores][1][:crosses]
+  -unless @hash[:scores][1][:fouls].blank?
+    %tr.fouls
+      %td.home
+        =home_scores[:fouls]
+      %td.stat
+        = I18n.translate(:fouls, :scope => @scope)
+      %td.away
+        =@hash[:scores][1][:fouls]
+  -unless @hash[:scores][1][:offsides].blank?        
+    %tr.offsides
+      %td.home
+        =home_scores[:offsides]
+      %td.stat
+        = I18n.translate(:offsides, :scope => @scope)
+      %td.away
+        =@hash[:scores][1][:offsides]
+  -unless @hash[:scores][1][:corner_kicks].blank?                
+    %tr.corner_kicks
+      %td.home
+        =home_scores[:corner_kicks]
+      %td.stat
+        = I18n.translate(:corner_kicks, :scope => @scope)
+      %td.away
+        =@hash[:scores][1][:corner_kicks]
+  -unless @hash[:scores][1][:passes].blank?                        
+    %tr.passes
+      %td.home
+        =home_scores[:passes]
+      %td.stat
+        = I18n.translate(:passes, :scope => @scope)
+      %td.away
+        =@hash[:scores][1][:passes]            
+  -unless @hash[:scores][1][:tackles].blank?                                
+    %tr.tackles
+      %td.home
+        =home_scores[:tackles]
+      %td.stat
+        = I18n.translate(:tackles, :scope => @scope)
+      %td.away
+        =@hash[:scores][1][:tackles]                  
