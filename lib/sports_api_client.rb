@@ -8,4 +8,8 @@ class SportsApiClient
   def self.set_language(lang)
     @language = lang
   end
+
+  def self.set_region(reg)
+    
+  end
 end

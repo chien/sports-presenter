@@ -1,0 +1,37 @@
+%h1= @standing.league_name
+%h2= @standing.stage_name
+
+%hr.indent
+
+- @standing.each_group do |group_name, standings|
+  %h3= group_name
+  %table.standing
+    %thead
+      %tr
+        %th
+        %th(colspan=2) Teams
+        %th P
+        %th W
+        %th D
+        %th L
+        %th F
+        %th A
+        %th +/-
+        %th PTS
+
+    %tbody
+      - standings.each do |standing|
+        %tr
+          %td= standing.position
+          %td
+            %img{src: standing.team_logo}
+          %td= standing.team_name
+          %td= standing.played
+          %td= standing.won
+          %td= standing.drawn
+          %td= standing.lost
+          %td= standing.goals_for
+          %td= standing.goals_against
+          %td= standing.difference
+          %td= standing.points
+  %hr
