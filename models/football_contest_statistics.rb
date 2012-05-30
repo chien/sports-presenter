@@ -1,4 +1,4 @@
-class SportsPresentation::FootballContestStatistics
+class FootballContestStatistics
 
   def initialize(contest_data, event_data)
     @contest_data, @event_data = contest_data, event_data
@@ -7,7 +7,6 @@ class SportsPresentation::FootballContestStatistics
   def self.fetch(contest_id)
     contest_data = SportsApiClient.fetch("/contest_details/#{contest_id}")
     events = SportsApiClient.fetch("/contests/#{contest_id}/events")
-        haml "contests/show"  
     new(contest_data, events)
   end
 

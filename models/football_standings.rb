@@ -1,10 +1,12 @@
 class FootballStandings
+  REQUIRED_TYPE = "application/vnd.playup.sport.sport.football"
 
-  attr_reader :league_name, :stage_name
+  attr_reader :league_name, :stage_name, :group_standings
 
   def initialize(data)
-    @league_name = data["name"]
-    @stage_name = data["stage_name"]
+    puts data.inspect
+    @league_name = data["competition_name"]
+    @stage_name = data["name"]
     
     @group_standings = []
 
@@ -21,8 +23,9 @@ class FootballStandings
     end
   end
 
-  def self.fetch(league_id)
-    new SportsApiClient.fetch("/leagues/#{league_id}/current_standings")
+  def self.fetch(stage_id)
+    stage_data = SportsApiClient.fetch("/stages/#{stage_id}")
+    new stage_data if stage_data.is_playup_kind?(REQUIRED_TYPE)
   end
 
   def each_group(&block)

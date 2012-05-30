@@ -1,0 +1,339 @@
+{
+  ":self": "http://localhost:3000/stages/5", 
+  ":type": "application/vnd.playup.sport.competition.stage.home_away+json", 
+  ":uid": "competition-71-stages-5", 
+  "ancestors": [
+    {
+      ":self": "http://localhost:3000/competitions/71", 
+      ":type": "application/vnd.playup.sport.competition+json", 
+      ":uid": "competition-71"
+    },
+    {
+        ":self": "http://localhost:3000/sports/9", 
+        ":type": "application/vnd.playup.sport.sport.football+json", 
+        ":uid": "sport-9"
+    }, 
+    {
+        ":self": "http://localhost:3000/sports", 
+        ":type": "application/vnd.playup.sport.sports+json", 
+        ":uid": "sports"
+    }
+  ],
+  "name": "Final Tournament - Group Stage",
+  "competition_name" : "Euro 2012",
+  "standings": [
+    {
+      "position":1,
+      "group_name": "Group A",
+      "statistics": {
+        ":type": "vnd.playup.sport.ranking.statistics.football+json",
+        "played": 5,
+        "won": 4,
+        "drawn": 3,
+        "lost": 2,
+        "goals_for": 800,
+        "goals_against": 2,
+        "difference": 798,
+        "points": 1000
+      },
+      "team":{  
+        ":self": "http://localhost:3000/teams/525",
+        ":type": "application/vnd.playup.sport.team+json",
+        ":uid": "team-525",
+        "display_name": "Cardinals",
+        "name": "Arizona",
+        "short_name": "ARI",
+        "logos": {
+          "header": [
+            {
+              "density": "low",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_70x46.png"
+            },
+            {
+              "density": "medium",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_105x69.png"
+            },
+            {
+              "density": "high",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_140x92.png"
+            }
+          ],
+          "calendar": [
+            {
+              "density": "low",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_35x23.png"
+              },
+            {
+              "density": "medium",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_53x35.png"
+            },
+            {
+              "density": "high",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_70x46.png"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position":2,
+      "group_name": "Group A",
+      "statistics": {
+        "played": 3,
+        "won": 5,
+        "drawn": 2,
+        "lost": 8,
+        "goals_for": 80,
+        "goals_against": 21,
+        "difference": 723,
+        "points": 100
+      },
+      "team":{  
+        ":self": "http://localhost:3000/teams/522",
+        ":type": "application/vnd.playup.sport.team+json",
+        ":uid": "team-522",
+        "display_name": "Mets",
+        "name": "New York",
+        "short_name": "NYM",
+        "logos": {
+          "header": [
+            {
+              "density": "low",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_70x46.png"
+            },
+            {
+              "density": "medium",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_105x69.png"
+            },
+            {
+              "density": "high",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_140x92.png"
+            }
+          ],
+          "calendar": [
+            {
+              "density": "low",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_35x23.png"
+              },
+            {
+              "density": "medium",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_53x35.png"
+            },
+            {
+              "density": "high",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_70x46.png"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position":3,
+      "group_name": "Group A",
+      "statistics": {
+        "played": 2,
+        "won": 5,
+        "drawn": 3,
+        "lost": 2,
+        "goals_for": 34,
+        "goals_against": 28,
+        "difference": 755,
+        "points": 13
+      },
+      "team":{  
+        ":self": "http://localhost:3000/teams/521",
+        ":type": "application/vnd.playup.sport.team+json",
+        ":uid": "team-521",
+        "display_name": "Bulls",
+        "name": "Chicago",
+        "short_name": "CHB",
+        "logos": {
+          "header": [
+            {
+              "density": "low",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_70x46.png"
+            },
+            {
+              "density": "medium",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_105x69.png"
+            },
+            {
+              "density": "high",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_140x92.png"
+            }
+          ],
+          "calendar": [
+            {
+              "density": "low",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_35x23.png"
+              },
+            {
+              "density": "medium",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_53x35.png"
+            },
+            {
+              "density": "high",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_70x46.png"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position":1,
+      "group_name": "Group B",
+      "statistics": {
+        "played": 1,
+        "won": 2,
+        "drawn": 3,
+        "lost": 4,
+        "goals_for": 5,
+        "goals_against": 4,
+        "difference": -4,
+        "points": 20
+      },
+      "team":{  
+        ":self": "http://localhost:3000/teams/25",
+        ":type": "application/vnd.playup.sport.team+json",
+        ":uid": "team-25",
+        "display_name": "Yankees",
+        "name": "New York",
+        "short_name": "NYY",
+        "logos": {
+          "header": [
+            {
+              "density": "low",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_70x46.png"
+            },
+            {
+              "density": "medium",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_105x69.png"
+            },
+            {
+              "density": "high",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_140x92.png"
+            }
+          ],
+          "calendar": [
+            {
+              "density": "low",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_35x23.png"
+              },
+            {
+              "density": "medium",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_53x35.png"
+            },
+            {
+              "density": "high",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_70x46.png"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position":2,
+      "group_name": "Group B",
+      "statistics": {
+        "played": 5,
+        "won": 6,
+        "drawn": 7,
+        "lost": 8,
+        "goals_for": 9,
+        "goals_against": 10,
+        "difference": -1,
+        "points": 5
+      },
+      "team":{  
+        ":self": "http://localhost:3000/teams/552",
+        ":type": "application/vnd.playup.sport.team+json",
+        ":uid": "team-552",
+        "display_name": "St. Louis",
+        "name": "Cardinals",
+        "short_name": "STC",
+        "logos": {
+          "header": [
+            {
+              "density": "low",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_70x46.png"
+            },
+            {
+              "density": "medium",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_105x69.png"
+            },
+            {
+              "density": "high",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_140x92.png"
+            }
+          ],
+          "calendar": [
+            {
+              "density": "low",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_35x23.png"
+              },
+            {
+              "density": "medium",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_53x35.png"
+            },
+            {
+              "density": "high",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_70x46.png"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position":3,
+      "group_name": "Group B",
+      "statistics": {
+        "played": 8,
+        "won": 7,
+        "drawn": 6,
+        "lost": 5,
+        "goals_for": 4,
+        "goals_against": 3,
+        "difference": 3,
+        "points": 1
+      },
+      "team":{  
+        ":self": "http://localhost:3000/teams/520",
+        ":type": "application/vnd.playup.sport.team+json",
+        ":uid": "team-520",
+        "display_name": "Marlins",
+        "name": "Miami",
+        "short_name": "MIM",
+        "logos": {
+          "header": [
+            {
+              "density": "low",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_70x46.png"
+            },
+            {
+              "density": "medium",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_105x69.png"
+            },
+            {
+              "density": "high",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_140x92.png"
+            }
+          ],
+          "calendar": [
+            {
+              "density": "low",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_35x23.png"
+              },
+            {
+              "density": "medium",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_53x35.png"
+            },
+            {
+              "density": "high",
+              "href": "http://playuplogos-dev.s3.amazonaws.com/team-logos/american_football/american_football_cardinals_ari_1333419218_70x46.png"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

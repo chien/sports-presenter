@@ -1,0 +1,70 @@
+{
+  ":self": "http://sports.playupgp.com/competitions/27",
+  ":type": "application/vnd.playup.sport.competition+json",
+  ":uid": "competition-27",
+  "name": "Euro 2012",
+  "short_name": "Euro 2012",
+  "region": "Europe",
+  "ancestors": [
+    {
+      ":self": "http://sports.playupgp.com/sports/3",
+      ":type": "application/vnd.playup.sport.sport.football+json",
+      ":uid": "sport-3"
+    },
+    {
+      ":self": "http://sports.playupgp.com/sports",
+      ":type": "application/vnd.playup.sport.sports+json",
+      ":uid": "sports"
+    }
+  ],
+  "logos": [
+    {
+      "density": "low",
+      "href": "http://sdimages.playupgp.com/league-logos/football/competition-27_1333435819_70x70.png"
+    },
+    {
+      "density": "medium",
+      "href": "http://sdimages.playupgp.com/league-logos/football/competition-27_1333435819_105x105.png"
+    },
+    {
+      "density": "high",
+      "href": "http://sdimages.playupgp.com/league-logos/football/competition-27_1333435819_140x140.png"
+    }
+  ],
+  "live_contests": 0,
+  "live": {
+    ":self": "http://sports.playupgp.com/competitions/27/live",
+    ":type": "application/vnd.playup.sport.competition.summary+json",
+    ":uid": "competition-27-live"
+  },
+  "current_season": {
+    ":self": "http://sports.playupgp.com/competitions/27/current_season",
+    ":type": "application/vnd.playup.sport.season+json",
+    ":uid": "competition-27-season"
+  },
+  "current_stage": {
+    ":self": "http://sports.playupgp.com/stages/43",
+    ":type": "application/vnd.playup.sport.stage+json",
+    ":uid": "competition-27-stage-43"
+  },
+  "stages": {
+    ":self": "http://sports.playupgp.com/competitions/27/stages",
+    ":type": "application/vnd.playup.collection+json",
+    ":uid": "competition-27-stages"
+  },
+  "rounds": {
+    ":self": "http://sports.playupgp.com/competitions/27/rounds",
+    ":type": "application/vnd.playup.collection+json",
+    ":uid": "competition-27-rounds"
+  },
+  "current_round": {
+    ":self": "http://sports.playupgp.com/rounds/2211",
+    ":type": "application/vnd.playup.sport.round+json",
+    ":uid": "round-2211"
+  },
+  "teams": {
+    ":self": "http://sports.playupgp.com/competitions/27/teams",
+    ":type": "application/vnd.playup.collection+json",
+    ":uid": "competition-27-teams"
+  }
+}
