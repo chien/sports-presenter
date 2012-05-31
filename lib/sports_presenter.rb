@@ -1,6 +1,6 @@
 require 'rubygems'
-require 'bundler'
-Bundler.require
+# require 'bundler'
+# Bundler.require
 
 module SportsPresentation
   class << self
@@ -13,6 +13,12 @@ SportsPresentation.presenter_base_url = "http://localhost:9292"
 SportsPresentation.sports_api_host = "http://localhost:3000"
 
 here = File.dirname(__FILE__)
+
+require 'addressable/uri'
+require 'sinatra'
+require 'json'
+require 'haml'
+require 'rest-client'
 
 Dir.glob("#{here}/sports-presenter/lib/*.rb").each { |r| require r }
 Dir.glob("#{here}/sports-presenter/models/*.rb").each { |r| require r }
