@@ -1,12 +1,18 @@
 class SportsPresentation < Sinatra::Base
   
   get '/stages/:id/standings' do
-    # @standing = FootballStandings.fetch(params[:id])
+    stage = Api::Stage.find(params[:id])
+    @standing = Presentation::FootballStandings.new stage
 
-    json = JSON(IO.read(File.join(File.dirname(__FILE__), "../spec/stage.json")))
-    @standing = FootballStandings.new json
+    haml :standings_football
+  end
 
-    haml :"standings_football"
+  get "/match_stats" do
+    haml :match_stats_football
+  end
+
+  get "/match_events" do
+    haml :match_events_football
   end
 
 end

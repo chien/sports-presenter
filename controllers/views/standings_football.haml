@@ -2,6 +2,10 @@
 %h2= @standing.stage_name
 
 %hr.indent
+%div.graphicarrow
+  %div.arrow-up
+  %div.arrow-up-a
+  %div.arrow-up-b
 
 - @standing.each_group do |group_name, standings|
   %h3= group_name
@@ -33,5 +37,5 @@
           %td= standing.goals_for
           %td= standing.goals_against
           %td= standing.difference
-          %td= standing.points
+          %td.points= standing.points
   %hr

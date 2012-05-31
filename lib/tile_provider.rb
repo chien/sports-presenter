@@ -3,27 +3,28 @@ class TileProvider
     tiles = TileList.new
 
     case context_url
-    when /\/competitions\/(\d+)$/ then tiles += tiles_for_competition($1, tiles)
-    when /\/contest\/(\d+)$/ then tiles += tiles_for_contest($1, tiles)
+    when /\/competitions\/(\d+)$/ then tiles_for_competition($1, tiles)
+    when /\/contests\/(\d+)$/ then tiles_for_contest($1, tiles)
     end
-
-    tiles.add_link_tile "/stages/4/standings", Tiles::StandingsTile.new
-    tiles.add_link_tile "/stages/4", Tiles::StandingsTile.new
 
     tiles
   end
 
   def self.tiles_for_competition(id, tiles)
-    stage = Competition.find(id).current_stage
+    stage = Api::Competition.find(id).current_stage
     if stage.standings
       tiles.add_link_tile "/stages/#{stage.id}/standings", Tiles::StandingsTile.new
     end
   end
 
   def self.tiles_for_contest(id, tiles)
-    contest = Contest.find(id)
-    if contest.events
-      tiles.add_link_tile "/contests/#{id}/events", Tiles::EventsTile.new
+    contest = Api::Contest.find(id)
+    if contest.has_events?
+      tiles.add_link_tile "/match_events", Tiles::EventsTile.new
+    end
+
+    if contest.has_statistics?
+      tiles.add_link_tile "/match_stats", Tiles::ContestStatisticsTile.new
     end
   end
 end

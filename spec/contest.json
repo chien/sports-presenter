@@ -1,0 +1,145 @@
+{
+  ":self": "http://sports.playupgp.com/contests/20110154845",
+  ":type": "application/vnd.playup.sport.contest.football+json",
+  ":uid": "contest-20110154845",
+  "scheduled_start_time": "2012-06-08T16:00:00Z",
+  "last_modified": "2012-05-30T22:04:54Z",
+  "has_live_updates": true,
+  "title": "Poland vs Greece",
+  "short_title": "POL vs GRE",
+  "round_name": "A",
+  "competition_name": "Euro 2012",
+  "sport_name": "Soccer",
+  "events": {
+    "all": {
+      ":self": "http://sports.playupgp.com/contests/20110154845/events",
+      ":type": "application/vnd.playup.collection+json",
+      ":uid": "contest-20110154845-events"
+    }
+  },
+  "ancestors": [
+    {
+      ":self": "http://sports.playupgp.com/rounds/2211",
+      ":type": "application/vnd.playup.sport.round+json",
+      ":uid": "round-2211"
+    },
+    {
+      ":self": "http://sports.playupgp.com/competitions/27",
+      ":type": "application/vnd.playup.sport.competition+json",
+      ":uid": "competition-27"
+    },
+    {
+      ":self": "http://sports.playupgp.com/sports/3",
+      ":type": "application/vnd.playup.sport.sport.football+json",
+      ":uid": "sport-3"
+    },
+    {
+      ":self": "http://sports.playupgp.com/sports",
+      ":type": "application/vnd.playup.sport.sports+json",
+      ":uid": "sports"
+    }
+  ],
+  "associated_contests": {
+    ":self": "http://sports.playupgp.com/contests/20110154845/associated_contests",
+    ":type": "application/vnd.playup.collection+json",
+    ":uid": "contest-20110154845-associated_contests"
+  },
+  "contest_details": {
+    ":self": "http://sports.playupgp.com/contests/20110154845/associated_contests",
+    ":type": "application/vnd.playup.collection+json",
+    ":uid": "contest-20110154845-associated_contests"
+
+    },
+  "scores": [
+    {
+      "total": 0,
+      "summary": "0",
+      "team": {
+        ":self": "http://sports.playupgp.com/teams/11603",
+        ":type": "application/vnd.playup.sport.team+json",
+        ":uid": "team-11603",
+        "display_name": "Poland",
+        "name": "Poland",
+        "short_name": "POL",
+        "logos": {
+          "header": [
+            {
+              "density": "low",
+              "href": "http://sdimages.playupgp.com/team-logos/football/football_poland_pol_1333421307_70x46.png"
+            },
+            {
+              "density": "medium",
+              "href": "http://sdimages.playupgp.com/team-logos/football/football_poland_pol_1333421307_105x69.png"
+            },
+            {
+              "density": "high",
+              "href": "http://sdimages.playupgp.com/team-logos/football/football_poland_pol_1333421307_140x92.png"
+            }
+          ],
+          "calendar": [
+            {
+              "density": "low",
+              "href": "http://sdimages.playupgp.com/team-logos/football/football_poland_pol_1333421307_35x23.png"
+            },
+            {
+              "density": "medium",
+              "href": "http://sdimages.playupgp.com/team-logos/football/football_poland_pol_1333421307_53x35.png"
+            },
+            {
+              "density": "high",
+              "href": "http://sdimages.playupgp.com/team-logos/football/football_poland_pol_1333421307_70x46.png"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "total": 0,
+      "summary": "0",
+      "team": {
+        ":self": "http://sports.playupgp.com/teams/11604",
+        ":type": "application/vnd.playup.sport.team+json",
+        ":uid": "team-11604",
+        "display_name": "Greece",
+        "name": "Greece",
+        "short_name": "GRE",
+        "logos": {
+          "header": [
+            {
+              "density": "low",
+              "href": "http://sdimages.playupgp.com/team-logos/football/football_greece_gre_1333421074_70x46.png"
+            },
+            {
+              "density": "medium",
+              "href": "http://sdimages.playupgp.com/team-logos/football/football_greece_gre_1333421074_105x69.png"
+            },
+            {
+              "density": "high",
+              "href": "http://sdimages.playupgp.com/team-logos/football/football_greece_gre_1333421074_140x92.png"
+            }
+          ],
+          "calendar": [
+            {
+              "density": "low",
+              "href": "http://sdimages.playupgp.com/team-logos/football/football_greece_gre_1333421074_35x23.png"
+            },
+            {
+              "density": "medium",
+              "href": "http://sdimages.playupgp.com/team-logos/football/football_greece_gre_1333421074_53x35.png"
+            },
+            {
+              "density": "high",
+              "href": "http://sdimages.playupgp.com/team-logos/football/football_greece_gre_1333421074_70x46.png"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "clock": {
+    "minutes": 0,
+    "seconds": 0,
+    "period": 0,
+    "summary": ""
+  }
+}
