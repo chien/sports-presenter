@@ -10,4 +10,5 @@ Gem::Specification.new do |s|
   s.files += Dir.glob("./lib/**/*.css")
   s.files += Dir.glob("./lib/**/*.png")
   s.files += Dir.glob("./lib/sports-presenter/public/fonts/*")
+  s.add_dependency "addressable", ">= 2.2.6"
 end
