@@ -21,11 +21,11 @@ module SportsPresentation
     def self.tiles_for_contest(id, tiles)
       contest = Api::Contest.find(id)
       if contest.has_events?
-        tiles.add_link_tile "/match_events", Tiles::EventsTile.new
+        tiles.add_link_tile "/contests/#{id}/events", Tiles::EventsTile.new
       end
 
       if contest.has_statistics?
-        tiles.add_link_tile "/match_stats", Tiles::ContestStatisticsTile.new
+        tiles.add_link_tile "/contests/#{id}/statistics", Tiles::ContestStatisticsTile.new
       end
     end
   end

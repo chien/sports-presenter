@@ -11,9 +11,17 @@ module SportsPresentation
         @name = event["name"]
         @player_name = event["player_name"]
         @at_seconds = (event.at("clock.minutes").to_i * 60) + (event.at("clock.extra_minutes").to_i * 60) + event.at("clock.seconds").to_i
-        @minutes = event.at("clock.minutes").to_i
-        @extra_minutes = event.at("clock.extra_minutes").to_i
-        @seconds = event.at("clock.seconds").to_i
+        @minutes = event.at("clock.minutes")
+        @extra_minutes = event.at("clock.extra_minutes")
+        @seconds = event.at("clock.seconds")
+
+        @minutes = @minutes.to_i if @minutes.to_s.length > 0
+        @extra_minutes = @extra_minutes.to_i if @extra_minutes.to_s.length > 0
+        @seconds = @seconds.to_i if @seconds.to_s.length > 0
+      end
+
+      def minute_code
+        "#{@minutes.to_i + @extra_minutes.to_i}\""
       end
 
     end

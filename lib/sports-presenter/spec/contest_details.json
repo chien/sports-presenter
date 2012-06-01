@@ -124,7 +124,7 @@
 }
 ],
 "team": {
-":self": "http://staging.sports-api.playupdev.com/teams/1182",
+":self": "http://staging.sports-api.playupdev.com/teams/11603",
 ":type": "application/vnd.playup.sport.team+json",
 ":uid": "team-1182",
 "display_name": "Estudiantes",

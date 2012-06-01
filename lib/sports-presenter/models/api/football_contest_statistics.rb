@@ -1,7 +1,7 @@
 module SportsPresentation
   module Api
     class FootballContestStatistics
-      STATS = %w( score saves yellow_cards red_cards crosses fouls offsides corner_kicks tackles passes poessession_percentage shots shots_on_goal )
+      STATS = %w( score saves yellow_cards red_cards crosses fouls offsides corner_kicks tackles passes possession_percentage shots shots_on_goal )
 
       attr_reader *STATS
       attr_reader :team_id, :display_name

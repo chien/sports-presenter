@@ -32,37 +32,51 @@
   %ol
     - @statistics.goals_rundown.each_with_index do |block, block_index|
       - block.list.each_with_index do |goal, goal_index|
-        %li{ :class => "#{block.side}-team #{goal_index == 0 && block_index > 0 ? 'scoredisplace' : nil}" }
+        // - if block.side == :away && block_index > 0 && goal_index != block.list.length - 1
+        - if block.side == :away && block_index > 0
+          %li.home-nodisplay
+        - if block.side == :home && block_index > 0
+          %li.away-nodisplay
+        %li{ :class => "#{block.side}-team" }
           %span.name= goal.player_name
-          %span.time= "#{goal.time}\""
+          %span.time= goal.time
+        // %li{ :class => "#{block.side}-team #{goal_index == 0 && block_index == 1 ? 'scoredisplace' : nil}" }
+        // - if block.side == :home && block_index > 0 && goal_index != block.list.length - 1
+        //   %li.away-nodisplay
+
+  %div.clear
+
+
+%div.clear
 
 %section.stats
   %ol
     %li
-      %span.home-team 46%
-      %span.away-team 54%
+      %span.home-team= @statistics.home_team.possession_percentage
+      %span.away-team= @statistics.away_team.possession_percentage
       Possession
     %li
-      %span.home-team 18/5
-      %span.away-team 10/3
+      %span.home-team= "#{@statistics.home_team.shots}/#{@statistics.home_team.shots_on_goal}"
+      %span.away-team= "#{@statistics.away_team.shots}/#{@statistics.away_team.shots_on_goal}"
       Shots/Shots on Goal
     %li
-      %span.home-team 5
-      %span.away-team 3
+      %span.home-team= @statistics.home_team.saves
+      %span.away-team= @statistics.away_team.saves
       Saves
     %li
-      %span.home-team 1
-      %span.away-team 1
+      %span.home-team= @statistics.home_team.yellow_cards
+      %span.away-team= @statistics.away_team.yellow_cards
       Yellow Cards
     %li
-      %span.home-team 0
-      %span.away-team 0
+      %span.home-team= @statistics.home_team.red_cards
+      %span.away-team= @statistics.away_team.red_cards
       Red Cards
     %li
-      %span.home-team 16
-      %span.away-team 14
+      %span.home-team= @statistics.home_team.crosses
+      %span.away-team= @statistics.away_team.crosses
       Crosses
     %li
-      %span.home-team 5
-      %span.away-team 3
+      %span.home-team= @statistics.home_team.fouls
+      %span.away-team= @statistics.away_team.fouls
       Fouls
+

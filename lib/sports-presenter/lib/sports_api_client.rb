@@ -1,29 +1,29 @@
 module SportsPresentation
   class SportsApiClient
 
-    def self.fetch(path)
-      url = File.join(SportsPresentation.sports_api_host, path)
-      headers = {:language => @language, :region => @region}
-      body = RestClient.get(url, headers).body
-
-      # Ditch the colon prefixes so we can use recursive open struct.
-      # body = body.gsub('":self":', '"_self":').gsub('":type":', '"_type":').gsub('":uid":', '"_uid":')
-
-      SportsApiResponse.new JSON(body)
+    class << self
+      attr_accessor :mode
     end
 
-
     def self.fetch(path)
-      if path =~ /stage/
-        mock_response("stage.json")
-      elsif path =~ /competi/
-        mock_response("competition.json")
-      elsif path =~ /events/
-        mock_response("events.json")
-      elsif path =~ /contest_details/
-        mock_response("contest_details.json")
-      elsif path =~ /contests/
-        mock_response("contest.json")
+      unless SportsApiClient.mode == :mock
+        url = File.join(SportsPresentation.sports_api_host, path)
+        headers = {:language => @language, :region => @region}
+        body = RestClient.get(url, headers).body
+
+        SportsApiResponse.new JSON(body)
+      else
+        if path =~ /stage/
+          mock_response("stage.json")
+        elsif path =~ /competi/
+          mock_response("competition.json")
+        elsif path =~ /events/
+          mock_response("events.json")
+        elsif path =~ /contest_details/
+          mock_response("contest_details.json")
+        elsif path =~ /contests/
+          mock_response("contest.json")
+        end
       end
     end
 

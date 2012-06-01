@@ -2,6 +2,8 @@ module SportsPresentation
   module Presentation
     class FootballContestStatistics
 
+      attr_reader :events
+
       def initialize(contest)
         @contest = contest
         @statistics = contest.statistics
@@ -24,8 +26,10 @@ module SportsPresentation
         @contest.round_name
       end
 
+      # Breaks goals into groups of sequential goals per side.
       def goals_rundown
         data = @events.sort_by { |event| -event.at_seconds }.select { |event| event.event_type =~ /goal/ }
+
         return [] if data.length == 0
 
         goal_blocks = []
@@ -48,7 +52,7 @@ module SportsPresentation
       private
 
       def make_goal_display(event)
-        OpenStruct.new(:time => event.extra_minutes || event.minutes, :player => event.player_name)
+        OpenStruct.new(:time => event.minute_code, :player_name => event.player_name)
       end
 
       def goal_block(team_id)

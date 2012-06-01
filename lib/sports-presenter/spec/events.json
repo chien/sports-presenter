@@ -55,6 +55,7 @@
 "time_stamp": "2012-05-28T21:29:40Z",
 "event_type": "football_goal_event",
 "goal_type": "penalty_goal",
+"team_id": "11603",
 "clock": {
 "minutes": "16",
 "extra_minutes": "0"
@@ -101,6 +102,57 @@
 "name": "Penalty Goal"
 },
 {
+":self": "http://staging.sports-api.playupdev.com/events/340153",
+":type": "application/vnd.playup.sport.event.events.football_goal_event+json",
+":uid": "event-340153",
+"time_stamp": "2012-05-28T21:57:38Z",
+"event_type": "football_goal_event",
+"goal_type": "goal",
+"clock": {
+"minutes": "42",
+"extra_minutes": "0"
+},
+"external_player_id": "33276",
+"player_name": "D. Zapata",
+"messages": [
+{
+"en": "D. Zapata scores for Estudiantes"
+},
+{
+"zh-CN": "D. Zapata scores for Estudiantes"
+},
+{
+"it": "D. Zapata scores for Estudiantes"
+},
+{
+"es": "D. Zapata scores for Estudiantes"
+},
+{
+"ja": "D. Zapata scores for Estudiantes"
+},
+{
+"pt": "D. Zapata scores for Estudiantes"
+},
+{
+"pl": "D. Zapata scores for Estudiantes"
+},
+{
+"ko": "D. Zapata scores for Estudiantes"
+},
+{
+"de": "D. Zapata scores for Estudiantes"
+},
+{
+"fr": "D. Zapata scores for Estudiantes"
+},
+{
+"en-GB": "D. Zapata scores for Estudiantes"
+}
+],
+"long_message": "D. Zapata scores for Estudiantes",
+"short_message": "D. Zapata\nEstudiantes\n42\"",
+"name": "Goal"
+},{
 ":self": "http://staging.sports-api.playupdev.com/events/340153",
 ":type": "application/vnd.playup.sport.event.events.football_goal_event+json",
 ":uid": "event-340153",
@@ -442,6 +494,217 @@
 ],
 "long_message": "Match completed - Estudiantes vs Arsenal ",
 "name": "End of match"
+},
+{
+":self": "http://staging.sports-api.playupdev.com/events/340126",
+":type": "application/vnd.playup.sport.event.events.football_goal_event+json",
+":uid": "event-340126",
+"time_stamp": "2012-05-28T21:29:40Z",
+"event_type": "football_goal_event",
+"goal_type": "penalty_goal",
+"team_id": "11603",
+"clock": {
+"minutes": "65",
+"extra_minutes": "0"
+},
+"external_player_id": "15201",
+"player_name": "E. Zelaya",
+"messages": [
+{
+"en": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"zh-CN": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"it": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"es": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"ja": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"pt": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"pl": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"ko": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"de": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"fr": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"en-GB": "E. Zelaya scores for Arsenal on penalty"
+}
+],
+"long_message": "E. Zelaya scores for Arsenal on penalty",
+"short_message": "E. Zelaya\nArsenal\n16\"",
+"name": "Penalty Goal"
+},
+{
+":self": "http://staging.sports-api.playupdev.com/events/340126",
+":type": "application/vnd.playup.sport.event.events.football_goal_event+json",
+":uid": "event-340126",
+"time_stamp": "2012-05-28T21:29:40Z",
+"event_type": "football_goal_event",
+"goal_type": "penalty_goal",
+"team_id": "11603",
+"clock": {
+"minutes": "66",
+"extra_minutes": "0"
+},
+"external_player_id": "15201",
+"player_name": "E. Zelaya",
+"messages": [
+{
+"en": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"zh-CN": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"it": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"es": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"ja": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"pt": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"pl": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"ko": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"de": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"fr": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"en-GB": "E. Zelaya scores for Arsenal on penalty"
+}
+],
+"long_message": "E. Zelaya scores for Arsenal on penalty",
+"short_message": "E. Zelaya\nArsenal\n16\"",
+"name": "Penalty Goal"
+},
+{
+":self": "http://staging.sports-api.playupdev.com/events/340126",
+":type": "application/vnd.playup.sport.event.events.football_goal_event+json",
+":uid": "event-340126",
+"time_stamp": "2012-05-28T21:29:40Z",
+"event_type": "football_goal_event",
+"goal_type": "penalty_goal",
+"team_id": "11603",
+"clock": {
+"minutes": "66",
+"extra_minutes": "0"
+},
+"external_player_id": "15201",
+"player_name": "E. Zelaya",
+"messages": [
+{
+"en": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"zh-CN": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"it": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"es": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"ja": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"pt": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"pl": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"ko": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"de": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"fr": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"en-GB": "E. Zelaya scores for Arsenal on penalty"
+}
+],
+"long_message": "E. Zelaya scores for Arsenal on penalty",
+"short_message": "E. Zelaya\nArsenal\n16\"",
+"name": "Penalty Goal"
+},
+{
+":self": "http://staging.sports-api.playupdev.com/events/340126",
+":type": "application/vnd.playup.sport.event.events.football_goal_event+json",
+":uid": "event-340126",
+"time_stamp": "2012-05-28T21:29:40Z",
+"event_type": "football_goal_event",
+"goal_type": "penalty_goal",
+"clock": {
+"minutes": "68",
+"extra_minutes": "0"
+},
+"external_player_id": "15201",
+"player_name": "E. Zelaya",
+"messages": [
+{
+"en": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"zh-CN": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"it": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"es": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"ja": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"pt": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"pl": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"ko": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"de": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"fr": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"en-GB": "E. Zelaya scores for Arsenal on penalty"
+}
+],
+"long_message": "E. Zelaya scores for Arsenal on penalty",
+"short_message": "E. Zelaya\nArsenal\n16\"",
+"name": "Penalty Goal"
 }
 ]
 }

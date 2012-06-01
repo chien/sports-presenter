@@ -27,15 +27,16 @@ Dir.glob("#{here}/sports-presenter/models/api/*.rb").each { |r| require r }
 Dir.glob("#{here}/sports-presenter/models/presentation/*.rb").each { |r| require r }
 Dir.glob("#{here}/sports-presenter/controllers/*.rb").each { |r| require r }
 
-
 module SportsPresentation
   class Application < Sinatra::Base
 
     set :public_folder, Proc.new { File.join(root, "..", "public" ) }
 
     before do
-      SportsApiClient.set_language(params[:lang] || "en")
-      SportsApiClient.set_region(params[:region] || 'AU')
+      SportsApiClient.set_language(params[:lang] || params[:locale] || "en")
+      SportsApiClient.set_region(params[:region] || 'EU')
+      
+      SportsPresentation::SportsApiClient.mode = (params[:real] == "true" ? nil : :mock)
     end
   end
 end
