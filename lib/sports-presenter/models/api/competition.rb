@@ -3,7 +3,7 @@ module SportsPresentation
     class Competition
 
       def initialize(competition)
-        @current_stage = PlayupTypes.wrap competition.at("current_stage")
+        @current_stage = PlayupTypes.lazyref competition.at("current_stage")
       end
 
       def self.find(id)

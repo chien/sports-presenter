@@ -1,5 +1,10 @@
 module SportsPresentation
   class PlayupTypes
+
+    def self.grab_last_id(content)
+      content[":self"] =~ /\/(\d+)$/ ? $1 : nil
+    end
+
     def self.resolve(mime_type)
       return nil if mime_type.nil?
 

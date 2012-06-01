@@ -8,6 +8,11 @@ module SportsPresentation
         @standings = PlayupTypes.wrap(stage.at("standings"))
         @name = stage.at("name")
         @competition_name = stage.at("competition_name")
+        @stage_id = PlayupTypes.grab_last_id(stage)
+      end
+
+      def id
+        @stage_id
       end
 
       def self.find(id)
