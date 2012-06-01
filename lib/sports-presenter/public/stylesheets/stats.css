@@ -1,0 +1,193 @@
+/* Match Stats Page */
+
+
+/*Class name for the team that did not score last*/
+.scoredisplace{
+  margin-top: 17px;
+}
+
+
+.contest,.teams,.scores{margin: 0 10px 0 10px;}
+.contest{font: 12px "OpenSansLightRegular", Arial, Helvetica, Geneva, sans-serif;}
+  .location{float: left;}
+  .round{float: right;}
+
+h1{
+  color: #696B6E;
+  margin-top: 4px;
+  font: 20px "BebasNeueRegular", Arial, Helvetica, Geneva, sans-serif;
+}
+  .teams .home-team,
+  .teams .away-team{
+    color: #FF4754;
+  }
+  .teams .home-team{
+    float: left;
+  } 
+  .teams .away-team{
+    float: right;
+  }
+  
+/* positioning for hr */
+hr.indent{margin-top: 5px;}
+.graphicarrow{margin-top: -1px;}
+
+  .scores .home-team,
+  .scores .away-team{
+    color: #FF4754;
+    font-size: 26px;
+  }
+  .scores .home-team{
+    float: left;
+  }
+  .scores .away-team{
+    float: right;
+  }
+  .scorebox h1{
+    color: #A5A6A8;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 0px;
+    }
+  .scorebox{
+    border: 1px solid #E2E1DE;
+    padding: 2px 3px 2px 3px;
+    margin: auto;
+    margin-top: 5px;
+    width: 40px;
+    -webkit-box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 1);
+    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    }
+    .goal-time-line{
+    background-position: center;
+    background-image: url(../img/gb.png);
+    background-size:1px 100%;
+    background-repeat: repeat-y;
+    padding-top: 1px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #E2E1DE;
+    -webkit-box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 1);
+    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 1);
+    font-size: 17 px;
+    }
+      .goal-time-line ol{
+        margin-top: 10px;
+      }
+    .goal-time-line .away-team,
+    .goal-time-line .home-team{
+      color: #fff;
+      width: 46%;
+      border-radius: 4px;
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      margin-bottom: 8px;
+      border: 1px solid #9BB9B9;
+      background: #89aaaa; /* Old browsers */
+      background: -moz-linear-gradient(top,  #89aaaa 0%, #9cbaba 2%, #a8c4c4 4%, #a8c4c4 98%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#89aaaa), color-stop(2%,#9cbaba), color-stop(4%,#a8c4c4), color-stop(98%,#a8c4c4)); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top,  #89aaaa 0%,#9cbaba 2%,#a8c4c4 4%,#a8c4c4 98%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top,  #89aaaa 0%,#9cbaba 2%,#a8c4c4 4%,#a8c4c4 98%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(top,  #89aaaa 0%,#9cbaba 2%,#a8c4c4 4%,#a8c4c4 98%); /* IE10+ */
+      background: linear-gradient(top,  #89aaaa 0%,#9cbaba 2%,#a8c4c4 4%,#a8c4c4 98%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#89aaaa', endColorstr='#a8c4c4',GradientType=0 ); /* IE6-9 */
+  }
+  .goal-time-line .home-team{
+    float: left;
+    clear: left;    
+    background-color: #A7C3C3;
+  }
+    .goal-time-line .home-team .name{
+      margin: 3px 0 3px 10px;
+      display:inline-block;
+    }
+    
+  .goal-time-line .away-team {
+    text-align: right;
+    float: right;
+    clear: right;
+    background-color: #A7C3C3;
+  } 
+    .goal-time-line .away-team .time{
+      margin: 3px 10px 3px 0;
+      display: inline-block;
+    }
+
+  /* No display workaround*/
+
+  .home-nodisplay,.away-nodisplay{
+    height: 22px;
+    width: 46%;
+    margin-bottom: 8px;
+  }
+  .home-nodisplay{
+    float: left;
+    
+  }
+  .away-nodisplay{
+    float: right;
+  }
+  
+  .goal-time-line .away-team:before{
+  border-left: 1px solid #9BB9B9;
+  border-bottom: 1px solid #9BB9B9;
+  content: "";
+  width: 7px;
+  height: 7px;
+  z-index:  -1;
+  float: left;
+  margin-top: 7px;
+  margin-left: -4px;
+  display: inline-block;
+  background-color: #A7C3C3;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  }
+
+.goal-time-line .home-team:after{
+  border-right: 1px solid #9BB9B9;
+  border-top: 1px solid #9BB9B9;
+  content: "";
+  width: 7px;
+  height: 7px;
+  z-index: -1;
+  float: right;
+  margin-top: 8px;
+  margin-right: -4px;
+  display: inline-block;
+  background-color: #A7C3C3;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+    }
+
+  .stats ol li{
+    color: #A5A6A8;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #E2E1DE;
+    -webkit-box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 1);
+    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 1);
+    text-align: center;
+    margin: 5px 0 5px 0;
+    font-size: 15px;  
+  }
+  .stats ol .home-team,
+  .stats ol .away-team{
+  margin-top: -1px;
+  color: #87898B;
+  font-size: 17px;
+  }
+  .stats ol .home-team{
+  float: left;
+  }
+  .stats ol .away-team{
+  float: right;
+  }
+  

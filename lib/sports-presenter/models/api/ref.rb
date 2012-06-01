@@ -16,6 +16,7 @@ module SportsPresentation
       end
 
       def fetch
+        puts "Fetching #{@href}"
         result = SportsApiClient.fetch(@href)
         PlayupTypes.wrap(result)
       end

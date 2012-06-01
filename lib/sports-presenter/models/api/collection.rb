@@ -5,6 +5,7 @@ module SportsPresentation
 
       def initialize(data)
         @data = []
+        data = data["items"] if data.is_a?(Hash)
         data.each do |entry|
           begin
             type = PlayupTypes.resolve(entry.playup_type)
@@ -15,6 +16,10 @@ module SportsPresentation
 
       def each(&block)
         @data.each(&block)
+      end
+
+      def self.fetch(url)
+        new SportsApiClient.fetch(url)
       end
 
     end

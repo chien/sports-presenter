@@ -1,0 +1,447 @@
+{
+":self": "http://staging.sports-api.playupdev.com/contests/20110157694/events",
+":type": "application/vnd.playup.collection+json",
+":uid": "contest-20110157694-events",
+"items": [
+{
+":self": "http://staging.sports-api.playupdev.com/events/340090",
+":type": "application/vnd.playup.sport.event.events.football_kick_off_event+json",
+":uid": "event-340090",
+"time_stamp": "2012-05-28T21:11:42Z",
+"event_type": "football_kick_off_event",
+"messages": [
+{
+"en": "Estudiantes Vs Arsenal match kicks off!"
+},
+{
+"zh-CN": "Estudiantes Vs Arsenal match kicks off!"
+},
+{
+"it": "Estudiantes Vs Arsenal match kicks off!"
+},
+{
+"es": "Estudiantes Vs Arsenal match kicks off!"
+},
+{
+"ja": "Estudiantes Vs Arsenal match kicks off!"
+},
+{
+"pt": "Estudiantes Vs Arsenal match kicks off!"
+},
+{
+"pl": "Estudiantes Vs Arsenal match kicks off!"
+},
+{
+"ko": "Estudiantes Vs Arsenal match kicks off!"
+},
+{
+"de": "Estudiantes Vs Arsenal match kicks off!"
+},
+{
+"fr": "Estudiantes Vs Arsenal match kicks off!"
+},
+{
+"en-GB": "Estudiantes Vs Arsenal match kicks off!"
+}
+],
+"long_message": "Estudiantes Vs Arsenal match kicks off!",
+"short_message": "Match started",
+"name": "Kickoff"
+},
+{
+":self": "http://staging.sports-api.playupdev.com/events/340126",
+":type": "application/vnd.playup.sport.event.events.football_goal_event+json",
+":uid": "event-340126",
+"time_stamp": "2012-05-28T21:29:40Z",
+"event_type": "football_goal_event",
+"goal_type": "penalty_goal",
+"clock": {
+"minutes": "16",
+"extra_minutes": "0"
+},
+"external_player_id": "15201",
+"player_name": "E. Zelaya",
+"messages": [
+{
+"en": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"zh-CN": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"it": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"es": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"ja": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"pt": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"pl": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"ko": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"de": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"fr": "E. Zelaya scores for Arsenal on penalty"
+},
+{
+"en-GB": "E. Zelaya scores for Arsenal on penalty"
+}
+],
+"long_message": "E. Zelaya scores for Arsenal on penalty",
+"short_message": "E. Zelaya\nArsenal\n16\"",
+"name": "Penalty Goal"
+},
+{
+":self": "http://staging.sports-api.playupdev.com/events/340153",
+":type": "application/vnd.playup.sport.event.events.football_goal_event+json",
+":uid": "event-340153",
+"time_stamp": "2012-05-28T21:57:38Z",
+"event_type": "football_goal_event",
+"goal_type": "goal",
+"clock": {
+"minutes": "42",
+"extra_minutes": "0"
+},
+"external_player_id": "33276",
+"player_name": "D. Zapata",
+"messages": [
+{
+"en": "D. Zapata scores for Estudiantes"
+},
+{
+"zh-CN": "D. Zapata scores for Estudiantes"
+},
+{
+"it": "D. Zapata scores for Estudiantes"
+},
+{
+"es": "D. Zapata scores for Estudiantes"
+},
+{
+"ja": "D. Zapata scores for Estudiantes"
+},
+{
+"pt": "D. Zapata scores for Estudiantes"
+},
+{
+"pl": "D. Zapata scores for Estudiantes"
+},
+{
+"ko": "D. Zapata scores for Estudiantes"
+},
+{
+"de": "D. Zapata scores for Estudiantes"
+},
+{
+"fr": "D. Zapata scores for Estudiantes"
+},
+{
+"en-GB": "D. Zapata scores for Estudiantes"
+}
+],
+"long_message": "D. Zapata scores for Estudiantes",
+"short_message": "D. Zapata\nEstudiantes\n42\"",
+"name": "Goal"
+},
+{
+":self": "http://staging.sports-api.playupdev.com/events/340154",
+":type": "application/vnd.playup.sport.event.events.football_card_event+json",
+":uid": "event-340154",
+"time_stamp": "2012-05-28T21:57:38Z",
+"event_type": "football_card_event",
+"card_type": "yellow_card",
+"team_id": "1182",
+"clock": {
+"minutes": "39",
+"extra_minutes": "0"
+},
+"external_player_id": "55484",
+"player_name": "M. Sánchez",
+"messages": [
+{
+"en": "M. Sánchez (from Estudiantes) receives a yellow card"
+},
+{
+"zh-CN": "M. Sánchez (from Estudiantes) receives a yellow card"
+},
+{
+"it": "M. Sánchez (from Estudiantes) receives a yellow card"
+},
+{
+"es": "M. Sánchez (from Estudiantes) receives a yellow card"
+},
+{
+"ja": "M. Sánchez (from Estudiantes) receives a yellow card"
+},
+{
+"pt": "M. Sánchez (from Estudiantes) receives a yellow card"
+},
+{
+"pl": "M. Sánchez (from Estudiantes) receives a yellow card"
+},
+{
+"ko": "M. Sánchez (from Estudiantes) receives a yellow card"
+},
+{
+"de": "M. Sánchez (from Estudiantes) receives a yellow card"
+},
+{
+"fr": "M. Sánchez (from Estudiantes) receives a yellow card"
+},
+{
+"en-GB": "M. Sánchez (from Estudiantes) receives a yellow card"
+}
+],
+"long_message": "M. Sánchez (from Estudiantes) receives a yellow card",
+"short_message": "M. Sánchez\nEstudiantes\n39\"",
+"name": "Yellow Card"
+},
+{
+":self": "http://staging.sports-api.playupdev.com/events/340155",
+":type": "application/vnd.playup.sport.event.events.football_card_event+json",
+":uid": "event-340155",
+"time_stamp": "2012-05-28T21:57:38Z",
+"event_type": "football_card_event",
+"card_type": "yellow_card",
+"team_id": "1175",
+"clock": {
+"minutes": "40",
+"extra_minutes": "0"
+},
+"external_player_id": "15201",
+"player_name": "E. Zelaya",
+"messages": [
+{
+"en": "E. Zelaya (from Arsenal) receives a yellow card"
+},
+{
+"zh-CN": "E. Zelaya (from Arsenal) receives a yellow card"
+},
+{
+"it": "E. Zelaya (from Arsenal) receives a yellow card"
+},
+{
+"es": "E. Zelaya (from Arsenal) receives a yellow card"
+},
+{
+"ja": "E. Zelaya (from Arsenal) receives a yellow card"
+},
+{
+"pt": "E. Zelaya (from Arsenal) receives a yellow card"
+},
+{
+"pl": "E. Zelaya (from Arsenal) receives a yellow card"
+},
+{
+"ko": "E. Zelaya (from Arsenal) receives a yellow card"
+},
+{
+"de": "E. Zelaya (from Arsenal) receives a yellow card"
+},
+{
+"fr": "E. Zelaya (from Arsenal) receives a yellow card"
+},
+{
+"en-GB": "E. Zelaya (from Arsenal) receives a yellow card"
+}
+],
+"long_message": "E. Zelaya (from Arsenal) receives a yellow card",
+"short_message": "E. Zelaya\nArsenal\n40\"",
+"name": "Yellow Card"
+},
+{
+":self": "http://staging.sports-api.playupdev.com/events/340157",
+":type": "application/vnd.playup.sport.event.events.football_half_time_event+json",
+":uid": "event-340157",
+"time_stamp": "2012-05-28T22:02:19Z",
+"event_type": "football_half_time_event",
+"messages": [
+{
+"en": "Half Time Estudiantes vs Arsenal "
+},
+{
+"zh-CN": "Half Time Estudiantes vs Arsenal "
+},
+{
+"it": "Half Time Estudiantes vs Arsenal "
+},
+{
+"es": "Half Time Estudiantes vs Arsenal "
+},
+{
+"ja": "Half Time Estudiantes vs Arsenal "
+},
+{
+"pt": "Half Time Estudiantes vs Arsenal "
+},
+{
+"pl": "Half Time Estudiantes vs Arsenal "
+},
+{
+"ko": "Half Time Estudiantes vs Arsenal "
+},
+{
+"de": "Half Time Estudiantes vs Arsenal "
+},
+{
+"fr": "Half Time Estudiantes vs Arsenal "
+},
+{
+"en-GB": "Half Time Estudiantes vs Arsenal "
+}
+],
+"long_message": "Half Time Estudiantes vs Arsenal ",
+"name": "Half Time"
+},
+{
+":self": "http://staging.sports-api.playupdev.com/events/340166",
+":type": "application/vnd.playup.sport.event.events.football_start_of_second_half_event+json",
+":uid": "event-340166",
+"time_stamp": "2012-05-28T22:13:34Z",
+"event_type": "football_start_of_second_half_event",
+"messages": [
+{
+"en": "Second half starts"
+},
+{
+"zh-CN": "Second half starts"
+},
+{
+"it": "Second half starts"
+},
+{
+"es": "Second half starts"
+},
+{
+"ja": "Second half starts"
+},
+{
+"pt": "Second half starts"
+},
+{
+"pl": "Second half starts"
+},
+{
+"ko": "Second half starts"
+},
+{
+"de": "Second half starts"
+},
+{
+"fr": "Second half starts"
+},
+{
+"en-GB": "Second half starts"
+}
+],
+"long_message": "Second half starts",
+"name": "2nd half"
+},
+{
+":self": "http://staging.sports-api.playupdev.com/events/340181",
+":type": "application/vnd.playup.sport.event.events.football_card_event+json",
+":uid": "event-340181",
+"time_stamp": "2012-05-28T22:35:35Z",
+"event_type": "football_card_event",
+"card_type": "yellow_card",
+"team_id": "1175",
+"clock": {
+"minutes": "63",
+"extra_minutes": "0"
+},
+"external_player_id": "55885",
+"player_name": "D. Pérez",
+"messages": [
+{
+"en": "D. Pérez (from Arsenal) receives a yellow card"
+},
+{
+"zh-CN": "D. Pérez (from Arsenal) receives a yellow card"
+},
+{
+"it": "D. Pérez (from Arsenal) receives a yellow card"
+},
+{
+"es": "D. Pérez (from Arsenal) receives a yellow card"
+},
+{
+"ja": "D. Pérez (from Arsenal) receives a yellow card"
+},
+{
+"pt": "D. Pérez (from Arsenal) receives a yellow card"
+},
+{
+"pl": "D. Pérez (from Arsenal) receives a yellow card"
+},
+{
+"ko": "D. Pérez (from Arsenal) receives a yellow card"
+},
+{
+"de": "D. Pérez (from Arsenal) receives a yellow card"
+},
+{
+"fr": "D. Pérez (from Arsenal) receives a yellow card"
+},
+{
+"en-GB": "D. Pérez (from Arsenal) receives a yellow card"
+}
+],
+"long_message": "D. Pérez (from Arsenal) receives a yellow card",
+"short_message": "D. Pérez\nArsenal\n63\"",
+"name": "Yellow Card"
+},
+{
+":self": "http://staging.sports-api.playupdev.com/events/340192",
+":type": "application/vnd.playup.sport.event.events.football_end_of_match_event+json",
+":uid": "event-340192",
+"time_stamp": "2012-05-28T23:05:40Z",
+"event_type": "football_end_of_match_event",
+"messages": [
+{
+"en": "Match completed - Estudiantes vs Arsenal "
+},
+{
+"zh-CN": "Match completed - Estudiantes vs Arsenal "
+},
+{
+"it": "Match completed - Estudiantes vs Arsenal "
+},
+{
+"es": "Match completed - Estudiantes vs Arsenal "
+},
+{
+"ja": "Match completed - Estudiantes vs Arsenal "
+},
+{
+"pt": "Match completed - Estudiantes vs Arsenal "
+},
+{
+"pl": "Match completed - Estudiantes vs Arsenal "
+},
+{
+"ko": "Match completed - Estudiantes vs Arsenal "
+},
+{
+"de": "Match completed - Estudiantes vs Arsenal "
+},
+{
+"fr": "Match completed - Estudiantes vs Arsenal "
+},
+{
+"en-GB": "Match completed - Estudiantes vs Arsenal "
+}
+],
+"long_message": "Match completed - Estudiantes vs Arsenal ",
+"name": "End of match"
+}
+]
+}

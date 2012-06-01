@@ -7,12 +7,14 @@ module SportsPresentation
 
       case actual
       when "vnd.playup.sport.contest.contest" then Api::Contest
+      when "vnd.playup.sport.contest_detail.football" then Api::ContestDetails
       when "vnd.playup.sport.competition" then Api::Competition
       when "vnd.playup.sport.competitions" then Api::Collection
       when "vnd.playup.sport.competition.stage.home_away" then Api::Stage
       when "vnd.playup.sport.competition.stage.knockout" then Api::Stage
       when "vnd.playup.sport.ranking.statistics.football" then Api::FootballRankingStatistics
       when "vnd.playup.collection" then Api::Collection
+      when /vnd\.playup\.sport\.event\.events\.football_(.*)/ then Api::Event
       end
 
     end
@@ -25,6 +27,7 @@ module SportsPresentation
       if response.is_a?(Array)
         response.collect { |r| wrap(r) || r }
       elsif type = resolve(response.playup_type)
+        puts "Wrapping #{type}"
         type.new(response) if type
       end
     end

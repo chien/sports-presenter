@@ -18,6 +18,10 @@ module SportsPresentation
         mock_response("stage.json")
       elsif path =~ /competi/
         mock_response("competition.json")
+      elsif path =~ /events/
+        mock_response("events.json")
+      elsif path =~ /contest_details/
+        mock_response("contest_details.json")
       elsif path =~ /contests/
         mock_response("contest.json")
       end

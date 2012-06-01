@@ -45,7 +45,7 @@
     ":uid": "contest-20110154845-associated_contests"
   },
   "contest_details": {
-    ":self": "http://sports.playupgp.com/contests/20110154845/associated_contests",
+    ":self": "http://sports.playupgp.com/contest_details/20110154845",
     ":type": "application/vnd.playup.collection+json",
     ":uid": "contest-20110154845-associated_contests"
 

@@ -1,32 +1,40 @@
 %header.contest
   %div.location Stamford Bridge
-  %div.round Week 38
+  %div.round= @statistics.round_name
+  %div.clear
 
-  %h1 Premier League
+  %h1= @statistics.competition_name
 
 %header.teams
-  %h1.home-team Chelsea
-  %h1.away-team Everton
+  %h1.home-team= @statistics.home_team.display_name
+  %h1.away-team= @statistics.away_team.display_name
+
+%div.clear
+
+%hr.indent
+%div.graphicarrow
+  %div.arrow-up
+  %div.arrow-up-a
+  %div.arrow-up-b
+
+%div.clear
 
 %section.scores
-  %div.home-team 3
-  %div.away-team 1
+  %div.home-team= @statistics.home_team.score
+  %div.away-team= @statistics.away_team.score
+
+%div.scorebox
+  %h1 Score
+
+%div.clear
 
 %section.goal-time-line
-  %h1 Scores
   %ol
-    %li.home-team
-      %span.name Torres
-      %span.time 63"
-    %l.home-team
-      %span.name Drogba
-      %span.time 54"
-    %li.away-team
-      %span.name Jelavic
-      %span.time 42"
-    %li.home-team
-      %span.name Lampard
-      %span.time 17"
+    - @statistics.goals_rundown.each_with_index do |block, block_index|
+      - block.list.each_with_index do |goal, goal_index|
+        %li{ :class => "#{block.side}-team #{goal_index == 0 && block_index > 0 ? 'scoredisplace' : nil}" }
+          %span.name= goal.player_name
+          %span.time= "#{goal.time}\""
 
 %section.stats
   %ol
