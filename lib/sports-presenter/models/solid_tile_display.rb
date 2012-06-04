@@ -13,7 +13,7 @@ module SportsPresentation
       if images = arguments[:background_image]
         if images.is_a?(Hash)
           @background_image = images.collect do |key, href| 
-            { "density" => key.to_s, "href" => href }
+            { "density" => key.to_s, "href" => File.join(SportsPresentation.assets_host, href) }
           end
         else
           @background_image = images

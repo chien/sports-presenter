@@ -4,9 +4,9 @@ module SportsPresentation
 
       def initialize
         super title: "Statistics", background_image: {
-          low: "http://sdimages.playupgp.com/sport-logos/sport-8_1333601532_148x88.jpeg",
-          medium: "http://sdimages.playupgp.com/sport-logos/sport-8_1333601532_222x132.jpeg",
-          high: "http://sdimages.playupgp.com/sport-logos/sport-8_1333601532_296x176.jpeg"
+          low: "/tiles/statistics/football/low_140_88.png",
+          medium: "/tiles/statistics/football/medium_222_132.png",
+          high: "/tiles/statistics/football/high_296_176.png"
         }
       end
 

@@ -6,11 +6,13 @@ module SportsPresentation
   class << self
     attr_accessor :presenter_base_url
     attr_accessor :sports_api_host
+    attr_accessor :assets_host
   end
 end
 
 SportsPresentation.presenter_base_url = "http://localhost:9292"
 SportsPresentation.sports_api_host = "http://localhost:3000"
+SportsPresentation.assets_host = "http://sportsdata-staging.s3.amazonaws.com/"
 
 here = File.dirname(__FILE__)
 
@@ -55,7 +57,7 @@ module SportsPresentation
       SportsApiClient.set_language(locale_from_query)
       SportsApiClient.set_region(params[:region] || 'EU')
       
-      SportsPresentation::SportsApiClient.mode = (params[:real] == "true" ? nil : :mock)
+      SportsPresentation::SportsApiClient.mode = nil #(params[:real] == "true" ? nil : :mock)
     end
   end
 end
