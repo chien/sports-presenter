@@ -26,13 +26,13 @@ module SportsPresentation
       data = {
         ":type" => "application/vnd.playup.display.tile.solid+json",
         "title" => @title,
-        "background_color" => @background_color,
-        "footer_subtitle" => @footer_subtitle,
-        "footer_title" => @footer_title,
-        "live" => @live
+        "live" => @live || false
       }
 
+      data["background_color"] = @background_color if @background_color
       data["background_image"] = @background_image if @background_image
+      data["footer_subtitle"] = @footer_subtitle if @footer_subtitle
+      data["footer_title"] = @footer_title if @footer_title
 
       data[":self"] = @poll if @poll
       data
