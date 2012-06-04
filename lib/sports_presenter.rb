@@ -23,6 +23,9 @@ require 'rest-client'
 Dir.glob("#{here}/sports-presenter/lib/*.rb").each { |r| require r }
 Dir.glob("#{here}/sports-presenter/models/*.rb").each { |r| require r }
 Dir.glob("#{here}/sports-presenter/models/tiles/*.rb").each { |r| require r }
+
+require "#{here}/sports-presenter/models/api/base"
+
 Dir.glob("#{here}/sports-presenter/models/api/*.rb").each { |r| require r }
 Dir.glob("#{here}/sports-presenter/models/presentation/*.rb").each { |r| require r }
 Dir.glob("#{here}/sports-presenter/controllers/*.rb").each { |r| require r }
