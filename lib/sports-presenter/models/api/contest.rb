@@ -2,7 +2,8 @@ module SportsPresentation
   module Api
     class Contest
 
-      attr_reader :competition_name, :round_name
+      attr_reader :competition_name, :round_name, :home_team, :away_team
+      attr_reader :home_team_score, :away_team_score
 
       def initialize(contest)
         @all_events = PlayupTypes.lazyref(contest.at("events.all"))
@@ -12,6 +13,15 @@ module SportsPresentation
         @has_statistics = !!@all_statistics
 
         @competition_name = contest.at("competition_name")
+
+        @scores = contest.at("scores")
+
+        @home_team = PlayupTypes.wrap @scores.first.at("team")
+        @away_team = PlayupTypes.wrap @scores.last.at("team")
+
+        @home_team_score = @scores.first.at("summary")
+        @away_team_score = @scores.last.at("summary")
+
         @round_name = contest.at("round_name")
       end
 

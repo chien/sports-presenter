@@ -10,6 +10,8 @@ module SportsPresentation
 
       actual = mime_type.split("/", 2).last.split("+", 2).first
 
+      puts "Wrapping #{actual.inspect}"
+
       case actual
       when "vnd.playup.sport.contest.contest" then Api::Contest
       when "vnd.playup.sport.contest_detail.football" then Api::ContestDetails
@@ -19,7 +21,10 @@ module SportsPresentation
       when "vnd.playup.sport.competition.stage.knockout" then Api::Stage
       when "vnd.playup.sport.ranking.statistics.football" then Api::FootballRankingStatistics
       when "vnd.playup.collection" then Api::Collection
+      when "vnd.playup.sport.team" then Api::Team
       when /vnd\.playup\.sport\.event\.events\.football_(.*)/ then Api::Event
+      else
+        puts "Cannot wrap type #{actual.inspect}"
       end
 
     end

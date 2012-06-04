@@ -1,47 +1,55 @@
 %header.contest
   %div.location Stamford Bridge
-  %div.round Week 38
+  %div.round= @events.round_name
+  %div.clear
 
-  %h1 Premier League
+  %h1= @events.competition_name
 
 %header.teams
-  %h1.home-team Chelsea
-  %h1.away-team Everton
+  %h1.home-team= @events.home_team.name
+  %h1.away-team= @events.away_team.name
+
+%div.clear
+
+%hr.indent
+%div.graphicarrow
+  %div.arrow-up
+  %div.arrow-up-a
+  %div.arrow-up-b
+
+%div.clear
 
 %section.scores
-  %div.home-team 3
-  %div.away-team 1
+  %div.home-team= @events.home_team.score
+  %div.away-team= @events.away_team.score
+
+%div.scorebox
+  %h1 Score
+
+%div.clear
 
 %section.goal-time-line
-  %h1 Scores
   %ol
-    %li.home-team
-      %span.name Torres
-      %span.time 63"
-    %l.home-team
-      %span.name Drogba
-      %span.time 54"
-    %li.away-team
-      %span.name Jelavic
-      %span.time 42"
-    %li.home-team
-      %span.name Lampard
-      %span.time 17"
+    - @events.goals_rundown.each_with_index do |block, block_index|
+      - block.list.each_with_index do |goal, goal_index|
+        - if block.side == :away && block_index > 0
+          %li.home-nodisplay
+        - if block.side == :home && block_index > 0
+          %li.away-nodisplay
+        %li{ :class => "#{block.side}-team" }
+          %span.name= goal.player_name
+          %span.time= goal.time
+
+  %div.clear
+
+
+%div.clear
 
 %section.events
   %ol
-    %li.home-team
-      %span.time 63:45
-      %span.name Goal
-      %p Torres scores for Chelsea
-    %li.home-team
-      %span.time 63:10
-      %span.name Corner Kick
-      %p Lampard from Chelsea takes a corner kick
-    %li.away-team
-      %span.time 63:10
-      %span.name Booking
-      %p Gibson from Everton receives a yellow card
-    %li
-      %span.name Match Started
-      %p Chelsea vs Everton kicks off
+    - @events.event_list.each do |event|
+      %li{ class: "#{event.class_name}" }
+        %span.time= event.time_code
+        %span.name= event.name
+        %p= event.message
+        %div.clear

@@ -28,7 +28,8 @@
         %tr
           %td= standing.position
           %td
-            %img{src: standing.team_logo}
+            - if standing.team_logo
+              %img{src: standing.team_logo}
           %td= standing.team_name
           %td= standing.played
           %td= standing.won

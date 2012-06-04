@@ -20,6 +20,10 @@ module SportsPresentation
         @seconds = @seconds.to_i if @seconds.to_s.length > 0
       end
 
+      def total_seconds
+        (@minutes.to_i + @extra_minutes.to_i) * 60 + @seconds.to_i
+      end
+
       def minute_code
         "#{@minutes.to_i + @extra_minutes.to_i}\""
       end

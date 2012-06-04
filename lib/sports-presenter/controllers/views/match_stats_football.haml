@@ -32,7 +32,6 @@
   %ol
     - @statistics.goals_rundown.each_with_index do |block, block_index|
       - block.list.each_with_index do |goal, goal_index|
-        // - if block.side == :away && block_index > 0 && goal_index != block.list.length - 1
         - if block.side == :away && block_index > 0
           %li.home-nodisplay
         - if block.side == :home && block_index > 0
@@ -40,9 +39,6 @@
         %li{ :class => "#{block.side}-team" }
           %span.name= goal.player_name
           %span.time= goal.time
-        // %li{ :class => "#{block.side}-team #{goal_index == 0 && block_index == 1 ? 'scoredisplace' : nil}" }
-        // - if block.side == :home && block_index > 0 && goal_index != block.list.length - 1
-        //   %li.away-nodisplay
 
   %div.clear
 

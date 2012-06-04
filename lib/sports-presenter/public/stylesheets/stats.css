@@ -94,6 +94,7 @@ hr.indent{margin-top: 5px;}
 			background: linear-gradient(top,  #89aaaa 0%,#9cbaba 2%,#a8c4c4 4%,#a8c4c4 98%); /* W3C */
 			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#89aaaa', endColorstr='#a8c4c4',GradientType=0 ); /* IE6-9 */
 	}
+	
 	.goal-time-line .home-team{
 		float: left;
 		clear: left;		
@@ -114,7 +115,44 @@ hr.indent{margin-top: 5px;}
 			margin: 3px 10px 3px 0;
 			display: inline-block;
 		}
-
+		.goal-time-line .away-team:before{
+		border-left: 1px solid #9BB9B9;
+		border-bottom: 1px solid #9BB9B9;
+		content: "";
+		width: 7px;
+		height: 7px;
+		z-index:	-1;
+		float: left;
+		margin-top: 7px;
+		margin-left: -4px;
+		display: inline-block;
+		background-color: #A7C3C3;
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		transform: rotate(45deg);
+		}
+	
+	.goal-time-line .home-team:after{
+		border-right: 1px solid #9BB9B9;
+		border-top: 1px solid #9BB9B9;
+		content: "";
+		width: 7px;
+		height: 7px;
+		z-index: -1;
+		float: right;
+		margin-top: 8px;
+		margin-right: -4px;
+		display: inline-block;
+		background-color: #A7C3C3;
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		transform: rotate(45deg);
+	  	}
+	
 	/* No display workaround*/
 
 	.home-nodisplay,.away-nodisplay{
@@ -130,43 +168,6 @@ hr.indent{margin-top: 5px;}
 		float: right;
 	}
 	
-	.goal-time-line .away-team:before{
-	border-left: 1px solid #9BB9B9;
-	border-bottom: 1px solid #9BB9B9;
-	content: "";
-	width: 7px;
-	height: 7px;
-	z-index:	-1;
-	float: left;
-	margin-top: 7px;
-	margin-left: -4px;
-	display: inline-block;
-	background-color: #A7C3C3;
-	-webkit-transform: rotate(45deg);
-	-moz-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	-o-transform: rotate(45deg);
-	transform: rotate(45deg);
-	}
-
-.goal-time-line .home-team:after{
-	border-right: 1px solid #9BB9B9;
-	border-top: 1px solid #9BB9B9;
-	content: "";
-	width: 7px;
-	height: 7px;
-	z-index: -1;
-	float: right;
-	margin-top: 8px;
-	margin-right: -4px;
-	display: inline-block;
-	background-color: #A7C3C3;
-	-webkit-transform: rotate(45deg);
-	-moz-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	-o-transform: rotate(45deg);
-	transform: rotate(45deg);
-  	}
 
 	.stats ol li{
 		color: #A5A6A8;
@@ -189,5 +190,60 @@ hr.indent{margin-top: 5px;}
 	}
 	.stats ol .away-team{
 	float: right;
-	}
+	}	
 	
+/*Match Events Page*/
+	
+	.events ol li{
+		color: #82AAAA;
+		padding-bottom: 8px;
+		border-bottom: 1px solid #E2E1DE;
+		-webkit-box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 1);
+		box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 1);
+		text-align: center;
+		margin: 7px 0 7px 0;
+		font-size: 17px;
+	}
+		.events ol li.home-team .time,
+		.events ol li.away-team .time{
+			font-size: 17px;
+			position: absolute;
+			color: #87898B;
+		}
+		.events ol .home-team .time{
+			left: 20px;
+			text-align: left;
+		}
+		.events ol .away-team .time{
+			right: 20px;
+			text-align: right;
+		}
+		
+		
+		.events ol .home-team p{
+			width: 90%;
+			margin-right: 10%;
+			left: 10px;
+			text-align: left;
+		}
+		.events ol .away-team p{
+		margin-left: 10%;
+		width: 90%;
+		float: right;
+		text-align: right;
+		}
+		
+		.events ol li p{
+			clear: both;
+			margin-top: 6px;
+			color: #87898B;
+			font: 13px/16px "OpenSansLightRegular", Arial, Helvetica, Geneva, sans-serif;
+			text-align: left;
+			width: 85%;
+		}
+		.events ol li.home-team,
+		.events ol li.away-team {
+		padding-left: 10px ;
+		padding-right: 10px;
+		}
+		
