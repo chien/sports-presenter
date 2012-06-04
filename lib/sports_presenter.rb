@@ -19,6 +19,7 @@ require 'sinatra'
 require 'json'
 require 'haml'
 require 'rest-client'
+require 'i18n'
 
 Dir.glob("#{here}/sports-presenter/lib/*.rb").each { |r| require r }
 Dir.glob("#{here}/sports-presenter/models/*.rb").each { |r| require r }
@@ -30,13 +31,28 @@ Dir.glob("#{here}/sports-presenter/models/api/*.rb").each { |r| require r }
 Dir.glob("#{here}/sports-presenter/models/presentation/*.rb").each { |r| require r }
 Dir.glob("#{here}/sports-presenter/controllers/*.rb").each { |r| require r }
 
+I18n.backend.load_translations *Dir[File.join(here, "sports-presenter", "i18n", "*.yml")]
+
 module SportsPresentation
   class Application < Sinatra::Base
 
     set :public_folder, Proc.new { File.join(root, "..", "public" ) }
 
+    def locale_from_query
+      params[:lang] || params[:locale] || "en"
+    end
+
+    helpers do
+      def t(key, *options)
+        args = options.pop || Hash.new
+        args[:locale] = locale_from_query
+
+        I18n.t(key, *options, args)
+      end
+    end
+
     before do
-      SportsApiClient.set_language(params[:lang] || params[:locale] || "en")
+      SportsApiClient.set_language(locale_from_query)
       SportsApiClient.set_region(params[:region] || 'EU')
       
       SportsPresentation::SportsApiClient.mode = (params[:real] == "true" ? nil : :mock)

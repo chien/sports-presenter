@@ -13,15 +13,15 @@
     %thead
       %tr
         %th
-        %th(colspan=2) Teams
-        %th P
-        %th W
-        %th D
-        %th L
-        %th F
-        %th A
+        %th(colspan=2)= t "standings.teams"
+        %th= t "standings.played_header"
+        %th= t "standings.won_header"
+        %th= t "standings.drawn_header"
+        %th= t "standings.lost_header"
+        %th= t "standings.for_header"
+        %th= t "standings.against_header"
         %th +/-
-        %th PTS
+        %th= t "standings.points_header"
 
     %tbody
       - standings.each do |standing|

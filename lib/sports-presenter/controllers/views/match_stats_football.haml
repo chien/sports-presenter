@@ -1,5 +1,5 @@
 %header.contest
-  %div.location Stamford Bridge
+  %div.location
   %div.round= @statistics.round_name
   %div.clear
 
@@ -24,7 +24,7 @@
   %div.away-team= @statistics.away_team.score
 
 %div.scorebox
-  %h1 Score
+  %h1= t "statistics.score"
 
 %div.clear
 
@@ -50,29 +50,29 @@
     %li
       %span.home-team= @statistics.home_team.possession_percentage
       %span.away-team= @statistics.away_team.possession_percentage
-      Possession
+      =t "statistics.possession"
     %li
       %span.home-team= "#{@statistics.home_team.shots}/#{@statistics.home_team.shots_on_goal}"
       %span.away-team= "#{@statistics.away_team.shots}/#{@statistics.away_team.shots_on_goal}"
-      Shots/Shots on Goal
+      =t "statistics.shots_shots_on_goal"
     %li
       %span.home-team= @statistics.home_team.saves
       %span.away-team= @statistics.away_team.saves
-      Saves
+      =t "statistics.saves"
     %li
       %span.home-team= @statistics.home_team.yellow_cards
       %span.away-team= @statistics.away_team.yellow_cards
-      Yellow Cards
+      =t "statistics.yellow_cards"
     %li
       %span.home-team= @statistics.home_team.red_cards
       %span.away-team= @statistics.away_team.red_cards
-      Red Cards
+      =t "statistics.red_cards"
     %li
       %span.home-team= @statistics.home_team.crosses
       %span.away-team= @statistics.away_team.crosses
-      Crosses
+      =t "statistics.crosses"
     %li
       %span.home-team= @statistics.home_team.fouls
       %span.away-team= @statistics.away_team.fouls
-      Fouls
+      =t "statistics.fouls"
 
