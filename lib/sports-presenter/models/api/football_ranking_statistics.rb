@@ -1,9 +1,9 @@
 module SportsPresentation
   module Api
-    class FootballRankingStatistics
+    class FootballRankingStatistics < Base
       attr_reader :played, :won, :drawn, :lost, :goals_for, :goals_against, :difference, :points
 
-      def initialize(stats)
+      def parse_response(stats)
         @played = stats.at("played")
         @won = stats.at("won")
         @drawn = stats.at("drawn")

@@ -38,7 +38,6 @@ module SportsPresentation
     private
 
     def self.mock_response(file)
-      puts "Mock #{file}"
       SportsApiResponse.new JSON(IO.read(File.join(File.dirname(__FILE__), "../spec/", file)))
     end
   end

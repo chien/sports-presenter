@@ -1,10 +1,10 @@
 module SportsPresentation
   module Api
-    class Event
+    class Event < Base
 
       attr_reader :team_id, :event_type, :long_message, :name, :player_name, :at_seconds, :minutes, :seconds, :extra_minutes
 
-      def initialize(event)
+      def parse_response(event)
         @team_id = event["team_id"]
         @event_type = event["event_type"]
         @long_message = event["long_message"]

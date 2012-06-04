@@ -1,10 +1,10 @@
 module SportsPresentation
   module Api
-    class ContestDetails
+    class ContestDetails < Base
 
       attr_reader :home_team, :away_team
 
-      def initialize(contest_details)
+      def parse_response(contest_details)
         @home_team = FootballContestStatistics.new(contest_details["scores"].first)
         @away_team = FootballContestStatistics.new(contest_details["scores"].last)
       end

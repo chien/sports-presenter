@@ -10,8 +10,6 @@ module SportsPresentation
 
       actual = mime_type.split("/", 2).last.split("+", 2).first
 
-      puts "Wrapping #{actual.inspect}"
-
       case actual
       when "vnd.playup.sport.contest.contest" then Api::Contest
       when "vnd.playup.sport.contest_detail.football" then Api::ContestDetails
@@ -24,7 +22,7 @@ module SportsPresentation
       when "vnd.playup.sport.team" then Api::Team
       when /vnd\.playup\.sport\.event\.events\.football_(.*)/ then Api::Event
       else
-        puts "Cannot wrap type #{actual.inspect}"
+        puts "Cannot resolve type #{actual.inspect}"
       end
 
     end
@@ -37,7 +35,6 @@ module SportsPresentation
       if response.is_a?(Array)
         response.collect { |r| wrap(r) || r }
       elsif type = resolve(response.playup_type)
-        puts "Wrapping #{type}"
         type.new(response) if type
       end
     end

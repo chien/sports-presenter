@@ -1,12 +1,12 @@
 module SportsPresentation
   module Api
-    class FootballContestStatistics
+    class FootballContestStatistics < Base
       STATS = %w( score saves yellow_cards red_cards crosses fouls offsides corner_kicks tackles passes possession_percentage shots shots_on_goal )
 
       attr_reader *STATS
       attr_reader :team_id, :display_name
 
-      def initialize(stats)
+      def parse_response(stats)
         STATS.each do |stat|
           # This funkyness is to ensure a missing value is set to zero.
           val = stats[stat].to_s

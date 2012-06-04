@@ -1,8 +1,8 @@
 module SportsPresentation
   module Api
-    class Ref
+    class Ref < Base
 
-      def initialize(hash)
+      def parse_response(hash)
         @href = hash.at(":self")
         @type = hash.at(":type")
       end

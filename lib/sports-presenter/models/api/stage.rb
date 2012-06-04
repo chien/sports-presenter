@@ -1,10 +1,10 @@
 module SportsPresentation
   module Api
-    class Stage
+    class Stage < Base
 
       attr_reader :standings, :name, :competition_name
 
-      def initialize(stage)
+      def parse_response(stage)
         @standings = PlayupTypes.wrap(stage.at("standings"))
         @name = stage.at("name")
         @competition_name = stage.at("competition_name")

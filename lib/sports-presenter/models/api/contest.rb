@@ -1,11 +1,11 @@
 module SportsPresentation
   module Api
-    class Contest
+    class Contest < Base
 
       attr_reader :competition_name, :round_name, :home_team, :away_team
       attr_reader :home_team_score, :away_team_score
 
-      def initialize(contest)
+      def parse_response(contest)
         @all_events = PlayupTypes.lazyref(contest.at("events.all"))
         @has_events = !!contest.at("events")
 

@@ -1,8 +1,8 @@
 module SportsPresentation
   module Api
-    class Competition
+    class Competition < Base
 
-      def initialize(competition)
+      def parse_response(competition)
         @current_stage = PlayupTypes.lazyref competition.at("current_stage")
       end
 
