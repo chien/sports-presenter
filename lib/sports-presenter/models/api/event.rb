@@ -5,7 +5,7 @@ module SportsPresentation
       attr_reader :team_id, :event_type, :long_message, :name, :player_name, :at_seconds, :minutes, :seconds, :extra_minutes
 
       def parse_response(event)
-        @team_id = event["team_id"]
+        @team_id = event["score_team_id"] || event["team_id"]
         @event_type = event["event_type"]
         @long_message = event["long_message"]
         @name = event["name"]
