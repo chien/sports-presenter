@@ -34,7 +34,7 @@ Dir.glob("#{here}/sports-presenter/models/api/*.rb").each { |r| require r }
 Dir.glob("#{here}/sports-presenter/models/presentation/*.rb").each { |r| require r }
 Dir.glob("#{here}/sports-presenter/controllers/*.rb").each { |r| require r }
 
-I18n.backend.load_translations *Dir[File.join(here, "sports-presenter", "i18n", "*.yml")]
+I18n.load_path += Dir[File.join(here, "sports-presenter", "i18n", "*.yml")]
 
 module SportsPresentation
   class Application < Sinatra::Base
