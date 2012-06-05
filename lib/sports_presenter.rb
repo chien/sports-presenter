@@ -38,6 +38,13 @@ I18n.load_path += Dir[File.join(here, "sports-presenter", "i18n", "*.yml")]
 
 module SportsPresentation
   class Application < Sinatra::Base
+    # Add cache headers to static files.
+    use CacheSettings, {
+      /\.(css|png|gif|eot|svg|ttf|woff)/ => {
+        :cache_control => "max-age=86400, public",
+        :expires => 86400
+      }
+    }
 
     set :public_folder, Proc.new { File.join(root, "..", "public" ) }
 
@@ -56,6 +63,8 @@ module SportsPresentation
 
     before do
       params[:locale] = locale_from_query
+
+      Rails.logger.info("[GET] Presenter #{request.inspect}") if defined?(Rails)
       
       SportsApiClient.set_language(locale_from_query)
       SportsApiClient.set_region(params[:region] || 'EU')
