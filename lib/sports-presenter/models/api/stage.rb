@@ -15,8 +15,8 @@ module SportsPresentation
         @stage_id
       end
 
-      def self.find(id)
-        stage = SportsApiClient.fetch("/stages/#{id}")
+      def self.find(competition_id, id)
+        stage = SportsApiClient.fetch("/competitions/#{competition_id}/stages/#{id}")
         new(stage)
       end
 

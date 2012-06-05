@@ -3,7 +3,7 @@ module SportsPresentation
     
     get "/tiles" do
       content_type :json
-      tile_data = TileProvider.fetch_tiles(params[:subject_url]).generate(:lang => params[:locale], :region => params[:region])
+      tile_data = TileProvider.fetch_tiles(params[:subject_url]).generate(:locale => params[:locale], :region => params[:region])
       tile_data.to_json
     end
     

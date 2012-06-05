@@ -6,7 +6,11 @@ module SportsPresentation
 
       def initialize(contest)
         @contest = contest
-        @events = contest.events
+        @events = contest.events || []
+      end
+
+      def valid?
+        @events.length > 0
       end
 
       def home_team
@@ -49,7 +53,7 @@ module SportsPresentation
       end
 
       def event_list
-        @events.sort_by { |event| -event.total_seconds }.collect do |event|
+        @events.reverse.collect do |event|
           wrap_event(event)
         end
       end
@@ -57,13 +61,21 @@ module SportsPresentation
       private
 
       def wrap_event(event)
-        time_code = ["#{event.minutes.to_i + event.extra_minutes.to_i}", "#{event.seconds}"].join(":")
+        minutes = event.minutes.to_i + event.extra_minutes.to_i
+        seconds = "%02d" % event.seconds.to_i
+
+        time_code = if minutes > 0
+          [minutes, seconds].join(":")
+        else
+          nil
+        end
 
         puts "#{@contest.home_team.id.inspect} - #{event.team_id.inspect}"
         class_name = case event.team_id
         when @contest.home_team.id.to_s then "home-team"
+        when @contest.away_team.id.to_s then "away-team"
         else
-          "away-team"
+          "game"
         end
 
         OpenStruct.new(:time_code => time_code, :name => event.name, :message => event.long_message, :class_name => class_name)

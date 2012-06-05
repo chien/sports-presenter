@@ -12,6 +12,10 @@ module SportsPresentation
         @statistics = contest.statistics
       end
 
+      def valid?
+        @statistics && @statistics.home_team && @statistics.away_team
+      end
+
       def home_team
         @statistics.home_team
       end

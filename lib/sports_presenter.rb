@@ -11,7 +11,7 @@ module SportsPresentation
 end
 
 SportsPresentation.presenter_base_url = "http://localhost:9292"
-SportsPresentation.sports_api_host = "http://localhost:3000"
+SportsPresentation.sports_api_host = "http://integration.sports-api.playupdev.com/"
 SportsPresentation.assets_host = "http://sportsdata-staging.s3.amazonaws.com/"
 
 here = File.dirname(__FILE__)
@@ -22,6 +22,7 @@ require 'json'
 require 'haml'
 require 'rest-client'
 require 'i18n'
+require 'benchmark'
 
 Dir.glob("#{here}/sports-presenter/lib/*.rb").each { |r| require r }
 Dir.glob("#{here}/sports-presenter/models/*.rb").each { |r| require r }
@@ -41,7 +42,7 @@ module SportsPresentation
     set :public_folder, Proc.new { File.join(root, "..", "public" ) }
 
     def locale_from_query
-      params[:lang] || params[:locale] || "en"
+      [params[:locale], "en"].reject { |str| str.to_s.length == 0 }.first
     end
 
     helpers do
@@ -54,6 +55,8 @@ module SportsPresentation
     end
 
     before do
+      params[:locale] = locale_from_query
+      
       SportsApiClient.set_language(locale_from_query)
       SportsApiClient.set_region(params[:region] || 'EU')
       

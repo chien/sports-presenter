@@ -17,3 +17,7 @@ en:
     red_cards: "Red Cards"
     crosses: "Crosses"
     fouls: "Fouls"
+  tiles:
+      competition_standings: "Standings"
+      contest_events: "Match Timeline"
+      contest_statistics: "Statistics"

@@ -14,6 +14,7 @@ h2{
 h3{
 	color: #FF4754;
 	margin: 0 0 0 20px;
+	padding-top: 20px;
 }
 table.standing{
 	width: 100%;
@@ -57,6 +58,10 @@ table.standing{
 		table.standing td,table.standing th{
 		min-width: 12px;
 		}	
+		table.standing th.name { width: auto; }
+		table.standing th.position { width: 1.5em; }
+		table.standing th { width: 3em; }
+
 		tbody tr td:nth-child(1){
 		color: #696B6E;
 		}

@@ -6,7 +6,11 @@ module SportsPresentation
       @events = Presentation::FootballEvents.new contest
       @additional_stylesheet = "stats"
 
-      haml :match_events_football
+      if @events.valid?
+        haml :match_events_football
+      else
+        haml :no_data
+      end
     end
 
   end

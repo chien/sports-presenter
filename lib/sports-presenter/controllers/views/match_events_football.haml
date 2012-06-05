@@ -49,7 +49,8 @@
   %ol
     - @events.event_list.each do |event|
       %li{ class: "#{event.class_name}" }
-        %span.time= event.time_code
+        - if event.time_code
+          %span.time= event.time_code
         %span.name= event.name
         %p= event.message
         %div.clear

@@ -14,6 +14,14 @@ module SportsPresentation
         end
       end
 
+      def length
+        @data.length
+      end
+
+      def reverse
+        @data.reverse
+      end
+
       def each(&block)
         @data.each(&block)
       end

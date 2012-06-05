@@ -7,9 +7,20 @@ module SportsPresentation
 
     def self.fetch(path)
       unless SportsApiClient.mode == :mock
-        url = File.join(SportsPresentation.sports_api_host, path)
+        url = if path =~ /http\:/
+          path
+        else
+          File.join(SportsPresentation.sports_api_host, path)
+        end
+
+        puts url.to_s
         headers = {:language => @language, :region => @region}
-        body = RestClient.get(url, headers).body
+        body = nil
+        time_taken = Benchmark.measure do
+          body = RestClient.get(url, headers).body
+        end
+
+        puts "Request time #{(time_taken.real * 1000).ceil} ms"
 
         SportsApiResponse.new JSON(body)
       else

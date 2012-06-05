@@ -1,12 +1,16 @@
 module SportsPresentation
   class Application < Sinatra::Base
     
-    get '/stages/:id/standings' do
-      stage = Api::Stage.find(params[:id])
+    get '/competitions/:competition_id/stages/:id/standings' do
+      stage = Api::Stage.find(params[:competition_id], params[:id])
       @standing = Presentation::FootballStandings.new stage
       @additional_stylesheet = "standings"
 
-      haml :standings_football
+      if @standing.valid?
+        haml :standings_football
+      else
+        haml :no_data
+      end
     end
 
   end

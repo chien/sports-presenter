@@ -13,8 +13,8 @@ module SportsPresentation
 
     def self.tiles_for_competition(id, tiles)
       stage = Api::Competition.find(id).current_stage
-      if stage.standings && contest.is_playup_kind?("vnd.playup.sport.sport.football")
-        tiles.add_link_tile "/stages/#{stage.id}/standings", Tiles::StandingsTile.new
+      if stage && stage.standings && stage.is_playup_kind?("vnd.playup.sport.sport.football")
+        tiles.add_link_tile "/competitions/#{id}/stages/#{stage.id}/standings", Tiles::StandingsTile.new
       end
     end
 

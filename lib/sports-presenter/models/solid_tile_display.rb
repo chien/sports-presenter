@@ -3,7 +3,7 @@ module SportsPresentation
     attr_reader :title
 
     def initialize(arguments = {})
-      @title = arguments[:title]
+      @title = I18n.t("tiles.#{arguments[:title]}")
       @background_color = arguments[:background_color]
       @footer_title = arguments[:footer_title]
       @footer_subtitle = arguments[:footer_subtitle]

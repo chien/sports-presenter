@@ -6,7 +6,7 @@ module SportsPresentation
       attr_reader :home_team_score, :away_team_score
 
       def parse_response(contest)
-        @all_events = PlayupTypes.lazyref(contest.at("events.all"))
+        @all_events = PlayupTypes.lazyref(contest.at("events"))
         @has_events = !!contest.at("events")
 
         @all_statistics = PlayupTypes.lazyref(contest.at("contest_details"))

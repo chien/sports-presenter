@@ -15,8 +15,8 @@ module SportsPresentation
       when "vnd.playup.sport.contest_detail.football" then Api::ContestDetails
       when "vnd.playup.sport.competition" then Api::Competition
       when "vnd.playup.sport.competitions" then Api::Collection
-      when "vnd.playup.sport.competition.stage.home_away" then Api::Stage
-      when "vnd.playup.sport.competition.stage.knockout" then Api::Stage
+      when "vnd.playup.sport.stage.home_away" then Api::Stage
+      when "vnd.playup.sport.stage.knockout" then Api::Stage
       when "vnd.playup.sport.ranking.statistics.football" then Api::FootballRankingStatistics
       when "vnd.playup.collection" then Api::Collection
       when "vnd.playup.sport.team" then Api::Team
@@ -32,6 +32,8 @@ module SportsPresentation
     end
 
     def self.wrap(response)
+      return nil if response.nil?
+      
       if response.is_a?(Array)
         response.collect { |r| wrap(r) || r }
       elsif type = resolve(response.playup_type)

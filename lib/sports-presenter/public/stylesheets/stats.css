@@ -207,19 +207,22 @@ hr.indent{margin-top: 5px;}
 		.events ol li.home-team .time,
 		.events ol li.away-team .time{
 			font-size: 17px;
-			position: absolute;
 			color: #87898B;
 		}
 		.events ol .home-team .time{
 			left: 20px;
 			text-align: left;
+			position: absolute;
 		}
 		.events ol .away-team .time{
 			right: 20px;
 			text-align: right;
+			position: absolute;
 		}
-		
-		
+
+		.events ol li.game p {
+			text-align: center;
+		}
 		.events ol .home-team p{
 			width: 90%;
 			margin-right: 10%;
@@ -238,9 +241,9 @@ hr.indent{margin-top: 5px;}
 			margin-top: 6px;
 			color: #87898B;
 			font: 13px/16px "OpenSansLightRegular", Arial, Helvetica, Geneva, sans-serif;
-			text-align: left;
+/*			text-align: left;
 			width: 85%;
-		}
+*/		}
 		.events ol li.home-team,
 		.events ol li.away-team {
 		padding-left: 10px ;
