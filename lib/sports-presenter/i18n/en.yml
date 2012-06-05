@@ -18,6 +18,6 @@ en:
     crosses: "Crosses"
     fouls: "Fouls"
   tiles:
-      competition_standings: "Standings"
-      contest_events: "Match Timeline"
-      contest_statistics: "Statistics"
+    competition_standings: "Standings"
+    contest_events: "Match Timeline"
+    contest_statistics: "Statistics"
