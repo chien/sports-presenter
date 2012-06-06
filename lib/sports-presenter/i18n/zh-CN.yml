@@ -1,13 +1,13 @@
 zh-CN:
   standings:
-    teams: 队名
-    played_header: P
-    won_header: 赢
+    teams: 球队
+    played_header: 场次
+    won_header: 胜
     drawn_header: 平
-    lost_header: 输
+    lost_header: 负
     for_header: 赢球
     against_header: 失球
-    points_header: PTS
+    points_header: 积分
   statistics:
     score: 比分
     saves: 扑救

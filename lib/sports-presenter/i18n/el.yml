@@ -1,13 +1,13 @@
 el:
   standings:
-    teams: ~
-    played_header: ~
-    won_header: ~
-    drawn_header: ~
-    lost_header: ~
-    for_header: ~
-    against_header: ~
-    points_header: ~
+    teams: Ομάδες
+    played_header: P
+    won_header: W
+    drawn_header: D
+    lost_header: L
+    for_header: GF
+    against_header: GA
+    points_header: PTS
   statistics:
     score: Σκορ
     saves: Saves

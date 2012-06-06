@@ -1,13 +1,13 @@
 uk:
   standings:
-    teams: ~
-    played_header: ~
-    won_header: ~
-    drawn_header: ~
-    lost_header: ~
-    for_header: ~
-    against_header: ~
-    points_header: ~
+    teams: Команди
+    played_header: З
+    won_header: В
+    drawn_header: Н
+    lost_header: П
+    for_header: ЗГ
+    against_header: ПГ
+    points_header: ОЧ
   statistics:
     score: Рахунок
     saves: "Відбиті удари"

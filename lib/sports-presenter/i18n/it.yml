@@ -1,13 +1,13 @@
 it:
   standings:
-    teams: ~
-    played_header: ~
-    won_header: ~
-    drawn_header: ~
-    lost_header: ~
-    for_header: ~
-    against_header: ~
-    points_header: ~
+    teams: Squadre
+    played_header: PG
+    won_header: PV
+    drawn_header: PD
+    lost_header: PP
+    for_header: GP
+    against_header: GC
+    points_header: PT
   statistics:
     score: Punteggio
     saves: Parate

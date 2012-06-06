@@ -1,13 +1,13 @@
 ko:
   standings:
-    teams: ~
-    played_header: ~
-    won_header: ~
-    drawn_header: ~
-    lost_header: ~
-    for_header: ~
-    against_header: ~
-    points_header: ~
+    teams: "팀 이름"
+    played_header: 전
+    won_header: 승
+    drawn_header: 무
+    lost_header: 패
+    for_header: 득점
+    against_header: 실점
+    points_header: 승점
   statistics:
     score: 점수
     saves: 세이브

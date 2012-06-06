@@ -1,23 +1,23 @@
 en:
   standings:
-    teams: "Teams"
-    played_header: "P"
-    won_header: "W"
-    drawn_header: "D"
-    lost_header: "L"
-    for_header: "F"
-    against_header: "A"
-    points_header: "PTS"
+    teams: Teams
+    played_header: P
+    won_header: W
+    drawn_header: D
+    lost_header: L
+    for_header: GF
+    against_header: GA
+    points_header: PTS
   statistics:
-    score: "Score"
-    possession: "Possession"
-    shots_shots_on_goal: "Shots/Shots On Goal"
-    saves: "Saves"
+    score: Score
+    saves: Saves
     yellow_cards: "Yellow Cards"
     red_cards: "Red Cards"
-    crosses: "Crosses"
-    fouls: "Fouls"
+    crosses: Crosses
+    fouls: Fouls
+    possession: "Possession (%)"
+    shots_shots_on_goal: "Shots Off/On Target"
   tiles:
-    competition_standings: "Standings"
-    contest_events: "Match Timeline"
-    contest_statistics: "Statistics"
+    competition_standings: Standings
+    contest_events: "Game Events"
+    contest_statistics: "Game Stats"
