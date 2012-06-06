@@ -24,7 +24,7 @@ module SportsPresentation
       data["background_image"] = @background_image if @background_image
       data["footer_subtitle"] = @footer_subtitle if @footer_subtitle
       data["footer_title"] = @footer_title if @footer_title
-      data["live"] = @live
+      data["live"] = true if @live
 
       data
     end
