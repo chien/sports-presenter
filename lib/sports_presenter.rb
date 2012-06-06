@@ -25,7 +25,10 @@ require 'i18n'
 require 'benchmark'
 
 Dir.glob("#{here}/sports-presenter/lib/*.rb").each { |r| require r }
+
+require "#{here}/sports-presenter/models/tile_display"
 Dir.glob("#{here}/sports-presenter/models/*.rb").each { |r| require r }
+
 Dir.glob("#{here}/sports-presenter/models/tiles/*.rb").each { |r| require r }
 
 require "#{here}/sports-presenter/models/api/base"
