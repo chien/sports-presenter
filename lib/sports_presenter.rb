@@ -66,8 +66,6 @@ module SportsPresentation
 
     before do
       params[:locale] = locale_from_query
-
-      Rails.logger.info("[GET] Presenter #{request.inspect}") if defined?(Rails)
       
       SportsApiClient.set_language(locale_from_query)
       SportsApiClient.set_region(params[:region] || 'EU')
