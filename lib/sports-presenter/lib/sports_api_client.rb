@@ -14,7 +14,7 @@ module SportsPresentation
         end
 
         puts url.to_s
-        headers = {:language => @language, :region => @region}
+        headers = { "Accept-Language" => @language, "X-PlayUp-Geoip-Country-Code" => @region }
         body = nil
         time_taken = Benchmark.measure do
           body = RestClient.get(url, headers).body
