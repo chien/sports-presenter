@@ -4,7 +4,7 @@ module SportsPresentation
 
       def initialize
         super title: :contest_statistics, image: {
-          low: "/tiles/statistics/football/low_140_88.png",
+          low: "/tiles/statistics/football/low_148_88.png",
           medium: "/tiles/statistics/football/medium_222_132.png",
           high: "/tiles/statistics/football/high_296_176.png"
         }

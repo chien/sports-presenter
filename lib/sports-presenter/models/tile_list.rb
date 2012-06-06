@@ -22,6 +22,7 @@ module SportsPresentation
         {
           ":type" => "application/vnd.playup.extension+json",
           ":uid" => tile[:uid],
+          ":tags" => [],
           "name" => tile[:display].title,
           "link" => {
             ":self" => uri.to_str,
