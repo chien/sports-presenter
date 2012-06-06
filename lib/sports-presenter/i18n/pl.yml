@@ -1,0 +1,25 @@
+pl:
+  standings:
+    teams: ~
+    played_header: ~
+    won_header: ~
+    drawn_header: ~
+    lost_header: ~
+    for_header: ~
+    against_header: ~
+    points_header: ~
+  statistics:
+    score: Wynik
+    saves: "Strzały obronione"
+    yellow_cards: "Żółte kartki"
+    red_cards: "Czerwone kartki"
+    crosses: Dośrodkowania
+    fouls: Faule
+    possession: "Posiadanie piłki (%)"
+    shots_shots_on_goal: "Strzały/strzały na bramkę"
+  tiles:
+    competition_standings: Tabele
+    contest_events: Mecze
+    contest_statistics: |-
+        Statystyki
+        meczu

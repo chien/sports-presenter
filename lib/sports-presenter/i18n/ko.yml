@@ -1,0 +1,23 @@
+ko:
+  standings:
+    teams: ~
+    played_header: ~
+    won_header: ~
+    drawn_header: ~
+    lost_header: ~
+    for_header: ~
+    against_header: ~
+    points_header: ~
+  statistics:
+    score: 점수
+    saves: 세이브
+    yellow_cards: 옐로카드
+    red_cards: 레드카드
+    crosses: 크로스
+    fouls: 파울
+    possession: "공 점유율 (%)"
+    shots_shots_on_goal: "무효/유효 슈팅"
+  tiles:
+    competition_standings: 순위
+    contest_events: "경기 이벤트"
+    contest_statistics: "경기 기록"

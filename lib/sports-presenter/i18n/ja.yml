@@ -1,0 +1,23 @@
+ja:
+  standings:
+    teams: チーム
+    played_header: P
+    won_header: W
+    drawn_header: D
+    lost_header: L
+    for_header: GF
+    against_header: GA
+    points_header: PTS
+  statistics:
+    score: スコア
+    saves: セーブ
+    yellow_cards: イエローカード
+    red_cards: レッドカード
+    crosses: クロス
+    fouls: ファウル
+    possession: ポゼッション
+    shots_shots_on_goal: シュート枠内
+  tiles:
+    competition_standings: 順位表
+    contest_events: イベント
+    contest_statistics: 試合データ

@@ -1,0 +1,23 @@
+hr:
+  standings:
+    teams: ~
+    played_header: ~
+    won_header: ~
+    drawn_header: ~
+    lost_header: ~
+    for_header: ~
+    against_header: ~
+    points_header: ~
+  statistics:
+    score: Rezultat
+    saves: Obrane
+    yellow_cards: "Žuti kartoni"
+    red_cards: "Crveni kartoni"
+    crosses: Napadi
+    fouls: Prekršaji
+    possession: "Posjed lopte (%)"
+    shots_shots_on_goal: "Udarci u okvir/izvan okvira"
+  tiles:
+    competition_standings: Tablica
+    contest_events: Događanja
+    contest_statistics: Statistika

@@ -1,0 +1,23 @@
+de:
+  standings:
+    teams: ~
+    played_header: ~
+    won_header: ~
+    drawn_header: ~
+    lost_header: ~
+    for_header: ~
+    against_header: ~
+    points_header: ~
+  statistics:
+    score: Spielstand
+    saves: Paraden
+    yellow_cards: "Gelbe Karten"
+    red_cards: "Rote Karten"
+    crosses: Lattenschüsse
+    fouls: Fouls
+    possession: "Ballbesitz (%)"
+    shots_shots_on_goal: "Schüsse daneben/aufs Tor"
+  tiles:
+    competition_standings: Tabelle
+    contest_events: Spielereignisse
+    contest_statistics: Spielstatistiken

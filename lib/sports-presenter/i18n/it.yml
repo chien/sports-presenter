@@ -1,0 +1,27 @@
+it:
+  standings:
+    teams: ~
+    played_header: ~
+    won_header: ~
+    drawn_header: ~
+    lost_header: ~
+    for_header: ~
+    against_header: ~
+    points_header: ~
+  statistics:
+    score: Punteggio
+    saves: Parate
+    yellow_cards: "Cartellini gialli"
+    red_cards: "Cartellini rossi"
+    crosses: "Tiri angolati"
+    fouls: Falli
+    possession: "Possesso (%)"
+    shots_shots_on_goal: "Tiri in/fuori porta"
+  tiles:
+    competition_standings: Posizioni
+    contest_events: |-
+        Eventi
+        partita
+    contest_statistics: |-
+        Statist.
+        partita

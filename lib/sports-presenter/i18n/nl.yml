@@ -1,0 +1,27 @@
+nl:
+  standings:
+    teams: ~
+    played_header: ~
+    won_header: ~
+    drawn_header: ~
+    lost_header: ~
+    for_header: ~
+    against_header: ~
+    points_header: ~
+  statistics:
+    score: Score
+    saves: Reserves
+    yellow_cards: "Gele Kaarten"
+    red_cards: "Rode Kaarten"
+    crosses: Kruizen
+    fouls: Trucs
+    possession: "Bezit (%)"
+    shots_shots_on_goal: "Schoten Van/Naar Doel"
+  tiles:
+    competition_standings: Klassement
+    contest_events: |-
+        Higlights
+        wedstrijd
+    contest_statistics: |-
+        Statistiek
+        Wedstrijd

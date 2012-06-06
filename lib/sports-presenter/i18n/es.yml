@@ -1,0 +1,25 @@
+es:
+  standings:
+    teams: Equipos
+    played_header: PJ
+    won_header: PG
+    drawn_header: PE
+    lost_header: PP
+    for_header: GF
+    against_header: GC
+    points_header: PTS
+  statistics:
+    score: Goles
+    saves: Reservas
+    yellow_cards: "Tarjetas Amarillas"
+    red_cards: "Tarjetas Rojas"
+    crosses: "Disparos cruzados"
+    fouls: "Faltas cometidas"
+    possession: "Posesión (%)"
+    shots_shots_on_goal: "Disparos / A Portería"
+  tiles:
+    competition_standings: Resultados
+    contest_events: Eventos
+    contest_statistics: |-
+        Estadísticas
+        del partido

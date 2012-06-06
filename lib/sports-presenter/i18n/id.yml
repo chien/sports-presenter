@@ -1,0 +1,23 @@
+id:
+  standings:
+    teams: ~
+    played_header: ~
+    won_header: ~
+    drawn_header: ~
+    lost_header: ~
+    for_header: ~
+    against_header: ~
+    points_header: ~
+  statistics:
+    score: Skor
+    saves: Penyelamatan
+    yellow_cards: "Kartu Kuning"
+    red_cards: "Kartu Merah"
+    crosses: "Umpan Silang"
+    fouls: Pelanggaran
+    possession: "Penguasaan Bola"
+    shots_shots_on_goal: "Tendangan terarah/melebar"
+  tiles:
+    competition_standings: Urutan
+    contest_events: "Acara Pertandingan"
+    contest_statistics: "Statistik Pertandingan"

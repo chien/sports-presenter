@@ -1,0 +1,23 @@
+ru:
+  standings:
+    teams: ~
+    played_header: ~
+    won_header: ~
+    drawn_header: ~
+    lost_header: ~
+    for_header: ~
+    against_header: ~
+    points_header: ~
+  statistics:
+    score: Счет
+    saves: "Перехваты мяча вратарем"
+    yellow_cards: "Желтые карточки"
+    red_cards: "Красные карточки"
+    crosses: "Пасы через поле"
+    fouls: Нарушения
+    possession: "Владение мячом (%)"
+    shots_shots_on_goal: "Удачные/неудачные удары"
+  tiles:
+    competition_standings: Позиции
+    contest_events: События
+    contest_statistics: Данные

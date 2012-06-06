@@ -1,0 +1,25 @@
+el:
+  standings:
+    teams: ~
+    played_header: ~
+    won_header: ~
+    drawn_header: ~
+    lost_header: ~
+    for_header: ~
+    against_header: ~
+    points_header: ~
+  statistics:
+    score: Σκορ
+    saves: Saves
+    yellow_cards: "Κίτρινες κάρτες"
+    red_cards: "Κόκκινες κάρτες"
+    crosses: Crosses
+    fouls: Φάουλ
+    possession: "Κατοχή (%)"
+    shots_shots_on_goal: "Σουτ εκτός/εντός εστίας"
+  tiles:
+    competition_standings: Κατάταξη
+    contest_events: Παιχνίδια
+    contest_statistics: |-
+        Στατιστικά
+        Αγώνα

@@ -1,0 +1,23 @@
+zh-CN:
+  standings:
+    teams: 队名
+    played_header: P
+    won_header: 赢
+    drawn_header: 平
+    lost_header: 输
+    for_header: 赢球
+    against_header: 失球
+    points_header: PTS
+  statistics:
+    score: 比分
+    saves: 扑救
+    yellow_cards: 黄牌数
+    red_cards: 红牌数
+    crosses: 横传球次数
+    fouls: 犯规次数
+    possession: 控球率(%)
+    shots_shots_on_goal: 射门/有效射门
+  tiles:
+    competition_standings: 积分排名
+    contest_events: 赛事活动
+    contest_statistics: 数据统计

@@ -1,0 +1,23 @@
+sv:
+  standings:
+    teams: ~
+    played_header: ~
+    won_header: ~
+    drawn_header: ~
+    lost_header: ~
+    for_header: ~
+    against_header: ~
+    points_header: ~
+  statistics:
+    score: Ställning
+    saves: Räddningar
+    yellow_cards: "Gula kort"
+    red_cards: "Röda kort"
+    crosses: Krossbollar
+    fouls: Foul
+    possession: "Bollinnehav (%)"
+    shots_shots_on_goal: "Skott mot mål"
+  tiles:
+    competition_standings: Resultat
+    contest_events: Matcher
+    contest_statistics: Statistik

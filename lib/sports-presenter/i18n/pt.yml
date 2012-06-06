@@ -1,0 +1,23 @@
+pt:
+  standings:
+    teams: Times
+    played_header: J
+    won_header: V
+    drawn_header: E
+    lost_header: D
+    for_header: GP
+    against_header: GC
+    points_header: PG
+  statistics:
+    score: Placar
+    saves: Defesas
+    yellow_cards: "Cartões amarelos"
+    red_cards: "Cartões vermelhos"
+    crosses: Cruzamentos
+    fouls: Faltas
+    possession: "Posse de bola (%)"
+    shots_shots_on_goal: "Chutes para fora/na direção do gol"
+  tiles:
+    competition_standings: Classificação
+    contest_events: "Eventos do jogo"
+    contest_statistics: Estatísticas
