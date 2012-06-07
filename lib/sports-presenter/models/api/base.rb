@@ -2,10 +2,11 @@ module SportsPresentation
   module Api
     class Base
 
-      attr_reader :response
+      attr_reader :response, :hash
 
       def initialize(response)
         @response = response
+        @hash = response.to_hash
         parse_response(response)
       end
 

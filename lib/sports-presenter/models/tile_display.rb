@@ -4,6 +4,7 @@ module SportsPresentation
 
     def initialize(arguments = {})
       @title = I18n.t("tiles.#{arguments[:title]}")
+      @title = arguments[:translated_title] unless arguments[:translated_title].nil?
       @poll = arguments[:poll]
     end
 
