@@ -11,5 +11,11 @@ module SportsPresentation
       nil
     end
 
+    def calendar_medium
+      @data.at("calendar").select { |logo| logo["density"] == "medium" }.first["href"]
+    rescue
+      nil
+    end
+
   end
 end

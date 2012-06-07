@@ -14,7 +14,7 @@ module SportsPresentation
           stage_object.standings.group_by { |standing| standing["group_name"] }.each do |group, standings_data|
             standings = standings_data.sort_by { |standing| standing["position"].to_i }.collect do |standing|
               team_name = standing.at("team.name")
-              team_logo = ImageDensities.new(standing.at("team.logos")).calendar_low
+              team_logo = ImageDensities.new(standing.at("team.logos")).calendar_medium
               position = standing["position"]
 
               OpenStruct.new(standing["statistics"].merge(team_name: team_name, team_logo: team_logo, position: position))
