@@ -14,7 +14,7 @@ module SportsPresentation
     def add_native_tile(object, display)
       raise ArgumentError, "No display" if display.nil?
      
-      @tiles << {:object =>object.hash, :display => display}
+      @tiles << {:object =>object, :display => display}
     end
 
     def generate(params = {})

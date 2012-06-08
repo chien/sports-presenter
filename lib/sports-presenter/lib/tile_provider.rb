@@ -32,7 +32,7 @@ module SportsPresentation
     def self.tiles_for_home(tiles)
       competitions = Api::Competition.all
       competitions.first(4).each do |competition|
-        tiles.add_native_tile competition, Tiles::CompetitionTile.new(competition.hash)
+        tiles.add_native_tile competition.response, Tiles::CompetitionTile.new(competition.name, competition.uid, competition.live_contests)
       end
     end
   end

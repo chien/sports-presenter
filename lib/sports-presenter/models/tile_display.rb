@@ -3,8 +3,12 @@ module SportsPresentation
     attr_reader :title
 
     def initialize(arguments = {})
-      @title = I18n.t("tiles.#{arguments[:title]}")
-      @title = arguments[:translated_title] unless arguments[:translated_title].nil?
+
+      if arguments[:title].class == Symbol
+        @title = I18n.t("tiles.#{arguments[:title]}")
+      else
+        @title = arguments[:title]
+      end        
       @poll = arguments[:poll]
     end
 

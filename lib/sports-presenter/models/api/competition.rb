@@ -1,8 +1,11 @@
 module SportsPresentation
   module Api
     class Competition < Base
-
+      attr_reader :name, :uid,:live_contests
       def parse_response(competition)
+        @name = competition["name"]
+        @uid = competition[":uid"]
+        @live_contests = competition["live_contests"]
         @current_stage = PlayupTypes.lazyref competition.at("current_stage")
       end
 
