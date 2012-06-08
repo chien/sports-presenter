@@ -26,7 +26,7 @@ module SportsPresentation
       end
 
       def round_name
-        @contest.round_name
+        @contest.round_display_name
       end
 
       # Breaks goals into groups of sequential goals per side.

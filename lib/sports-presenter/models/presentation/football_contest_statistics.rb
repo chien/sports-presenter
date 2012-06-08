@@ -24,14 +24,6 @@ module SportsPresentation
         @statistics.away_team
       end
 
-      def competition_name
-        @contest.competition_name
-      end
-
-      def round_name
-        @contest.round_name
-      end
-
     end
   end
 end
