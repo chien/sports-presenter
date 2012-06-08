@@ -1,7 +1,7 @@
 module SportsPresentation
   module Api
     class Competition < Base
-      attr_reader :name, :uid,:live_contests
+      attr_reader :name, :uid, :live_contests
       def parse_response(competition)
         @name = competition["name"]
         @uid = competition[":uid"]
