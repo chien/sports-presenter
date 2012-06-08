@@ -1,10 +1,10 @@
 module SportsPresentation
   module Api
     class FootballContestStatistics < Base
-      STATS = %w( score saves yellow_cards red_cards crosses fouls offsides corner_kicks tackles passes possession_percentage shots shots_on_goal )
+      STATS = %w( score saves yellow_cards red_cards crosses fouls offsides corner_kicks tackles passes possession_percentage )
 
       attr_reader *STATS
-      attr_reader :team_id, :display_name
+      attr_reader :team_id, :display_name, :shot_statistics
 
       def parse_response(stats)
         STATS.each do |stat|
@@ -14,6 +14,8 @@ module SportsPresentation
 
           instance_variable_set("@#{stat}", val)
         end
+
+        @shot_statistics = stats.at("shot_statistics")
 
         @team_id = stats.at("team.:self") =~ /\/teams\/(\d+)$/ ? $1 : nil
         @display_name = stats.at("team.display_name")

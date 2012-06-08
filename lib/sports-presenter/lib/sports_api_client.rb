@@ -14,6 +14,7 @@ module SportsPresentation
         end
 
         puts url.to_s
+        puts "Locale: #{@language} Geoip: #{@region}"
         headers = { "Accept-Language" => @language, "X-PlayUp-Geoip-Country-Code" => @region }
         body = nil
         time_taken = Benchmark.measure do

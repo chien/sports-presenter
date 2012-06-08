@@ -52,8 +52,8 @@
       %span.away-team= @statistics.away_team.possession_percentage
       =t "statistics.possession"
     %li
-      %span.home-team= "#{@statistics.home_team.shots}/#{@statistics.home_team.shots_on_goal}"
-      %span.away-team= "#{@statistics.away_team.shots}/#{@statistics.away_team.shots_on_goal}"
+      %span.home-team= @statistics.home_team.shot_statistics
+      %span.away-team= @statistics.away_team.shot_statistics
       =t "statistics.shots_shots_on_goal"
     %li
       %span.home-team= @statistics.home_team.saves

@@ -41,34 +41,34 @@ I18n.load_path += Dir[File.join(here, "sports-presenter", "i18n", "*.yml")]
 
 module SportsPresentation
   class Application < Sinatra::Base
-    # Add cache headers to static files.
+    use LocaleRequest
     use CacheSettings, {
+      # Add cache headers to static files.
       /\.(css|png|gif|eot|svg|ttf|woff)/ => {
         :cache_control => "max-age=86400, public",
         :expires => 86400
+      }, 
+
+      # Otherwise cache for 5 seconds.
+      /.*/ => {
+        :cache_control => "max-age=5, public", 
+        :expires => 5
       }
     }
 
     set :public_folder, Proc.new { File.join(root, "..", "public" ) }
 
-    def locale_from_query
-      [params[:locale], "en"].reject { |str| str.to_s.length == 0 }.first
+    def locale
+      request.env["rack.locale"]
     end
 
-    helpers do
-      def t(key, *options)
-        args = options.pop || Hash.new
-        args[:locale] = locale_from_query
-
-        I18n.t(key, *options, args)
-      end
+    def region
+      request.env["rack.region"]
     end
 
     before do
-      params[:locale] = locale_from_query
-      
-      SportsApiClient.set_language(locale_from_query)
-      SportsApiClient.set_region(params[:region] || 'EU')
+      SportsApiClient.set_language(I18n.locale)
+      SportsApiClient.set_region(region)
       
       SportsPresentation::SportsApiClient.mode = nil #(params[:real] == "true" ? nil : :mock)
     end
