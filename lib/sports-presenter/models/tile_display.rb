@@ -4,7 +4,7 @@ module SportsPresentation
 
     def initialize(arguments = {})
 
-      if arguments[:title].class == Symbol
+      if arguments[:title].is_a? Symbol
         @title = I18n.t("tiles.#{arguments[:title]}")
       else
         @title = arguments[:title]
