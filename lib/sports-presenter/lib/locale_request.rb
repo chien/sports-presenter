@@ -4,10 +4,13 @@ class LocaleRequest
   end
 
   def call(env)
-    region = env["HTTP_X_PLAYUP_GEOIP_COUNTRY_CODE"] || "NA"
+    region = env["HTTP_X_PLAYUP_GEOIP_REGION_CODE"] || "NA"
     region = $1 if env["QUERY_STRING"] =~ /region\=(..)/
-
     env["rack.region"] = region
+
+    country = env["HTTP_X_PLAYUP_GEOIP_COUNTRY_CODE"] || "US"
+    country = $1 if env["QUERY_STRING"] =~ /country\=(..)/
+    env["rack.country"] = country
 
     old_locale = I18n.locale
     locale = nil
@@ -30,7 +33,8 @@ class LocaleRequest
     status, headers, body = @app.call(env)
 
     headers['Content-Language'] = locale
-    headers['X-PlayUp-Geoip-Country-Code'] = region
+    headers['X-PlayUp-Geoip-Region-Code'] = region
+    headers['X-PlayUp-Geoip-Country-Code'] = country
 
     I18n.locale = old_locale
     [status, headers, body]

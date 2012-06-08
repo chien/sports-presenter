@@ -15,7 +15,7 @@ module SportsPresentation
 
         puts url.to_s
         puts "Locale: #{@language} Geoip: #{@region}"
-        headers = { "Accept-Language" => @language, "X-PlayUp-Geoip-Country-Code" => @region }
+        headers = { "Accept-Language" => @language, "X-PlayUp-Geoip-Region-Code" => @region, "X-PlayUp-Geoip-Country-Code" => @country }
         body = nil
         time_taken = Benchmark.measure do
           body = RestClient.get(url, headers).body
@@ -45,6 +45,10 @@ module SportsPresentation
 
     def self.set_region(region)
       @region = region
+    end
+
+    def self.set_country(country)
+      @country = country
     end
 
     private

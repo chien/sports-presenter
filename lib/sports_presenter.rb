@@ -66,9 +66,15 @@ module SportsPresentation
       request.env["rack.region"]
     end
 
+    def country
+      request.env["rack.country"]
+    end
+
     before do
+      puts "#{region} #{country} #{locale}"
       SportsApiClient.set_language(I18n.locale)
       SportsApiClient.set_region(region)
+      # SportsApiClient.set_country(country)
       
       SportsPresentation::SportsApiClient.mode = nil #(params[:real] == "true" ? nil : :mock)
     end
