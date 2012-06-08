@@ -16,7 +16,7 @@ module SportsPresentation
         return Thread.current[image_cache_key] unless Thread.current[image_cache_key].nil?
 
         Thread.current[image_cache_key] = begin
-          RestClient.get(File.join(SportsPresentation.assets_host,"tiles/statistics/#{uid}_low_148_88.png")).code == 200
+          RestClient.get(File.join(SportsPresentation.assets_host,"tiles/competitions/#{uid}/low_148_88.png")).code == 200
         rescue
           false
         end        
@@ -26,9 +26,9 @@ module SportsPresentation
 
         if has_special_image?
           {
-            low: "/tiles/statistics/#{uid}_low_148_88.png",
-            medium: "/tiles/statistics/#{uid}_medium_222_132.png",
-            high: "/tiles/statistics/#{uid}_high_296_176.png"
+            low: "/tiles/competitions/#{uid}/low_148_88.png",
+            medium: "/tiles/competitions/#{uid}/medium_222_132.png",
+            high: "/tiles/competitions/#{uid}/high_296_176.png"
           }
         else
           {
