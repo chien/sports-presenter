@@ -70,7 +70,7 @@ module SportsPresentation
       request.env["rack.country"]
     end
 
-    helper do
+    helpers do
       def t(*args)
         I18n.t(*args)
       end
