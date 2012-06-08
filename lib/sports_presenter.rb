@@ -70,6 +70,12 @@ module SportsPresentation
       request.env["rack.country"]
     end
 
+    helper do
+      def t(*args)
+        I18n.t(*args)
+      end
+    end
+
     before do
       puts "#{region} #{country} #{locale}"
       SportsApiClient.set_language(I18n.locale)
