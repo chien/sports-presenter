@@ -70,7 +70,6 @@ module SportsPresentation
           nil
         end
 
-        puts "#{@contest.home_team.id.inspect} - #{event.team_id.inspect}"
         class_name = case event.team_id
         when @contest.home_team.id.to_s then "home-team"
         when @contest.away_team.id.to_s then "away-team"
@@ -86,7 +85,7 @@ module SportsPresentation
       end
 
       def goal_block(team_id)
-        side = home_team.team_id == team_id ? :home : :away
+        side = @contest.home_team.id.to_s == team_id.to_s ? :home : :away
         OpenStruct.new(:team_id => team_id, :side => side, :list => [])
       end
 
