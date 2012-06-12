@@ -16,18 +16,17 @@ class LocaleRequest
     locale = nil
 
     lang = env["HTTP_ACCEPT_LANGUAGE"]
-    lang = $1 if env["QUERY_STRING"] =~ /locale\=(..)/
+    lang = $1 if env["QUERY_STRING"] =~ /locale\=([a-z\-\,]+)/i
 
-    # http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.4
-    if lang
-      lang = lang.split(",").map { |l|
-        l += ';q=1.0' unless l =~ /;q=\d+\.\d+$/
-        l.split(';q=')
-      }.first
-      locale = lang.first.split("-").first
-    else
-      locale = I18n.default_locale
+    locale = if lang
+      accepted_codes = lang.split(";q").first.split(",")
+
+      accepted_codes.detect do |code|
+        !I18n.translate(:tiles, :locale => code).include?("translation missing:")
+      end
     end
+
+    locale ||= I18n.default_locale
 
     locale = env['rack.locale'] = I18n.locale = locale.to_s
     status, headers, body = @app.call(env)
