@@ -5,8 +5,8 @@ class CacheSettings
   end
   
   def call env
+    path = env["PATH_INFO"]
     res = @app.call(env)
-    path = env["REQUEST_PATH"]
     @pat.each do |pattern,data|
       if path =~ pattern
         res[1]["Cache-Control"] = data[:cache_control] if data.has_key?(:cache_control)
