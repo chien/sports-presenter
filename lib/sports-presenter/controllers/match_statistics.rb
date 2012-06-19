@@ -5,6 +5,7 @@ module SportsPresentation
       contest = Api::Contest.find(params[:id])
       @statistics = Presentation::FootballContestStatistics.new contest
       @additional_stylesheet = "stats"
+      @title = t("tiles.contest_statistics")
 
       if @statistics.valid?
         haml :match_stats_football
