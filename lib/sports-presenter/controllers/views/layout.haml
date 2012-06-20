@@ -7,9 +7,19 @@
     %title
     %link(rel="stylesheet" href="#{SportsPresentation.presenter_base_url}/stylesheets/reset.css")
     %link(rel="stylesheet" href="#{SportsPresentation.presenter_base_url}/stylesheets/base.css")
+    %link(rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css")
+    %link(rel="stylesheet" href="#{SportsPresentation.presenter_base_url}/stylesheets/boxscore.css")
+    %link(rel="stylesheet" href="#{SportsPresentation.presenter_base_url}/stylesheets/style.css")
+    %link(rel="stylesheet" href="#{SportsPresentation.presenter_base_url}/stylesheets/baseball-standings.css")
+
+    %script(src="http://code.jquery.com/jquery-1.7.1.min.js")
+    %script(src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js")
 
     - if @additional_stylesheet
       %link(rel="stylesheet" href="#{SportsPresentation.presenter_base_url}/stylesheets/#{@additional_stylesheet}.css")
+
+    - if @additional_javascript
+      %script(src="#{SportsPresentation.presenter_base_url}/javascripts/#{@additional_javascript}.js")
 
   %body
     %div.bl-bg

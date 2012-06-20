@@ -1,0 +1,297 @@
+%div(data-role="page")
+  #bg-tl
+    #bg-tr
+      #bg-bl
+        #bg-br
+          .container
+            %h1 MLB Box Score
+            %h2
+              %span.away-team-name 
+                Away Team
+              vs. 
+              %span.home-team-names
+                Home Team
+            %hr.indent
+            .graphicarrow
+              .arrow-up
+              .arrow-up-a
+              .arrow-up-b
+            //!-- /graphicarrow --
+            %br
+            .linescore-container
+              %table.standing
+                %thead.linescore-header
+                  %tr
+                    %th.blank
+                    %th.inning-1 1
+                    %th.inning-2 2
+                    %th.inning-3 3
+                    %th.inning-4 4
+                    %th.inning-5 5
+                    %th.inning-6 6
+                    %th.inning-7 7
+                    %th.inning-8 8
+                    %th.inning-9 9
+                    %th.blank
+                    %th R
+                    %th.hits H
+                    %th.errors E
+                %tbody
+                  %tr.away
+                    %td
+                      .away-team-name 
+                        Away Team
+                    %td.inning-1 0
+                    %td.inning-2 0
+                    %td.inning-3 0
+                    %td.inning-4 0
+                    %td.inning-5 0
+                    %td.inning-6 0
+                    %td.inning-7 0
+                    %td.inning-8 0
+                    %td.inning-9 0
+                    %td.blank
+                    %td.runs 0
+                    %td.hits 0
+                    %td.errors 0
+                  %tr.home
+                    %td
+                      .home-team-name 
+                        Home Team
+                    %td.inning-1 0
+                    %td.inning-2 0
+                    %td.inning-3 0
+                    %td.inning-4 0
+                    %td.inning-5 0
+                    %td.inning-6 0
+                    %td.inning-7 0
+                    %td.inning-8 0
+                    %td.inning-9 0
+                    %td.blank
+                    %td.runs 0
+                    %td.hits 0
+                    %td.errors 0
+            .play-by-play
+              %i play by play placeholder text
+            %br
+            %div(data-role="fieldcontain")
+              %fieldset.radioGroup(data-role="controlgroup" data-type="horizontal")
+                %input#radio1_0(type="radio" name="radio1" value="" checked="checked")
+                %label(for="radio1_0")
+                  %span.away-team-name 
+                    Away
+                %input#radio1_1(type="radio" name="radio1" value="")
+                %label(for="radio1_1")
+                  %span.home-team-name 
+                    Home
+            .boxscore-batting-away
+              %br
+              %h3
+                %span.away-team-name#away-stats 
+                  Away Team
+                &ndash; Batting
+              %table.standing
+                %thead.boxscore-header
+                  %tr
+                    %th
+                      %span.away-team-name 
+                        Away Team
+                    %th AB
+                    %th H
+                    %th R
+                    %th RBI
+                    %th HR
+                    %th BB
+                    %th K
+                    %th AVG
+                %tbody
+                  %tr
+                    %td Player Name
+                    %td 0
+                    %td 0
+                    %td 0
+                    %td 0
+                    %td 0
+                    %td 0
+                    %td 0
+                    %td .000
+                %tfoot.boxscore-footer
+                  %tr
+                    %td
+                      %b Total
+                    %td
+                      %b 0
+                    %td
+                      %b 0
+                    %td
+                      %b 0
+                    %td
+                      %b 0
+                    %td
+                      %b 0
+                    %td
+                      %b 0
+                    %td
+                      %b 0
+                    %td
+                      %b .000
+              .away-batting-specifics
+                %i batting specific placeholder
+            %br
+            .boxscore-pitching-away
+              %h3
+                %span.away-team-name#away-stats
+                  Away Team
+                &ndash; Pitching
+              %table.standing
+                %thead.boxscore-header
+                  %tr
+                    %th 
+                      .away-team-name 
+                        Away Team
+                    %th IP
+                    %th H
+                    %th R
+                    %th ER
+                    %th BB
+                    %th SO
+                    %th HR
+                    %th ERA
+                %tbody
+                  %tr
+                    %td Player Name
+                    %td 0
+                    %td 0
+                    %td 0
+                    %td 0
+                    %td 0
+                    %td 0
+                    %td 0
+                    %td 0.00
+                %tfoot.boxscore-footer
+                  %tr
+                    %td
+                      %b Total
+                    %td
+                      %b 0
+                    %td
+                      %b 0
+                    %td
+                      %b 0
+                    %td
+                      %b 0
+                    %td
+                      %b 0
+                    %td
+                      %b 0
+                    %td
+                      %b 0
+                    %td
+                      %b 0.00
+              .away-pitching-specifics
+                %i pitching specific placeholder
+            .boxscore-batting-home
+              %h3
+                %span.home-team-name#home-stats
+                  Home Team
+                &ndash;  Batting
+              %table.standing
+                %thead.boxscore-header
+                  %tr
+                    %th
+                      .home-team-name 
+                        Home Team
+                    %th AB
+                    %th H
+                    %th R
+                    %th RBI
+                    %th HR
+                    %th BB
+                    %th K
+                    %th AVG
+                %tbody
+                  %tr
+                    %td Player Name
+                    %td 0
+                    %td 0
+                    %td 0
+                    %td 0
+                    %td 0
+                    %td 0
+                    %td 0
+                    %td .000
+                %tfoot.boxscore-footer
+                  %tr
+                    %td
+                      %b Total
+                    %td
+                      %b 0
+                    %td
+                      %b 0
+                    %td
+                      %b 0
+                    %td
+                      %b 0
+                    %td
+                      %b 0
+                    %td
+                      %b 0
+                    %td
+                      %b 0
+                    %td
+                      %b .000
+              .home-batting-specifics
+                %i batting specific placeholder
+            %br
+            .boxscore-pitching-home
+              %h3
+                %span.home-team-name#home-stats
+                  Home Team
+                &ndash; Pitching
+              %table.standing
+                %thead.boxscore-header
+                  %tr
+                    %th 
+                      .home-team-name 
+                        Home Team
+                    %th IP
+                    %th H
+                    %th R
+                    %th ER
+                    %th BB
+                    %th SO
+                    %th HR
+                    %th ERA
+                %tbody
+                  %tr
+                    %td Player Name
+                    %td 0
+                    %td 0
+                    %td 0
+                    %td 0
+                    %td 0
+                    %td 0
+                    %td 0
+                    %td 0.00
+                %tfoot.boxscore-footer
+                  %tr
+                    %td
+                      %b Total
+                    %td
+                      %b 0
+                    %td
+                      %b 0
+                    %td
+                      %b 0
+                    %td
+                      %b 0
+                    %td
+                      %b 0
+                    %td
+                      %b 0
+                    %td
+                      %b 0
+                    %td
+                      %b 0.00
+              .home-pitching-specifics
+                %i pitching specific placeholder

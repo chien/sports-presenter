@@ -1,0 +1,49 @@
+@charset "UTF-8";
+/* CSS Document */
+
+h1, h2, h3 {
+    font: 20px "BebasNeueRegular",Arial,Helvetica,Geneva,sans-serif;
+}
+h1 {
+    color: #696B6E;
+    margin: 5px 0 -3px 20px;
+}
+h2 {
+    color: #ACAEAF;
+    margin-left: 20px;
+}
+h3 {
+    color: #FF4754;
+    margin: 0 0 0 20px;
+}
+table.standing {
+    color: #969799;
+    font-size: 14px;
+    margin: 5px 0;
+    width: 100%;
+}
+thead th {
+    background-color: #EEEDEB;
+    box-shadow: 0 1px 0 0 #FFFFFF;
+    color: #696B6E;
+    padding: 9px 0;
+}
+thead tr th:nth-last-child(1) {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+thead tr th:nth-child(1) {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+table.standing tr {
+}
+table.standing td {
+    border-bottom: 1px solid #E2E1DE;
+    box-shadow: 0 2px 0 0 #FFFFFF;
+    padding: 9px 0 10px;
+    text-align: center;
+}
+table.standing td, table.standing th {
+    min-width: 12px;
+}
