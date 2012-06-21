@@ -5,8 +5,9 @@ module SportsPresentation
       attr_reader :home_team, :away_team
 
       def parse_response(contest_details)
-        @home_team = FootballContestStatistics.new(contest_details["scores"].first)
-        @away_team = FootballContestStatistics.new(contest_details["scores"].last)
+        klass = SportsPresentation::Api.const_get(contest_details["sport_name"] + "ContestStatistics")
+        @home_team = klass.new contest_details["scores"].first
+        @away_team = klass.new contest_details["scores"].last
       end
 
       def self.find(id)

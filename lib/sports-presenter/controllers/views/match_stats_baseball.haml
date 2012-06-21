@@ -1,0 +1,168 @@
+%div(data-role="page")
+  #bg-tl
+    #bg-tr
+      #bg-bl
+        #bg-br
+          .container
+            %h1 MLB Box Score
+            %h2
+              %span.away-team-name= @statistics.away_team.display_name
+              vs. 
+              %span.home-team-names= @statistics.home_team.display_name
+            %hr.indent
+            .graphicarrow
+              .arrow-up
+              .arrow-up-a
+              .arrow-up-b
+            %br
+            .linescore-container
+              %table.standing
+                %thead.linescore-header
+                  %tr
+                    %th.blank
+                    - @statistics.total_innings.times do |index|
+                      - inn = index + 1
+                      %th{ :class => "inning-#{inn}"}= inn
+                    %th.blank
+                    %th R
+                    %th.hits H
+                    %th.errors E
+                %tbody
+                  %tr.away
+                    %td
+                      .away-team-name= @statistics.away_team.display_name
+                    - @statistics.total_innings.times do |index|
+                      - inn = index + 1
+                      %td{ :class => "inning-#{inn}"}= @statistics.away_team.innings[index].nil? ? "" : @statistics.away_team.innings[index]["score"]
+                    %td.blank
+                    %td.runs= @statistics.away_team.runs
+                    %td.hits= @statistics.away_team.hits
+                    %td.errors= @statistics.away_team.errors
+                  %tr.home
+                    %td
+                      .home-team-name= @statistics.home_team.display_name
+                    - @statistics.total_innings.times do |index|
+                      - inn = index + 1
+                      %td{ :class => "inning-#{inn}"}= @statistics.home_team.innings[index].nil? ? "" : @statistics.home_team.innings[index]["score"]
+                    %td.blank
+                    %td.runs= @statistics.home_team.runs
+                    %td.hits= @statistics.home_team.hits
+                    %td.errors= @statistics.home_team.errors
+            -#.play-by-play
+              -#%i play by play placeholder text
+            %br
+            %div(data-role="fieldcontain")
+              %fieldset.radioGroup(data-role="controlgroup" data-type="horizontal")
+                %input#radio1_0(type="radio" name="radio1" value="" checked="checked")
+                %label(for="radio1_0")
+                  %span.away-team-name= @statistics.away_team.display_name
+                %input#radio1_1(type="radio" name="radio1" value="")
+                %label(for="radio1_1")
+                  %span.home-team-name= @statistics.home_team.display_name
+            .boxscore-batting-away
+              %br
+              %h3
+                %span.away-team-name#away-stats= @statistics.away_team.display_name
+                &ndash; Batting
+              %table.standing
+                %thead.boxscore-header
+                  %tr
+                    %th
+                      %span.away-team-name= @statistics.away_team.display_name
+                    %th AB
+                    %th H
+                    %th R
+                    %th RBI
+                    %th HR
+                    %th BB
+                    %th K
+                    %th AVG
+                %tbody
+                  - @statistics.away_team.players.each do |player|
+                    %tr
+                      %td= player["first_name"] + " " + player["last_name"]
+                      %td= player["at_bats"]
+                      %td= player["singles"] + player["doubles"] + player["triples"] + player["homeruns"]
+                      %td= player["runs"]
+                      %td= player["rbi"]
+                      %td= player["homeruns"]
+                      %td= player["walks"]
+                      %td= player["strike_outs"]
+                      %td= player["batting_average"]
+                %tfoot.boxscore-footer
+                  %tr
+                    %td
+                      %b Total
+                    %td
+                      %b= @statistics.away_team.total["at_bats"]
+                    %td
+                      %b= @statistics.away_team.total["singles"] + @statistics.away_team.total["doubles"] + @statistics.away_team.total["triples"] + @statistics.away_team.total["homeruns"]
+                    %td
+                      %b= @statistics.away_team.total["runs"]
+                    %td
+                      %b= @statistics.away_team.total["rbi"]
+                    %td
+                      %b= @statistics.away_team.total["homeruns"]
+                    %td
+                      %b= @statistics.away_team.total["walks"]
+                    %td
+                      %b= @statistics.away_team.total["strike_outs"]
+                    %td
+                      %b -
+              -#.away-batting-specifics
+                -#%i batting specific placeholder
+            %br
+            -#= haml :baseball_away_pitching
+            .boxscore-batting-home
+              %h3
+                %span.home-team-name#home-stats= @statistics.home_team.display_name
+                &ndash;  Batting
+              %table.standing
+                %thead.boxscore-header
+                  %tr
+                    %th
+                      .home-team-name= @statistics.home_team.display_name
+                    %th AB
+                    %th H
+                    %th R
+                    %th RBI
+                    %th HR
+                    %th BB
+                    %th K
+                    %th AVG
+                %tbody
+                  - @statistics.home_team.players.each do |player|
+                    %tr
+                      %td= player["first_name"] + " " + player["last_name"]
+                      %td= player["at_bats"]
+                      %td= player["singles"] + player["doubles"] + player["triples"] + player["homeruns"]
+                      %td= player["runs"]
+                      %td= player["rbi"]
+                      %td= player["homeruns"]
+                      %td= player["walks"]
+                      %td= player["strike_outs"]
+                      %td= player["batting_average"]
+                %tfoot.boxscore-footer
+                  %tr
+                    %td
+                      %b Total
+                    %td
+                      %b= @statistics.home_team.total["at_bats"]
+                    %td
+                      %b= @statistics.home_team.total["singles"] + @statistics.home_team.total["doubles"] + @statistics.home_team.total["triples"] + @statistics.home_team.total["homeruns"]
+                    %td
+                      %b= @statistics.home_team.total["runs"]
+                    %td
+                      %b= @statistics.home_team.total["rbi"]
+                    %td
+                      %b= @statistics.home_team.total["homeruns"]
+                    %td
+                      %b= @statistics.home_team.total["walks"]
+                    %td
+                      %b= @statistics.home_team.total["strike_outs"]
+                    %td
+                      %b -
+              -#.home-batting-specifics
+                -#%i batting specific placeholder
+            %br
+            -#= haml :baseball_home_pitching

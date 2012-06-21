@@ -3,11 +3,13 @@ module SportsPresentation
     
     get '/contests/:id/statistics' do
       contest = Api::Contest.find(params[:id])
-      @statistics = Presentation::FootballContestStatistics.new contest
+      klass = SportsPresentation::Presentation.const_get(contest.sport + "ContestStatistics")
+      @statistics = klass.new contest
       @additional_stylesheet = "stats"
-
+      @additional_javascript = "JQUI"
+      
       if @statistics.valid?
-        haml :match_stats_football
+        haml "match_stats_#{contest.sport.downcase}".to_sym
       else
         haml :no_data
       end

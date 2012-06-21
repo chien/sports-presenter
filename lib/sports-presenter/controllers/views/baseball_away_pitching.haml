@@ -1,0 +1,50 @@
+.boxscore-pitching-away.hide
+  %h3
+    %span.away-team-name#away-stats= @statistics.away_team.display_name
+    &ndash; Pitching
+  %table.standing
+    %thead.boxscore-header
+      %tr
+        %th 
+          .away-team-name= @statistics.away_team.display_name
+        %th IP
+        %th H
+        %th R
+        %th ER
+        %th BB
+        %th SO
+        %th HR
+        %th ERA
+    %tbody
+      %tr
+        %td Player Name
+        %td 0
+        %td 0
+        %td 0
+        %td 0
+        %td 0
+        %td 0
+        %td 0
+        %td 0.00
+    %tfoot.boxscore-footer
+      %tr
+        %td
+          %b Total
+        %td
+          %b 0
+        %td
+          %b 0
+        %td
+          %b 0
+        %td
+          %b 0
+        %td
+          %b 0
+        %td
+          %b 0
+        %td
+          %b 0
+        %td
+          %b 0.00
+  -#.away-pitching-specifics
+    -#%i pitching specific placeholder

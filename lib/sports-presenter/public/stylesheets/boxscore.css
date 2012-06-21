@@ -1,0 +1,55 @@
+#versus-text {
+	position:relative;
+	top:-40px;	
+}
+hr {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #DDDDDD;
+    border-color: -moz-use-text-color -moz-use-text-color #FFFFFF;
+    border-style: none none solid;
+    border-width: 0 0 1px;
+    clear: left;
+    float: left;
+    height: 1px;
+    margin: 15px 0 5px;
+    padding: 0;
+    width: 100%;
+}
+#away-icon-container {
+	text-align:center;
+	position:relative;
+}
+#home-icon-container {
+	text-align:center;
+	position:relative;
+}
+
+#home-img {
+	padding:6px;
+}
+
+#away-img {
+	padding:6px;
+}
+
+#away-text {
+	position:absolute;
+	left:18px;
+	top:-20px;
+	color:white;
+	width:80px;
+	height:50px;
+}
+
+#home-text {
+	position:absolute;
+	right:20px;
+	top:-20px;
+	color:white;
+	width:80px;
+	height:50px;
+}
