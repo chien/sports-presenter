@@ -2,7 +2,6 @@ module SportsPresentation
   class TileProvider
     def self.fetch_tiles(context_url)
       tiles = TileList.new
-      puts context_url
       case context_url
       when /\/competitions\/(\d+)$/ then tiles_for_competition($1, tiles)
       when /\/contests\/(\d+)$/ then tiles_for_contest($1, tiles)
