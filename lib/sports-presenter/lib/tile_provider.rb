@@ -2,6 +2,7 @@ module SportsPresentation
   class TileProvider
     def self.fetch_tiles(context_url)
       tiles = TileList.new
+      puts context_url
       case context_url
       when /\/competitions\/(\d+)$/ then tiles_for_competition($1, tiles)
       when /\/contests\/(\d+)$/ then tiles_for_contest($1, tiles)
@@ -24,7 +25,7 @@ module SportsPresentation
         tiles.add_link_tile "/contests/#{id}/events", Tiles::EventsTile.new
       end
 
-      if contest.has_statistics? && contest.is_playup_kind?("vnd.playup.sport.sport.football")
+      if contest.has_statistics? && ( contest.is_playup_kind?("vnd.playup.sport.sport.football") || contest.is_playup_kind?("vnd.playup.sport.sport.baseball") )
         tiles.add_link_tile "/contests/#{id}/statistics", Tiles::ContestStatisticsTile.new
       end
     end
