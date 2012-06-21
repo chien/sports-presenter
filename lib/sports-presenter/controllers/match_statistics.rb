@@ -13,7 +13,6 @@ module SportsPresentation
       else
         haml :no_data
       end
-      haml "match_stats_#{contest.sport.downcase}".to_sym
     end
 
   end

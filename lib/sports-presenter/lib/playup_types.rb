@@ -13,6 +13,7 @@ module SportsPresentation
       case actual
       when "vnd.playup.sport.contest.contest" then Api::Contest
       when "vnd.playup.sport.contest_detail.football" then Api::ContestDetails
+      when "vnd.playup.sport.contest_detail.baseball" then Api::ContestDetails
       when "vnd.playup.sport.competition" then Api::Competition
       when "vnd.playup.sport.competitions" then Api::Collection
       when "vnd.playup.sport.stage.home_away" then Api::Stage

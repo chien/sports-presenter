@@ -47,3 +47,6 @@ table.standing td {
 table.standing td, table.standing th {
     min-width: 12px;
 }
+.hide {
+	display: none;
+}
