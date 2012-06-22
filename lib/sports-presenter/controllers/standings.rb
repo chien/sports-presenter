@@ -8,13 +8,12 @@ module SportsPresentation
         @standing = Presentation::FootballStandings.new stage
         view = :standings_football
         @title = t("tiles.group_standings")
-        @additional_stylesheet = "standings"
       elsif stage.is_playup_kind?("application/vnd.playup.sport.stage.knockout")
         @standing = Presentation::FootballKnockoutStandings.new stage
         view = :knockout_standings_football
         @title = t("tiles.knockout_standings")
-        @additional_stylesheet = "elimination"
       end
+      @stylesheets = @standing.stylesheets
       
       if @standing.valid?
         haml view

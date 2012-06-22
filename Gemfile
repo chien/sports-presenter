@@ -5,3 +5,4 @@ gem 'rest-client', '~> 1.6.3'
 gem 'json'
 gem "addressable", require: "addressable/uri"
 gem "i18n"
+gem "pry"

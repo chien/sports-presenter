@@ -1,10 +1,11 @@
 module SportsPresentation
   module Presentation
     class FootballKnockoutStandings
+      include Presentable
       attr_reader :league_name, :stage_name, :rounds
 
       def initialize(stage_object)
-        
+        @assets = Asset.new(self).extend(PresentationAsset)        
         @group_standings = []
         @rounds = {}
 

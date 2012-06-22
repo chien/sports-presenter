@@ -4,11 +4,12 @@ module SportsPresentation
     end
     
     class FootballContestStatistics < FootballEvents
-
+      include Presentable
       attr_reader :events
 
       def initialize(contest)
         super
+        @assets = Asset.new(self).extend(PresentationAsset)        
         @statistics = contest.statistics
       end
 

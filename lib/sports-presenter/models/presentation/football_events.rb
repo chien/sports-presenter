@@ -1,11 +1,13 @@
 module SportsPresentation
   module Presentation
     class FootballEvents
-
+      include Presentable
+      
       attr_reader :events
 
       def initialize(contest)
         @contest = contest
+        @assets = Asset.new(self).extend(PresentationAsset)
         @events = contest.events || []
       end
 

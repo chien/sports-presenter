@@ -4,7 +4,7 @@ module SportsPresentation
     get '/contests/:id/events' do
       contest = Api::Contest.find(params[:id])
       @events = Presentation::FootballEvents.new contest
-      @additional_stylesheet = "stats"
+      @stylesheets = @events.stylesheets
       @title = t("tiles.contest_events")
 
       if @events.valid?

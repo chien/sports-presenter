@@ -5,9 +5,8 @@ module SportsPresentation
       contest = Api::Contest.find(params[:id])
       klass = SportsPresentation::Presentation.const_get(contest.sport + "ContestStatistics")
       @statistics = klass.new contest
-      @additional_stylesheet = "stats"
-      @additional_javascript = "JQUI"
-
+      @stylesheets = @statistics.stylesheets
+      @javascripts = @statistics.javascripts
       @title = t("tiles.contest_statistics")
 
       if @statistics.valid?

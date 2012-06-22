@@ -2,11 +2,11 @@ module SportsPresentation
   module Presentation
     
     class BaseballContestStatistics
-
-      attr_reader :events
+      include Presentable
 
       def initialize(contest)
         super
+        @assets = Asset.new(self).extend(JqueryAsset).extend(JqueryMobileAsset).extend(PresentationAsset)
         @statistics = contest.statistics
       end
 
