@@ -8,6 +8,9 @@ sv:
     for_header: ~
     against_header: ~
     points_header: ~
+    qf: Quarter Finals
+    sf: Semi Finals
+    f: Finals
   statistics:
     score: Ställning
     saves: Räddningar

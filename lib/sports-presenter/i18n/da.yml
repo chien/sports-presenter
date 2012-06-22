@@ -8,6 +8,9 @@ da:
     for_header: ~
     against_header: ~
     points_header: ~
+    qf: Quarter Finals
+    sf: Semi Finals
+    f: Final
   statistics:
     score: Stilling
     saves: Redninger

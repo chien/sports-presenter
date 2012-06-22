@@ -4,7 +4,7 @@
     %meta(charset="utf-8")
     %meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
     %meta(name="refresh" content="10")
-    %title
+    %title= @title
     %link(rel="stylesheet" href="#{SportsPresentation.presenter_base_url}/stylesheets/reset.css")
     %link(rel="stylesheet" href="#{SportsPresentation.presenter_base_url}/stylesheets/base.css")
     %link(rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css")
@@ -25,5 +25,16 @@
     %div.bl-bg
       %div.container
         = yield
-
         %div.logofooter
+  %script{:type => "text/javascript", :src => "#{SportsPresentation.presenter_base_url}/scripts/swipe.js"}
+  %script
+    :plain
+      var slider = new Swipe(document.getElementById('slider'), {
+        callback: function(e, pos) {
+          var i = bullets.length;
+          while (i--) {
+            bullets[i].className = ' ';
+          }
+          bullets[pos].className = 'on';
+        }
+      }),bullets = document.getElementById('position').getElementsByTagName('em');

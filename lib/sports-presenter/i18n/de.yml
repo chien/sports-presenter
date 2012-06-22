@@ -8,6 +8,9 @@ de:
     for_header: ET
     against_header: GT
     points_header: PT
+    qf: Viertelfinale
+    sf: Halbfinale
+    f: Endspiel
   statistics:
     score: Spielstand
     saves: Paraden

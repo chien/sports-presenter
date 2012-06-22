@@ -19,6 +19,11 @@ module SportsPresentation
         Api::Collection.new(competitions)
       end
 
+      def stages
+        stages = SportsApiClient.fetch("/competitions/#{id}/stages")
+        Api::Collection.new(stages)
+      end
+
       def current_stage
         if @current_stage.respond_to?(:fetch) 
           @current_stage = @current_stage.fetch
