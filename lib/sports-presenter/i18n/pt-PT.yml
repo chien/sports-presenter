@@ -8,6 +8,9 @@ pt-PT:
     for_header: GM
     against_header: GS
     points_header: P
+    qf: Quartos-de-final
+    sf: Meias-Finais
+    f: Final
   statistics:
     score: Resultado
     saves: Defesas

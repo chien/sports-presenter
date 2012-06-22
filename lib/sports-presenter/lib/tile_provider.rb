@@ -1,20 +1,31 @@
 module SportsPresentation
   class TileProvider
     def self.fetch_tiles(context_url)
+      puts context_url
       tiles = TileList.new
       case context_url
-      when /\/competitions\/(\d+)$/ then tiles_for_competition($1, tiles)
-      when /\/contests\/(\d+)$/ then tiles_for_contest($1, tiles)
-      when /welcome$/ then tiles_for_home(tiles)
+        when /\/competitions\/(\d+)$/ then 
+          tiles_for_competition($1, tiles)
+        when /\/contests\/(\d+)$/ then 
+          tiles_for_contest($1, tiles)
+        when /welcome$/ 
+          then tiles_for_home(tiles)
       end
 
       tiles
     end
 
     def self.tiles_for_competition(id, tiles)
-      stage = Api::Competition.find(id).current_stage
-      if stage && stage.standings && stage.is_playup_kind?("vnd.playup.sport.sport.football")
-        tiles.add_link_tile "/competitions/#{id}/stages/#{stage.id}/standings", Tiles::StandingsTile.new
+      stages = Api::Stage.find_by_competition_id(id)
+      stages.each do |stage|
+        if stage && stage.standings 
+          if stage.is_playup_kind?("application/vnd.playup.sport.stage.home_away")
+            tiles.add_link_tile "/competitions/#{id}/stages/#{stage.id}/standings", Tiles::GroupStandingsTile.new
+          elsif stage.is_playup_kind?("application/vnd.playup.sport.stage.knockout") && id == 27 #Euros
+            tiles.add_link_tile "/competitions/#{id}/stages/#{stage.id}/standings", Tiles::KnockoutStandingsTile.new
+          end
+        end
+
       end
     end
 

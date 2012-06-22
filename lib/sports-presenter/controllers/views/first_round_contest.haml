@@ -1,0 +1,23 @@
+-home_team_loser, away_team_loser ="",""
+-if contest.home_team_score < contest.away_team_score
+  -home_team_loser = "lost" 
+-elsif contest.home_team_score > contest.away_team_score
+  -away_team_loser = "lost"
+%div.match
+  - redright = "redright" unless current_round == round_size
+  %div{:class=>redright}
+  %a(href="#" onclick='slider.next();return false;')
+    %div{:class=>"teambox #{home_team_loser}"}
+      -if current_round > 1
+        %div{:class=>"redleft"}
+      %img{src: contest.home_team.logos.calendar_medium}
+      =contest.home_team.display_name
+      %span 
+        =contest.home_team_score
+    %div{:class=>"teambox #{away_team_loser}"}
+      -if current_round > 1
+        %div{:class=>"redleft"}
+      %img{src: contest.away_team.logos.calendar_medium}
+      =contest.away_team.display_name
+      %span 
+        =contest.away_team_score

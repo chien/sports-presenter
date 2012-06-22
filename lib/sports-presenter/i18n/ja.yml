@@ -8,6 +8,9 @@ ja:
     for_header: GF
     against_header: GA
     points_header: PTS
+    qf: Quarter Finals
+    sf: Semi Finals
+    f: Finals
   statistics:
     score: スコア
     saves: セーブ

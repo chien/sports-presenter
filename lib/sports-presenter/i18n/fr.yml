@@ -8,6 +8,9 @@ fr:
     for_header: BM
     against_header: BE
     points_header: PTS
+    qf: Quarts de final
+    sf: Demi-Finales
+    f: Finale
   statistics:
     score: Score
     saves: Reserves

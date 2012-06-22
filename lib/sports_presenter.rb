@@ -11,7 +11,7 @@ module SportsPresentation
 end
 
 SportsPresentation.presenter_base_url = "http://127.0.0.1:9292"
-SportsPresentation.sports_api_host = "http://integration.sports-api.playupdev.com/"
+SportsPresentation.sports_api_host = "http://127.0.0.1:3000/"
 SportsPresentation.assets_host = "http://sportsdata-staging.s3.amazonaws.com/"
 
 here = File.dirname(__FILE__)
@@ -23,6 +23,7 @@ require 'haml'
 require 'rest-client'
 require 'i18n'
 require 'benchmark'
+require 'pry'
 
 Dir.glob("#{here}/sports-presenter/lib/*.rb").each { |r| require r }
 

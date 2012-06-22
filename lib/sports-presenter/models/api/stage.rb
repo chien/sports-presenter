@@ -15,6 +15,11 @@ module SportsPresentation
         @stage_id
       end
 
+      def self.find_by_competition_id(competition_id)
+        stages = SportsApiClient.fetch("/competitions/#{competition_id}/stages")
+        Api::Collection.new(stages)
+      end
+
       def self.find(competition_id, id)
         stage = SportsApiClient.fetch("/competitions/#{competition_id}/stages/#{id}")
         new(stage)

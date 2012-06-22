@@ -8,6 +8,9 @@ es:
     for_header: GF
     against_header: GC
     points_header: PTS
+    qf: Cuartos de final
+    sf: Semi Final
+    f: Final
   statistics:
     score: Goles
     saves: Reservas

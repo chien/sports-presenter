@@ -8,6 +8,9 @@ uk:
     for_header: ЗГ
     against_header: ПГ
     points_header: ОЧ
+    qf: чвертьфінали
+    sf: півфінали
+    f: фінал
   statistics:
     score: Рахунок
     saves: "Відбиті удари"

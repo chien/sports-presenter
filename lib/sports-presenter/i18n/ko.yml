@@ -8,6 +8,9 @@ ko:
     for_header: 득점
     against_header: 실점
     points_header: 승점
+    qf: Quarter Finals
+    sf: Semi Finals
+    f: Finals
   statistics:
     score: 점수
     saves: 세이브
