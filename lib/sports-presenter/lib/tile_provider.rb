@@ -1,7 +1,6 @@
 module SportsPresentation
   class TileProvider
     def self.fetch_tiles(context_url)
-      puts context_url
       tiles = TileList.new
       case context_url
         when /\/competitions\/(\d+)$/ then 
@@ -21,7 +20,7 @@ module SportsPresentation
         if stage && stage.standings 
           if stage.is_playup_kind?("application/vnd.playup.sport.stage.home_away")
             tiles.add_link_tile "/competitions/#{id}/stages/#{stage.id}/standings", Tiles::GroupStandingsTile.new
-          elsif stage.is_playup_kind?("application/vnd.playup.sport.stage.knockout") && id == 27 #Euros
+          elsif stage.is_playup_kind?("application/vnd.playup.sport.stage.knockout") && id == "27" #Euros
             tiles.add_link_tile "/competitions/#{id}/stages/#{stage.id}/standings", Tiles::KnockoutStandingsTile.new
           end
         end

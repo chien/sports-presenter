@@ -23,7 +23,6 @@ require 'haml'
 require 'rest-client'
 require 'i18n'
 require 'benchmark'
-require 'pry'
 
 Dir.glob("#{here}/sports-presenter/lib/*.rb").each { |r| require r }
 
