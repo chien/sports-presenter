@@ -8,6 +8,9 @@ ru:
     for_header: ГЗ
     against_header: ГП
     points_header: Оч
+    qf: четвертьфинал
+    sf: полуфинал
+    f: финал
   statistics:
     score: Счет
     saves: "Перехваты мяча вратарем"

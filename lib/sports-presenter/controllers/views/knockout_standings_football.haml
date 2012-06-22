@@ -1,0 +1,30 @@
+%h1= @standing.league_name
+%h2= @standing.stage_name
+
+%div.swipe#slider
+  %section.t-container
+    -needed_contest_count = 0
+    - @standing.rounds.each_with_index do |round,i|
+      -viewport = ''
+      -current_round= i+1
+      -current_round.times{|i| viewport="#{viewport}i"}
+      %section{:class=>"viewport viewport-#{viewport}", :style => "display: #{i==0 ? 'block' : 'none'};"}
+        - heading = ["qf","sf","f"]
+        %h2= I18n.translate(heading[i], :scope => [:standings])
+        -needed_contest_count = round.contests.size if i == 0
+        -round.contests.each do |contest|
+          -locals = { :current_round => current_round, :round_size => @standing.rounds.size, :contest => contest}
+          -partial = (i == 0 ? :first_round_contest : :contest)
+          =haml(partial,:locals=> locals )
+        - if round.contests.size != needed_contest_count                
+          -(needed_contest_count - round.contests.size).times do
+            =haml(:empty_contest,:locals=> { :current_round => current_round, :round_size => @standing.rounds.size} )
+        -needed_contest_count = needed_contest_count / 2
+  %div.clear
+  %span#position
+    %em.on
+      ="&bull;"
+    %em
+      ="&bull;"
+    %em
+      ="&bull;"

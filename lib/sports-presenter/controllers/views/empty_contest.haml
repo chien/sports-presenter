@@ -1,0 +1,18 @@
+%div.match
+  -redright = "redright" unless (current_round) == round_size
+  %div{:class => redright}
+  %a(href="#" onclick='slider.next();return false;')
+    %div{:class=>"teambox"}
+      -if current_round!=1
+        %div{:class=>"redleft"}
+      =""
+      %span 
+        ="-"
+%div.match
+  %a(href="#" onclick='slider.next();return false;')
+    %div{:class=>"teambox"}
+      -if current_round>1
+        %div{:class=>"redleft"}
+      =""
+      %span 
+        ="-"

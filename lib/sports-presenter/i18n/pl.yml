@@ -8,6 +8,9 @@ pl:
     for_header: GF
     against_header: GA
     points_header: PKT
+    qf: ćwierćfinał
+    sf: półfinał
+    f: Finał
   statistics:
     score: Wynik
     saves: "Strzały obronione"

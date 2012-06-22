@@ -8,6 +8,9 @@ zh-CN:
     for_header: 赢球
     against_header: 失球
     points_header: 积分
+    qf: 四分之一决赛
+    sf: 半决赛
+    f: 决赛
   statistics:
     score: 比分
     saves: 扑救
