@@ -28,6 +28,8 @@ module SportsPresentation
     end
     
     module JqueryMobileAsset
+      include JqueryAsset
+      
       def javascripts
         super << "http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"
       end
