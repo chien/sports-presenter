@@ -31,18 +31,19 @@ module SportsPresentation
       # team_type should be :home_team or :away_team
       def build_struct(team_type)
         return unless team_stat = @statistics.send(team_type)
-        players = team_stat.players.find_all{|player| player["at_bats"] != 0 }
-        total = {}
+        total_hash = {}
         [:runs, :homeruns, :singles, :doubles, :triples, :walks, :rbi, :stolen_bases, :at_bats, :strike_outs].each do |player_stat|
-          total[player_stat.to_s] = players.map{|p| p[player_stat.to_s] }.inject(0, :+)
+          total_hash[player_stat.to_s] = team_stat.players.map{|p| p.send(player_stat) }.inject(0, :+)
         end
+        total_hash["hits"] = total_hash["singles"] + total_hash["doubles"] + total_hash["triples"] + total_hash["homeruns"]
+        total = OpenStruct.new(total_hash)
         OpenStruct.new(
           :display_name => team_stat.display_name,
           :runs => team_stat.runs,
           :hits => team_stat.hits,
           :errors => team_stat.errors,
           :innings => team_stat.innings,
-          :players => players,
+          :players => team_stat.players,
           :total => total
         )        
       end

@@ -4,7 +4,7 @@
       #bg-bl
         #bg-br
           .container
-            %h1 MLB Box Score
+            %h1= @title
             %h2
               %span.away-team-name= @statistics.away_team.display_name
               vs. 
@@ -53,11 +53,11 @@
             %br
             %div(data-role="fieldcontain")
               %fieldset.radioGroup(data-role="controlgroup" data-type="horizontal")
-                %input#radio1_0(type="radio" name="radio1" value="" checked="checked")
-                %label(for="radio1_0")
+                %input#away_radio(type="radio" name="radio1" value="" checked="checked")
+                %label(for="away_radio")
                   %span.away-team-name= @statistics.away_team.display_name
-                %input#radio1_1(type="radio" name="radio1" value="")
-                %label(for="radio1_1")
+                %input#home_radio(type="radio" name="radio1" value="")
+                %label(for="home_radio")
                   %span.home-team-name= @statistics.home_team.display_name
             .boxscore-batting-away
               %br
@@ -80,33 +80,33 @@
                 %tbody
                   - @statistics.away_team.players.each do |player|
                     %tr
-                      %td= player["first_name"] + " " + player["last_name"]
-                      %td= player["at_bats"]
-                      %td= player["singles"] + player["doubles"] + player["triples"] + player["homeruns"]
-                      %td= player["runs"]
-                      %td= player["rbi"]
-                      %td= player["homeruns"]
-                      %td= player["walks"]
-                      %td= player["strike_outs"]
-                      %td= player["batting_average"]
+                      %td= player.display_name
+                      %td= player.at_bats
+                      %td= player.hits
+                      %td= player.runs
+                      %td= player.rbi
+                      %td= player.homeruns
+                      %td= player.walks
+                      %td= player.strike_outs
+                      %td= player.batting_average
                 %tfoot.boxscore-footer
                   %tr
                     %td
                       %b Total
                     %td
-                      %b= @statistics.away_team.total["at_bats"]
+                      %b= @statistics.away_team.total.at_bats
                     %td
-                      %b= @statistics.away_team.total["singles"] + @statistics.away_team.total["doubles"] + @statistics.away_team.total["triples"] + @statistics.away_team.total["homeruns"]
+                      %b= @statistics.away_team.total.hits
                     %td
-                      %b= @statistics.away_team.total["runs"]
+                      %b= @statistics.away_team.total.runs
                     %td
-                      %b= @statistics.away_team.total["rbi"]
+                      %b= @statistics.away_team.total.rbi
                     %td
-                      %b= @statistics.away_team.total["homeruns"]
+                      %b= @statistics.away_team.total.homeruns
                     %td
-                      %b= @statistics.away_team.total["walks"]
+                      %b= @statistics.away_team.total.walks
                     %td
-                      %b= @statistics.away_team.total["strike_outs"]
+                      %b= @statistics.away_team.total.strike_outs
                     %td
                       %b -
               -#.away-batting-specifics
@@ -133,33 +133,33 @@
                 %tbody
                   - @statistics.home_team.players.each do |player|
                     %tr
-                      %td= player["first_name"] + " " + player["last_name"]
-                      %td= player["at_bats"]
-                      %td= player["singles"] + player["doubles"] + player["triples"] + player["homeruns"]
-                      %td= player["runs"]
-                      %td= player["rbi"]
-                      %td= player["homeruns"]
-                      %td= player["walks"]
-                      %td= player["strike_outs"]
-                      %td= player["batting_average"]
+                      %td= player.display_name
+                      %td= player.at_bats
+                      %td= player.hits
+                      %td= player.runs
+                      %td= player.rbi
+                      %td= player.homeruns
+                      %td= player.walks
+                      %td= player.strike_outs
+                      %td= player.batting_average
                 %tfoot.boxscore-footer
                   %tr
                     %td
                       %b Total
                     %td
-                      %b= @statistics.home_team.total["at_bats"]
+                      %b= @statistics.home_team.total.at_bats
                     %td
-                      %b= @statistics.home_team.total["singles"] + @statistics.home_team.total["doubles"] + @statistics.home_team.total["triples"] + @statistics.home_team.total["homeruns"]
+                      %b= @statistics.home_team.total.hits
                     %td
-                      %b= @statistics.home_team.total["runs"]
+                      %b= @statistics.home_team.total.runs
                     %td
-                      %b= @statistics.home_team.total["rbi"]
+                      %b= @statistics.home_team.total.rbi
                     %td
-                      %b= @statistics.home_team.total["homeruns"]
+                      %b= @statistics.home_team.total.homeruns
                     %td
-                      %b= @statistics.home_team.total["walks"]
+                      %b= @statistics.home_team.total.walks
                     %td
-                      %b= @statistics.home_team.total["strike_outs"]
+                      %b= @statistics.home_team.total.strike_outs
                     %td
                       %b -
               -#.home-batting-specifics

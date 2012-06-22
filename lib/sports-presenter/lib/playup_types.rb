@@ -15,6 +15,7 @@ module SportsPresentation
       when "vnd.playup.sport.contest.football" then Api::Contest
       when "vnd.playup.sport.contest_detail.football" then Api::ContestDetails
       when "vnd.playup.sport.contest_detail.baseball" then Api::ContestDetails
+      when "vnd.playup.sport.contest_detail.player.baseball" then Api::BaseballPlayer
       when "vnd.playup.sport.competition" then Api::Competition
       when "vnd.playup.sport.competitions" then Api::Collection
       when "vnd.playup.sport.stage.home_away" then Api::Stage

@@ -15,10 +15,14 @@ module SportsPresentation
           instance_variable_set("@#{stat}", val)
         end
 
-        @team_id = stats.at("team.:self") =~ /\/teams\/(\d+)$/ ? $1 : nil
+        @team_id = PlayupTypes.grab_last_id(stats.at("team.:self"))
         @display_name = stats.at("team.display_name")
         @innings = stats.at("innings")
-        @players = stats.at("players")
+        @players = []
+        stats.at("players").each do |player|
+          next if player["at_bats"] == 0
+          @players << PlayupTypes.wrap(player)
+        end
       end
 
     end
