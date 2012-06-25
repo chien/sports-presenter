@@ -8,8 +8,8 @@ pt:
     for_header: GP
     against_header: GC
     points_header: PG
-    qf: Quartos-de-final
-    sf: Meias-Finais
+    qf: Quartas de Final
+    sf: Semifinal
     f: Final
   statistics:
     score: Placar
