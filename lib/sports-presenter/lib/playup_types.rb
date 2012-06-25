@@ -18,7 +18,7 @@ module SportsPresentation
       when "vnd.playup.sport.competitions" then Api::Collection
       when "vnd.playup.sport.stage.home_away" then Api::Stage
       when "vnd.playup.sport.stage.knockout" then Api::Stage
-      when "vnd.playup.sport.stage.knockout.round" then Api::KnockoutRound
+      when "vnd.playup.sport.knockout.round" then Api::KnockoutRound
       when "vnd.playup.sport.ranking.statistics.football" then Api::FootballRankingStatistics
       when "vnd.playup.collection" then Api::Collection
       when "vnd.playup.sport.team" then Api::Team

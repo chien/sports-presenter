@@ -4,7 +4,7 @@ module SportsPresentation
 
       attr_reader :competition_name, :round_name, :home_team, :away_team
       attr_reader :home_team_score, :away_team_score
-      attr_reader :round_label
+      attr_reader :round_label, :scheduled_start_time
 
       def parse_response(contest)
         @all_events = PlayupTypes.lazyref(contest.at("events"))
@@ -25,6 +25,8 @@ module SportsPresentation
 
         @round_name = contest.at("round_name")
         @round_label = contest.at("round_label")
+
+        @scheduled_start_time = Time.parse(contest.at("scheduled_start_time"))
       end
 
       def round_display_name
