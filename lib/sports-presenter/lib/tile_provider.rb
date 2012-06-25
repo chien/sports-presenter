@@ -7,11 +7,29 @@ module SportsPresentation
           tiles_for_competition($1, tiles)
         when /\/contests\/(\d+)$/ then 
           tiles_for_contest($1, tiles)
-        when /welcome$/ 
-          then tiles_for_home(tiles)
+        when /welcome$/ then
+          tiles_for_home(tiles)
+        when /grouping-([a-z\-]+)-(\d+)/i then
+          tiles_for_group($1, $2, tiles)
       end
 
       tiles
+    end
+
+    def self.tiles_for_group(slug, id, tiles)
+      grouping = Api::Grouping.find(slug)
+
+      grouping.competitions.each do |competition|
+        tiles.add_native_tile competition.response, Tiles::CompetitionTile.new(competition.name, competition.uid, competition.live_contests)
+      end
+
+      grouping.contests.each do |contest|
+        tiles.add_native_tile contest.response, Tiles::ContestTile.new(contest.name, contest.uid)
+      end
+
+      grouping.groupings.each do |grouping|
+        tiles.add_native_tile grouping.response, Tiles::GroupingTile.new(grouping.name, grouping.uid)
+      end
     end
 
     def self.tiles_for_competition(id, tiles)
