@@ -18,10 +18,11 @@ module SportsPresentation
       stages = Api::Stage.find_by_competition_id(id)
       stages.each do |stage|
         if stage && stage.standings 
+          stage_url = "/competitions/#{id}/stages/#{stage.id}/standings"
           if stage.is_playup_kind?("application/vnd.playup.sport.stage.home_away")
-            tiles.add_link_tile "/competitions/#{id}/stages/#{stage.id}/standings", Tiles::GroupStandingsTile.new
+            tiles.add_link_tile stage_url, Tiles::GroupStandingsTile.new
           elsif stage.is_playup_kind?("application/vnd.playup.sport.stage.knockout") && id == "27" #Euros
-            tiles.add_link_tile "/competitions/#{id}/stages/#{stage.id}/standings", Tiles::KnockoutStandingsTile.new
+            tiles.add_link_tile stage_url, Tiles::KnockoutStandingsTile.new
           end
         end
 

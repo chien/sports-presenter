@@ -13,7 +13,10 @@
       %img{src: contest.home_team.logos.calendar_medium}
       =contest.home_team.display_name
       %span 
-        =contest.home_team_score
+        -if contest.home_team_score && contest.scheduled_start_time < Time.now.utc
+          =contest.home_team_score 
+        -else 
+          ="-"
 %div.match
   %a(href="#" onclick='slider.next();return false;')
     %div{:class=>"teambox #{away_team_loser}"}
@@ -22,4 +25,7 @@
       %img{src: contest.away_team.logos.calendar_medium}
       =contest.away_team.display_name
       %span 
-        =contest.away_team_score
+        -if contest.away_team_score && contest.scheduled_start_time < Time.now.utc
+          =contest.away_team_score 
+        -else 
+          ="-"
