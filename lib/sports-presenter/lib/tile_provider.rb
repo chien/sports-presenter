@@ -33,9 +33,9 @@ module SportsPresentation
                   nil
               end
       contests = url.to_s.length != 0 ? Api::Collection.fetch(url)  : [] 
-      # contests.each do |contest|
-      #   tiles.add_native_tile contest.response, Tiles::ContestTile.new(contest.title, contest.uid, contest.is_live?)
-      # end
+      contests.each do |contest|
+        tiles.add_native_tile contest.response, Tiles::ContestTile.new(contest.title, contest.uid, contest.is_live?)
+      end
 
       # grouping.groupings.each do |grouping|
       #   tiles.add_native_tile grouping.response, Tiles::GroupingTile.new(grouping.name, grouping.uid)
