@@ -57,7 +57,8 @@ module SportsPresentation
     }
 
     set :public_folder, Proc.new { File.join(root, "..", "public" ) }
-
+    set :show_exceptions, true
+    
     def locale
       request.env["rack.locale"]
     end
