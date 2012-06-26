@@ -23,6 +23,8 @@ require 'haml'
 require 'rest-client'
 require 'i18n'
 require 'benchmark'
+require 'airbrake'
+
 
 Dir.glob("#{here}/sports-presenter/lib/*.rb").each { |r| require r }
 
@@ -57,8 +59,13 @@ module SportsPresentation
     }
 
     set :public_folder, Proc.new { File.join(root, "..", "public" ) }
-    set :show_exceptions, true
-    
+
+Airbrake.configure do |config|
+  config.api_key = '757646976907fb3ae7930559b64cbe58'
+end
+
+use Airbrake::Rack
+
     def locale
       request.env["rack.locale"]
     end
