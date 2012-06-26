@@ -43,21 +43,6 @@ I18n.load_path += Dir[File.join(here, "sports-presenter", "i18n", "*.yml")]
 
 module SportsPresentation
   class Application < Sinatra::Base
-    use LocaleRequest
-    use CacheSettings, {
-      # Add cache headers to static files.
-      /\.(css|png|gif|eot|svg|ttf|woff)/ => {
-        :cache_control => "max-age=86400, public",
-        :expires => 86400
-      }, 
-
-      # Otherwise cache for 5 seconds.
-      /.*/ => {
-        :cache_control => "max-age=5, public", 
-        :expires => 5
-      }
-    }
-    set :public_folder, Proc.new { File.join(root, "..", "public" ) }
     set :raise_errors, true
     set :show_exceptions, true
 
@@ -73,6 +58,22 @@ module SportsPresentation
       e = env['sinatra.error']
       {:result => 'error', :message => e.message}.to_json
     end
+
+    use LocaleRequest
+    use CacheSettings, {
+      # Add cache headers to static files.
+      /\.(css|png|gif|eot|svg|ttf|woff)/ => {
+        :cache_control => "max-age=86400, public",
+        :expires => 86400
+      }, 
+
+      # Otherwise cache for 5 seconds.
+      /.*/ => {
+        :cache_control => "max-age=5, public", 
+        :expires => 5
+      }
+    }
+    set :public_folder, Proc.new { File.join(root, "..", "public" ) }
 
     def locale
       request.env["rack.locale"]
