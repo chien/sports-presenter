@@ -24,7 +24,7 @@ require 'rest-client'
 require 'i18n'
 require 'benchmark'
 require 'airbrake'
-
+require 'json'
 
 Dir.glob("#{here}/sports-presenter/lib/*.rb").each { |r| require r }
 
@@ -58,6 +58,13 @@ module SportsPresentation
       }
     }
 
+error do
+  content_type :json
+  status 400 # or whatever
+
+  e = env['sinatra.error']
+  {:result => 'error', :message => e.message}.to_json
+end
     set :public_folder, Proc.new { File.join(root, "..", "public" ) }
 
 Airbrake.configure do |config|
