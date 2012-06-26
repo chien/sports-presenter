@@ -55,11 +55,6 @@ module SportsPresentation
         @all_statistics = @all_statistics.fetch if @all_statistics.is_a?(Api::Ref)
       end
 
-      def self.where(url)
-        contests = SportsApiClient.fetch(url)
-        Api::Collection.new(contests)
-      end
-
       def self.find(id)
         contest = SportsApiClient.fetch("/contests/#{id}")
         new(contest)

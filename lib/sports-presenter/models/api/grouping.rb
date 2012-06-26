@@ -9,8 +9,8 @@ module SportsPresentation
         @uid = grouping.at(":uid")
         @groupings = [] #grouping["groupings"].collect {|group| Api::Grouping.new group} if grouping["groupings"]
 
-        @competitions = []#Api::Competition.where(grouping.at("competitions.:self"))
-        @contests = Api::Contest.where(grouping.at("contests.:self"))
+        @competitions = []#PlayupTypes.lazyref("competitions")
+        @contests = PlayupTypes.lazyref("contests")
       end
 
       def self.find(slug)
