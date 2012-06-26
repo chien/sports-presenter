@@ -4,7 +4,7 @@ module SportsPresentation
 
       attr_reader :competition_name, :round_name, :home_team, :away_team
       attr_reader :home_team_score, :away_team_score
-      attr_reader :round_label, :scheduled_start_time
+      attr_reader :round_label, :scheduled_start_time, :end_time
 
       def parse_response(contest)
         @all_events = PlayupTypes.lazyref(contest.at("events"))
@@ -27,6 +27,12 @@ module SportsPresentation
         @round_label = contest.at("round_label")
 
         @scheduled_start_time = Time.parse(contest.at("scheduled_start_time"))
+        #@end_time = Time.parse(contest.at("end_time")) unless contest.at("end_time")
+      end
+
+      def is_live?
+        #scheduled_start_time > Time.now.utc && end_time
+        true
       end
 
       def round_display_name
@@ -47,6 +53,11 @@ module SportsPresentation
 
       def statistics
         @all_statistics = @all_statistics.fetch if @all_statistics.is_a?(Api::Ref)
+      end
+
+      def self.where(url)
+        contests = SportsApiClient.fetch(url)
+        Api::Collection.new(contests)
       end
 
       def self.find(id)

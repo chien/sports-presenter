@@ -19,6 +19,11 @@ module SportsPresentation
         Api::Collection.new(competitions)
       end
 
+      def self.where(url)
+        competitions = SportsApiClient.fetch(url)
+        Api::Collection.new(competitions)
+      end
+
       def stages
         stages = SportsApiClient.fetch("/competitions/#{id}/stages")
         Api::Collection.new(stages)
