@@ -19,12 +19,8 @@ module SportsPresentation
     def self.tiles_for_group(slug, id, tiles)
       # grouping = Api::Grouping.find(slug)
 
-      # grouping.competitions.each do |competition|
-      #   tiles.add_native_tile competition.response, Tiles::CompetitionTile.new(competition.name, competition.uid, competition.live_contests)
-      # end
-
       puts slug
-      url = case slug
+      contest_url = case slug
                 when 'sprints' then
                   '/groupings/sprints/contests'
                 when 'tennis' then
@@ -32,7 +28,21 @@ module SportsPresentation
                 else
                   nil
               end
-      contests = url.to_s.length != 0 ? Api::Collection.fetch(url)  : [] 
+            competition_range = case slug
+                when 'sprints' then
+                  5..8
+                when 'tennis' then
+                  20..22  
+                else
+                  1..2
+              end
+      contests = contest_url.to_s.length != 0 ? Api::Collection.fetch(contest_url)  : [] 
+      competitions = Api::Collection.fetch('competitions')
+      
+      competitions[competition_range].each do |competition|
+        tiles.add_native_tile competition.response, Tiles::CompetitionTile.new(competition.name, competition.uid, competition.live_contests)
+      end
+
       contests.each do |contest|
         tiles.add_native_tile contest.response, Tiles::ContestTile.new(contest.title, contest.uid, contest.is_live?)
       end
