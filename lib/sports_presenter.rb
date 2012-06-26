@@ -57,21 +57,22 @@ module SportsPresentation
         :expires => 5
       }
     }
-
-error do
-  content_type :json
-  status 400 # or whatever
-
-  e = env['sinatra.error']
-  {:result => 'error', :message => e.message}.to_json
-end
     set :public_folder, Proc.new { File.join(root, "..", "public" ) }
+    set :raise_errors, true
+    set :show_exceptions, true
 
-Airbrake.configure do |config|
-  config.api_key = '757646976907fb3ae7930559b64cbe58'
-end
+    Airbrake.configure do |config|
+      config.api_key = '757646976907fb3ae7930559b64cbe58'
+    end
+    use Airbrake::Rack
 
-use Airbrake::Rack
+    error do
+      content_type :json
+      status 400 # or whatever
+
+      e = env['sinatra.error']
+      {:result => 'error', :message => e.message}.to_json
+    end
 
     def locale
       request.env["rack.locale"]
