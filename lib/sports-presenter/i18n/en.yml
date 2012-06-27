@@ -21,7 +21,7 @@ en:
     possession: "Possession (%)"
     shots_shots_on_goal: "Shots Off/On Target"
   tiles:
-    group_standings: Standings
+    group_standings: Group Standings
     knockout_standings: Knockout Standings
     contest_events: "Game Events"
     contest_statistics: "Game Stats"
