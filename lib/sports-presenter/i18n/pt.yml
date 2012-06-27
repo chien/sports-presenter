@@ -8,9 +8,9 @@ pt:
     for_header: GP
     against_header: GC
     points_header: PG
-    qf: Quartas de Final
-    sf: Semifinal
-    f: Final
+    quarter_final: Quartas de Final
+    semi_final: Semifinal
+    final: Final
   statistics:
     score: Placar
     saves: Defesas

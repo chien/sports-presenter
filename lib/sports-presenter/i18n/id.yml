@@ -8,9 +8,9 @@ id:
     for_header: GF
     against_header: GA
     points_header: PTS
-    qf: Perempat Final
-    sf: Semi Finals
-    f: Final
+    quarter_final: Perempat Final
+    semi_final: Semi Finals
+    final: Final
   statistics:
     score: Skor
     saves: Penyelamatan

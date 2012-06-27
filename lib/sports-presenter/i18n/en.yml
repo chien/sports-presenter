@@ -8,9 +8,9 @@ en:
     for_header: GF
     against_header: GA
     points_header: PTS
-    qf: Quarter Finals
-    sf: Semi Finals
-    f: Final
+    quarter_final: Quarter Finals
+    semi_final: Semi Finals
+    final: Final
   statistics:
     score: Score
     saves: Saves
