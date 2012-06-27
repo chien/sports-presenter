@@ -1,5 +1,7 @@
 /* Match Stats Page */
-
+.logofooter{
+	background-image: none !important;
+}
 /*Class name for the team that did not score last*/
 .scoredisplace{
 	margin-top: 17px;
@@ -193,7 +195,7 @@ hr.indent{margin-top: 5px;}
 /*Match Events Page*/
 	
 	.events ol li{
-		color: #82AAAA;
+		color: #538387;
 		padding-bottom: 8px;
 		border-bottom: 1px solid #E2E1DE;
 		-webkit-box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 1);
@@ -236,7 +238,7 @@ hr.indent{margin-top: 5px;}
 		.events ol li p{
 			clear: both;
 			margin-top: 6px;
-			color: #87898B;
+			color: #686A6D;
 			font: 13px/16px "OpenSansLightRegular", Arial, Helvetica, Geneva, sans-serif;
 /*			text-align: left;
 			width: 85%;

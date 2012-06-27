@@ -18,6 +18,7 @@ h1{
 h2{
 	color: #FF4653;
 	margin-left: 30px;
+	margin-top: 10px;
 	margin-bottom: 17px;
 }
 
@@ -176,8 +177,6 @@ h2{
       #position em.on {
         color:#9D9EA0;
       }
-.inline {
-  display: inline;
-}
+
 		
 		
