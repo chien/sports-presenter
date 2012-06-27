@@ -16,15 +16,21 @@ h2{
 }
 h3{
 	color: #FF4754;
-	margin: 0 0 0 20px;
+	margin: 15px 0 0 20px;
 }
 table.standing{
 	width: 100%;
 	margin: 5px 0 5px 0;
 	font-size: 14px;
 	color: #969799;
-}
+} 
 
+  table.standing th.name {
+    padding-left: 10px !important;
+  }
+  table.standing td.position {
+    text-align:center;
+  }
 	thead th{
 		text-align: left;
 		background-color: #EEEDEB;
