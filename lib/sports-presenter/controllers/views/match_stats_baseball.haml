@@ -4,11 +4,10 @@
       #bg-bl
         #bg-br
           .container
-            %h1= @title
             %h2
-              %span.away-team-name= @statistics.away_team.display_name
-              vs. 
-              %span.home-team-names= @statistics.home_team.display_name
+              %span.away-team-name= @statistics.away_team.display_name.upcase
+              VS
+              %span.home-team-names= @statistics.home_team.display_name.upcase
             %hr.indent
             .graphicarrow
               .arrow-up
@@ -26,28 +25,28 @@
                     %th.blank
                     %th R
                     %th.hits H
-                    %th.errors E
+                    %th.errors.last E
                 %tbody
                   %tr.away
-                    %td
-                      .away-team-name= @statistics.away_team.display_name
+                    %td.first
+                      .away-team-name= @statistics.away_team.display_name.upcase
                     - @statistics.total_innings.times do |index|
                       - inn = index + 1
                       %td{ :class => "inning-#{inn}"}= @statistics.away_team.innings[index].nil? ? "" : @statistics.away_team.innings[index]["score"]
                     %td.blank
                     %td.runs= @statistics.away_team.runs
                     %td.hits= @statistics.away_team.hits
-                    %td.errors= @statistics.away_team.errors
+                    %td.errors.last= @statistics.away_team.errors
                   %tr.home
-                    %td
-                      .home-team-name= @statistics.home_team.display_name
+                    %td.first
+                      .home-team-name= @statistics.home_team.display_name.upcase
                     - @statistics.total_innings.times do |index|
                       - inn = index + 1
                       %td{ :class => "inning-#{inn}"}= @statistics.home_team.innings[index].nil? ? "" : @statistics.home_team.innings[index]["score"]
                     %td.blank
                     %td.runs= @statistics.home_team.runs
                     %td.hits= @statistics.home_team.hits
-                    %td.errors= @statistics.home_team.errors
+                    %td.errors.last= @statistics.home_team.errors
             -#.play-by-play
               -#%i play by play placeholder text
             %br
@@ -62,13 +61,13 @@
             .boxscore-batting-away
               %br
               %h3
-                %span.away-team-name#away-stats= @statistics.away_team.display_name
-                &ndash; Batting
+                %span.away-team-name#away-stats= @statistics.away_team.display_name.upcase
+                BATTING
               %table.standing
                 %thead.boxscore-header
                   %tr
-                    %th
-                      %span.away-team-name= @statistics.away_team.display_name
+                    %th.first
+                      %span.away-team-name PLAYERS
                     %th AB
                     %th H
                     %th R
@@ -76,11 +75,11 @@
                     %th HR
                     %th BB
                     %th K
-                    %th AVG
+                    %th.last AVG
                 %tbody
                   - @statistics.away_team.players.each do |player|
                     %tr
-                      %td= player.display_name
+                      %td.first= player.display_name.upcase
                       %td= player.at_bats
                       %td= player.hits
                       %td= player.runs
@@ -88,11 +87,11 @@
                       %td= player.homeruns
                       %td= player.walks
                       %td= player.strike_outs
-                      %td= player.batting_average
+                      %td.last= player.batting_average
                 %tfoot.boxscore-footer
                   %tr
-                    %td
-                      %b Total
+                    %td.first
+                      %b TOTAL
                     %td
                       %b= @statistics.away_team.total.at_bats
                     %td
@@ -107,7 +106,7 @@
                       %b= @statistics.away_team.total.walks
                     %td
                       %b= @statistics.away_team.total.strike_outs
-                    %td
+                    %td.last
                       %b -
               -#.away-batting-specifics
                 -#%i batting specific placeholder
@@ -115,13 +114,13 @@
             = haml :baseball_away_pitching
             .boxscore-batting-home
               %h3
-                %span.home-team-name#home-stats= @statistics.home_team.display_name
-                &ndash;  Batting
+                %span.home-team-name#home-stats= @statistics.home_team.display_name.upcase
+                BATTING
               %table.standing
                 %thead.boxscore-header
                   %tr
-                    %th
-                      .home-team-name= @statistics.home_team.display_name
+                    %th.first
+                      .home-team-name PLAYERS
                     %th AB
                     %th H
                     %th R
@@ -129,11 +128,11 @@
                     %th HR
                     %th BB
                     %th K
-                    %th AVG
+                    %th.last AVG
                 %tbody
                   - @statistics.home_team.players.each do |player|
                     %tr
-                      %td= player.display_name
+                      %td.first= player.display_name.upcase
                       %td= player.at_bats
                       %td= player.hits
                       %td= player.runs
@@ -141,11 +140,11 @@
                       %td= player.homeruns
                       %td= player.walks
                       %td= player.strike_outs
-                      %td= player.batting_average
+                      %td.last= player.batting_average
                 %tfoot.boxscore-footer
                   %tr
-                    %td
-                      %b Total
+                    %td.first
+                      %b TOTAL
                     %td
                       %b= @statistics.home_team.total.at_bats
                     %td
@@ -160,7 +159,7 @@
                       %b= @statistics.home_team.total.walks
                     %td
                       %b= @statistics.home_team.total.strike_outs
-                    %td
+                    %td.last
                       %b -
               -#.home-batting-specifics
                 -#%i batting specific placeholder

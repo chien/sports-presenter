@@ -1,12 +1,12 @@
 .boxscore-pitching-away
   %h3
-    %span.away-team-name#away-stats= @statistics.away_team.display_name
-    &ndash; Pitching
+    %span.away-team-name#away-stats= @statistics.away_team.display_name.upcase
+    PITCHING
   %table.standing
     %thead.boxscore-header
       %tr
-        %th 
-          .away-team-name= @statistics.away_team.display_name
+        %th.first
+          .away-team-name PLAYERS
         %th IP
         %th H
         %th R
@@ -14,11 +14,11 @@
         %th BB
         %th SO
         %th HR
-        %th ERA
+        %th.last ERA
     %tbody
       - @statistics.away_team.pitchers.nil? || @statistics.away_team.pitchers.each do |player|
         %tr
-          %td= player.display_name
+          %td.first= player.display_name.upcase
           %td= player.innings
           %td= player.hits
           %td= player.runs
@@ -26,11 +26,11 @@
           %td= player.walks
           %td= player.strike_outs
           %td= player.homeruns
-          %td= player.earned_run_average
+          %td.last= player.earned_run_average
     %tfoot.boxscore-footer
       %tr
-        %td
-          %b Total
+        %td.first
+          %b TOTAL
         %td
           %b= @statistics.away_team.total_pitcher.innings
         %td
@@ -45,7 +45,7 @@
           %b= @statistics.away_team.total_pitcher.strike_outs
         %td
           %b= @statistics.away_team.total_pitcher.homeruns
-        %td
+        %td.last
           %b -
   -#.away-pitching-specifics
     -#%i pitching specific placeholder
