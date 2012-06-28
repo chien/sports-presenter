@@ -1,16 +1,17 @@
 module SportsPresentation
   class TileProvider
-    def self.fetch_tiles(context_url)
+    def self.fetch_tiles(subject, uid)
       tiles = TileList.new
-      case context_url
+      case subject
         when /\/competitions\/(\d+)$/ then 
           tiles_for_competition($1, tiles)
         when /\/contests\/(\d+)$/ then 
           tiles_for_contest($1, tiles)
         when /welcome$/ then
           tiles_for_home(tiles)
-        when /groupings\/([a-z\-]+)/i then
-          tiles_for_group($1, $2, tiles)
+        when "grouping" then
+          uid_array = uid.split("-")
+          tiles_for_group(uid_array[1], uid_array[2], tiles)
       end
 
       tiles
@@ -18,7 +19,6 @@ module SportsPresentation
 
     def self.tiles_for_group(slug, id, tiles)
       # grouping = Api::Grouping.find(slug)
-
       puts slug
       contest_url = case slug
                 when 'sprints' then
@@ -28,7 +28,7 @@ module SportsPresentation
                 else
                   nil
               end
-            competition_range = case slug
+      competition_range = case slug
                 when 'sprints' then
                   5..8
                 when 'tennis' then
@@ -37,6 +37,7 @@ module SportsPresentation
                   1..2
               end
       contests = contest_url.to_s.length != 0 ? Api::Collection.fetch(contest_url)  : [] 
+      grouping = Api::Grouping.find(slug)
       competitions = Api::Collection.fetch('competitions')
       
       competitions[competition_range].each do |competition|
@@ -47,9 +48,10 @@ module SportsPresentation
         tiles.add_native_tile contest.response, Tiles::ContestTile.new(contest.title, contest.uid, contest.is_live?)
       end
 
-      # grouping.groupings.each do |grouping|
-      #   tiles.add_native_tile grouping.response, Tiles::GroupingTile.new(grouping.name, grouping.uid)
-      # end
+      grouping.groupings.each do |ref|
+        grouping = ref.fetch
+        tiles.add_link_tile grouping.url, Tiles::GroupingTile.new(grouping.name, grouping.uid)
+      end
     end
 
     def self.tiles_for_competition(id, tiles)

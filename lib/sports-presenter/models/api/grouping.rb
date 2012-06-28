@@ -2,12 +2,16 @@ module SportsPresentation
   module Api
     class Grouping < Base
 
-      attr_reader :groupings, :competitions, :contests, :name, :uid
+      attr_reader :groupings, :competitions, :contests, :name, :uid, :url
 
       def parse_response(grouping)
         @name = grouping.at("name")
         @uid = grouping.at(":uid")
-        @groupings = [] #grouping["groupings"].collect {|group| Api::Grouping.new group} if grouping["groupings"]
+        @url = grouping.at(":self")
+        @groupings = []
+        @groupings = grouping["groupings"].collect do |group| 
+          PlayupTypes.lazyref group
+        end if grouping["groupings"]
 
         @competitions = []#PlayupTypes.lazyref("competitions")
         @contests = PlayupTypes.lazyref("contests")
