@@ -14,8 +14,9 @@ module SportsPresentation
     get "/tiles" do
       content_type :json
       subject = params[:subject_url].to_s.length != 0 ? params[:subject_url] : params[:section_type]
+      section = params[:section_type]      
       uid = params[:subject_uid].to_s.length != 0 ? params[:subject_uid] : ''
-      tile_data = TileProvider.fetch_tiles(subject, uid).generate(:locale => locale, :region => region)
+      tile_data = TileProvider.fetch_tiles(subject, uid, section).generate(:locale => locale, :region => region)
       tile_data.to_json
     end
     

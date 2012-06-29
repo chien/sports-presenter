@@ -1,6 +1,6 @@
 module SportsPresentation
   class TileProvider
-    def self.fetch_tiles(subject, uid)
+    def self.fetch_tiles(subject, uid, section)
       tiles = TileList.new
       case subject
         when /\/competitions\/(\d+)$/ then 
@@ -9,10 +9,11 @@ module SportsPresentation
           tiles_for_contest($1, tiles)
         when /welcome$/ then
           tiles_for_home(tiles)
-        when "grouping" then
+        end
+        if section == "grouping"
           uid_array = uid.split("-")
           tiles_for_group(uid_array[1], uid_array[2], tiles)
-      end
+        end
 
       tiles
     end
@@ -34,14 +35,16 @@ module SportsPresentation
                 when 'tennis' then
                   20..22  
                 else
-                  1..2
+                nil
               end
       contests = contest_url.to_s.length != 0 ? Api::Collection.fetch(contest_url)  : [] 
       grouping = Api::Grouping.find(slug)
       competitions = Api::Collection.fetch('competitions')
       
-      competitions[competition_range].each do |competition|
-        tiles.add_native_tile competition.response, Tiles::CompetitionTile.new(competition.name, competition.uid, competition.live_contests)
+      unless competition_range.nil?
+        competitions[competition_range].each do |competition|
+          tiles.add_native_tile competition.response, Tiles::CompetitionTile.new(competition.name, competition.uid, competition.live_contests)
+        end
       end
 
       contests.each do |contest|
