@@ -1,5 +1,43 @@
 @charset "UTF-8";
 /* CSS Document */
+.ui-body-c, .ui-overlay-c {
+    background-color: #F7F7F4;
+	background:none;
+}
+#bg-tl {
+	background-image: url("../img/bg-tl.png");
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+#bg-tr {
+	background-image: url("../img/bg-tr.png");
+	background-position: right top;
+	background-repeat: no-repeat;
+}
+#bg-bl {
+	background-image: url("../img/bg-bl.png");
+	background-position: left bottom;
+	background-repeat: no-repeat;
+}
+#bg-br {
+	background-image: url("../img/bg-br.png");
+	background-position: right bottom;
+	background-repeat: no-repeat;
+}
+.graphicarrow {
+    margin-left: 48%;
+    margin-top: 9px;
+}
+legend {
+	text-align:center;
+}
+.ui-field-contain {
+	margin: auto;
+	width: 60%;
+}
+.points {
+    color: #FF4754;
+}
 
 h1, h2, h3 {
     font: 20px "BebasNeueRegular",Arial,Helvetica,Geneva,sans-serif;
@@ -15,6 +53,9 @@ h2 {
 h3 {
     color: #FF4754;
     margin: 0 0 0 20px;
+}
+.baseball-container{ 
+	position: relative !important;
 }
 table.standing {
     color: #969799;

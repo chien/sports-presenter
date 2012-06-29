@@ -28,7 +28,7 @@
   background-position: bottom left;
 }
 html{
-  background-color: #F7F7F4;
+  background-color: #F6F6F3;
   background-image: url('../img/bg-br.png');
   background-position: bottom right;
   background-repeat: no-repeat;
@@ -40,11 +40,11 @@ body{
   background-repeat: no-repeat;
   }
 .container{ 
-  background-image: url('../img/bg-tl.png');
-  background-repeat: no-repeat;
-  font-family:"BebasNeueRegular", Arial, Helvetica, Geneva, sans-serif;
-  font-weight: normal;
-  padding: 10px;
+  background-image: url('../img/bg-tl.png') !important;
+  background-repeat: no-repeat !important;
+  font-family:"BebasNeueRegular", Arial, Helvetica, Geneva, sans-serif !important;
+  font-weight: normal !important;
+  padding: 10px !important;
 } 
 .graphicarrow{
   margin-top: 9px;
