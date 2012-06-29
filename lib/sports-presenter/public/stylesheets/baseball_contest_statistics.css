@@ -40,7 +40,7 @@ legend {
 }
 
 h1, h2, h3 {
-    font: 20px "BebasNeueRegular",Arial,Helvetica,Geneva,sans-serif;
+    font: 18px "BebasNeueRegular",Arial,Helvetica,Geneva,sans-serif;
 }
 h1 {
     color: #696B6E;
@@ -54,12 +54,16 @@ h3 {
     color: #FF4754;
     margin: 0 0 0 20px;
 }
+.title {
+	line-height: 2;
+}
 .baseball-container{ 
 	position: relative !important;
 }
 table.standing {
     color: #969799;
-    font-size: 14px;
+    font-size: 14px !important;
+		line-height: 1.2;
     margin: 5px 0;
     width: 100%;
 }
@@ -86,7 +90,10 @@ table.standing td {
     text-align: center;
 }
 table.standing td, table.standing th {
+		font-family: "BebasNeueRegular";
     min-width: 12px;
+		width: 15px;
+		max-width: 15px;
 }
 .hide {
 	display: none;
@@ -94,7 +101,8 @@ table.standing td, table.standing th {
 table.standing .first {
     text-align: left;
 		padding-left: 20px;
+		max-width: 60px;
 }
 table.standing .last {
-		padding-right: 10px;
+		padding-right: 9px;
 }

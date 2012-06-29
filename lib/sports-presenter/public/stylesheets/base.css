@@ -28,16 +28,18 @@
   background-position: bottom left;
 }
 html{
-  background-color: #F6F6F3;
+  background-color: #F7F7F4;
   background-image: url('../img/bg-br.png');
   background-position: bottom right;
   background-repeat: no-repeat;
   -webkit-font-smoothing: antialiased;
+	height: auto !important;
 }
 body{
   background-image: url('../img/bg-tr.png');
   background-position: top right;
   background-repeat: no-repeat;
+	height: auto !important;
   }
 .container{ 
   background-image: url('../img/bg-tl.png') !important;
