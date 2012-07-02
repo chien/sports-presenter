@@ -34,12 +34,12 @@ module SportsPresentation
         @link_type = contest.at(":type")
 
         @scheduled_start_time = Time.parse(contest.at("scheduled_start_time"))
-        #@end_time = Time.parse(contest.at("end_time")) unless contest.at("end_time")
+        @start_time = contest.at("start_time") unless contest.at("start_time").nil?
+        @end_time = contest.at("end_time") unless contest.at("end_time")
       end
 
       def is_live?
-        #scheduled_start_time > Time.now.utc && end_time
-        true
+        !@start_time.nil? && @end_time.nil?
       end
 
       def round_display_name

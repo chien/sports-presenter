@@ -10,8 +10,8 @@ module SportsPresentation
         end
         case section
         when "grouping" then
-          uid_array = uid.split("-")
-          tiles_for_group(uid_array[1], uid_array[2], tiles)
+          uid_array = uid.match(Api::Grouping.uid_regex)    
+          tiles_for_group(uid_array[:slug], uid_array[:id], tiles)
         when "welcome" then
           tiles_for_home(tiles)
         end
@@ -20,43 +20,20 @@ module SportsPresentation
     end
 
     def self.tiles_for_group(slug, id, tiles)
-      # grouping = Api::Grouping.find(slug)
-      puts slug
-      contest_url = case slug
-                when 'sprints' then
-                  '/groupings/sprints/contests'
-                when 'tennis' then
-                  '/groupings/tennis/contests'
-                else
-                  nil
-              end
-      competition_range = case slug
-                when 'sprints' then
-                  5..8
-                when 'tennis' then
-                  20..22  
-                else
-                nil
-              end
-      puts contest_url
-      contests = contest_url.to_s.length != 0 ? Api::Collection.fetch(contest_url)  : [] 
-
       grouping = Api::Grouping.find(slug)
-      competitions = Api::Collection.fetch('competitions')
+      puts slug
       
-      unless competition_range.nil?
-        competitions[competition_range].each do |competition|
-          tiles.add_native_tile competition.response, Tiles::CompetitionTile.new(competition.name, competition.uid, competition.live_contests)
-        end
+      grouping.competitions.each do |competition|
+        tiles.add_native_tile competition.response, Tiles::CompetitionTile.new(competition.name, competition.uid, competition.live_contests)
       end
 
-      contests.each do |contest|
+      grouping.contests.each do |contest|
         tiles.add_link_tile contest.url, Tiles::ContestTile.new(contest.title, contest.uid, contest.is_live?, contest.link_type)
       end
 
       grouping.groupings.each do |ref|
         grouping = ref.fetch
-        tiles.add_link_tile grouping.url, Tiles::GroupingTile.new(grouping.name, grouping.uid, grouping.link_type)
+        tiles.add_link_tile grouping.url, Tiles::GroupingTile.new(grouping.name, grouping.uid, grouping.link_type, grouping.slug)
       end
     end
 
