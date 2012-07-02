@@ -7,12 +7,13 @@ module SportsPresentation
           tiles_for_competition($1, tiles)
         when /\/contests\/(\d+)$/ then 
           tiles_for_contest($1, tiles)
-        when /welcome$/ then
-          tiles_for_home(tiles)
         end
-        if section == "grouping"
+        case section
+        when "grouping" then
           uid_array = uid.split("-")
           tiles_for_group(uid_array[1], uid_array[2], tiles)
+        when "welcome" then
+          tiles_for_home(tiles)
         end
 
       tiles
@@ -37,7 +38,9 @@ module SportsPresentation
                 else
                 nil
               end
+      puts contest_url
       contests = contest_url.to_s.length != 0 ? Api::Collection.fetch(contest_url)  : [] 
+
       grouping = Api::Grouping.find(slug)
       competitions = Api::Collection.fetch('competitions')
       
@@ -48,12 +51,12 @@ module SportsPresentation
       end
 
       contests.each do |contest|
-        tiles.add_native_tile contest.response, Tiles::ContestTile.new(contest.title, contest.uid, contest.is_live?)
+        tiles.add_link_tile contest.url, Tiles::ContestTile.new(contest.title, contest.uid, contest.is_live?, contest.link_type)
       end
 
       grouping.groupings.each do |ref|
         grouping = ref.fetch
-        tiles.add_link_tile grouping.url, Tiles::GroupingTile.new(grouping.name, grouping.uid)
+        tiles.add_link_tile grouping.url, Tiles::GroupingTile.new(grouping.name, grouping.uid, grouping.link_type)
       end
     end
 

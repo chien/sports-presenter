@@ -2,10 +2,10 @@ module SportsPresentation
   module Api
     class Contest < Base
 
-      attr_reader :competition_name, :round_name, :home_team, :away_team
+      attr_reader :competition_name, :round_name, :home_team, :away_team, :url
       attr_reader :home_team_score, :away_team_score
       attr_reader :round_label, :scheduled_start_time, :end_time
-      attr_reader :uid, :title
+      attr_reader :uid, :title, :link_type
 
       def parse_response(contest)
         @all_events = PlayupTypes.lazyref(contest.at("events"))
@@ -29,6 +29,9 @@ module SportsPresentation
 
         @title = contest.at("title")
         @uid = contest.at(":uid")
+
+        @url = contest.at(":self")
+        @link_type = contest.at(":type")
 
         @scheduled_start_time = Time.parse(contest.at("scheduled_start_time"))
         #@end_time = Time.parse(contest.at("end_time")) unless contest.at("end_time")

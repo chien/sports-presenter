@@ -10,8 +10,8 @@ module SportsPresentation
   end
 end
 
-SportsPresentation.presenter_base_url = "http://127.0.0.1:9292"
-SportsPresentation.sports_api_host = "http://127.0.0.1:3000/"
+SportsPresentation.presenter_base_url = "http://localhost:9292"
+SportsPresentation.sports_api_host = "http://localhost:3000/"
 SportsPresentation.assets_host = "http://sportsdata-staging.s3.amazonaws.com/"
 
 here = File.dirname(__FILE__)
