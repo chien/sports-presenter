@@ -17,7 +17,19 @@ module SportsPresentation
         puts @response.ancestor_types
         @response.is_playup_kind?(vars)
       end
-
+      
+      def shorten_name(first_name, last_name)
+        first_name[0] + ". " + last_name
+      end
+      
+      def truncate(target, length_limit)
+        if target.length > length_limit
+          target[0..(length_limit-1)] + "..."
+        else
+          target
+        end
+      end
+      
     end
   end
 end

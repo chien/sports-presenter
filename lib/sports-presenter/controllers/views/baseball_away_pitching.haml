@@ -18,33 +18,33 @@
     %tbody
       - @statistics.away_team.pitchers.nil? || @statistics.away_team.pitchers.each do |player|
         %tr
-          %td.first= player.display_name.upcase
-          %td= player.innings
-          %td= player.hits
-          %td= player.runs
-          %td= player.earned_runs
-          %td= player.walks
-          %td= player.strike_outs
-          %td= player.homeruns
-          %td.last= player.earned_run_average
+          %td.first= player.display_name
+          %td.data= player.innings
+          %td.data= player.hits
+          %td.data= player.runs
+          %td.data= player.earned_runs
+          %td.data= player.walks
+          %td.data= player.strike_outs
+          %td.data= player.homeruns
+          %td.data.last= player.earned_run_average
     %tfoot.boxscore-footer
       %tr
         %td.first
-          %b TOTAL
+          %b Total
         %td
-          %b= @statistics.away_team.total_pitcher.innings
+          %b.data= @statistics.away_team.total_pitcher.innings
         %td
-          %b= @statistics.away_team.total_pitcher.hits
+          %b.data= @statistics.away_team.total_pitcher.hits
         %td
-          %b= @statistics.away_team.total_pitcher.runs
+          %b.data= @statistics.away_team.total_pitcher.runs
         %td
-          %b= @statistics.away_team.total_pitcher.earned_runs
+          %b.data= @statistics.away_team.total_pitcher.earned_runs
         %td
-          %b= @statistics.away_team.total_pitcher.walks
+          %b.data= @statistics.away_team.total_pitcher.walks
         %td
-          %b= @statistics.away_team.total_pitcher.strike_outs
+          %b.data= @statistics.away_team.total_pitcher.strike_outs
         %td
-          %b= @statistics.away_team.total_pitcher.homeruns
+          %b.data= @statistics.away_team.total_pitcher.homeruns
         %td.last
           %b -
   -#.away-pitching-specifics

@@ -1,4 +1,36 @@
 @charset "UTF-8";
+
+@font-face {
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 700;
+src: local('Open Sans Bold'), local('OpenSans-Bold'), url('http://themes.googleusercontent.com/static/fonts/opensans/v6/k3k702ZOKiLJc3WVjuplzInF5uFdDttMLvmWuJdhhgs.ttf') format('truetype');
+}
+@font-face {
+font-family: 'Open Sans';
+font-style: italic;
+font-weight: 400;
+src: local('Open Sans Italic'), local('OpenSans-Italic'), url('http://themes.googleusercontent.com/static/fonts/opensans/v6/xjAJXh38I15wypJXxuGMBp0EAVxt0G0biEntp43Qt6E.ttf') format('truetype');
+}
+@font-face {
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+src: local('Open Sans'), local('OpenSans'), url('http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3aCWcynf_cDxXwCLxiixG1c.ttf') format('truetype');
+}
+@font-face {
+font-family: 'Open Sans';
+font-style: italic;
+font-weight: 700;
+src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url('http://themes.googleusercontent.com/static/fonts/opensans/v6/PRmiXeptR36kaC0GEAetxp_TkvowlIOtbR7ePgFOpF4.ttf') format('truetype');
+}
+@font-face {
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 300;
+src: local('Open Sans Light'), local('OpenSans-Light'), url('http://themes.googleusercontent.com/static/fonts/opensans/v6/DXI1ORHCpsQm3Vp6mXoaTYnF5uFdDttMLvmWuJdhhgs.ttf') format('truetype');
+}
+
 /* CSS Document */
 .ui-body-c, .ui-overlay-c {
     background-color: #F7F7F4;
@@ -84,16 +116,27 @@ thead tr th:nth-child(1) {
 table.standing tr {
 }
 table.standing td {
-    border-bottom: 1px solid #E2E1DE;
-    box-shadow: 0 1px 0 0 #FFFFFF;
-    padding: 9px 0;
-    text-align: center;
+	font-family: "Open Sans Light";
+  border-bottom: 1px solid #E2E1DE;
+  box-shadow: 0 1px 0 0 #FFFFFF;
+  padding: 9px 0;
+  text-align: center;
+	color: #686A6D;
+  min-width: 12px;
+	width: 15px;
+	max-width: 15px;
 }
-table.standing td, table.standing th {
-		font-family: "BebasNeueRegular";
-    min-width: 12px;
-		width: 15px;
-		max-width: 15px;
+
+table.standing td.data, .boxscore-footer td b.data{
+	color: #7F8183;
+	font-family: "BebasNeueRegular";
+}
+
+table.standing th {
+	font-family: "BebasNeueRegular";
+  min-width: 12px;
+	width: 15px;
+	max-width: 15px;
 }
 .hide {
 	display: none;
