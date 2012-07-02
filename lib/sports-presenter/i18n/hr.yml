@@ -8,9 +8,9 @@ hr:
     for_header: ZG
     against_header: PG
     points_header: BD
-    qf: Quarter Finals
-    sf: Semi Finals
-    f: Finals
+    quarter_final: Quarter Finals
+    semi_final: Semi Finals
+    final: Finals
   statistics:
     score: Rezultat
     saves: Obrane

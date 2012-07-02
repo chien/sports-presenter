@@ -8,9 +8,9 @@ nl:
     for_header: GV
     against_header: GT
     points_header: PTN
-    qf: Quarter Finals
-    sf: Semi Finals
-    f: Finals
+    quarter_final: Quarter Finals
+    semi_final: Semi Finals
+    final: Finals
   statistics:
     score: Score
     saves: Reserves
