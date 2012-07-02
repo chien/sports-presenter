@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "sports-presenter"
-  s.version = "0.0.59"
+  s.version = "0.0.60"
   s.summary = "Sports Presenter gem for make pretty good"
   s.authors = ["Sean St. Quentin"]
   s.email = ["sean.quentin@iplayup.com"]
