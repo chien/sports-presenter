@@ -23,7 +23,7 @@ module SportsPresentation
         if tile[:display].respond_to? :link_type
           type = tile[:display].link_type 
         end
-        binding.pry if type.nil?
+
         uri = format_uri(tile[:href], params)
         link_hash = {}
         link_hash[":self"] = uri
