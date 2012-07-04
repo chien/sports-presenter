@@ -48,10 +48,9 @@ module SportsPresentation
         url
       else
         uri = Addressable::URI.parse(SportsPresentation.presenter_base_url)
-        uri.path = url
         uri.query_values = params
         base_path = uri.path
-        #puts File.join(base_path, uri)
+        uri.path = File.join(base_path, url)
         uri.to_str
       end
     end
