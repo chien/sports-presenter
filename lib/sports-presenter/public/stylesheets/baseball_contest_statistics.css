@@ -113,6 +113,28 @@ thead tr th:nth-child(1) {
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
 }
+.linescore-container .team {
+	width: 20%;
+	float: left;
+}
+.linescore-container .innings {
+	width: 65%;
+	float: left;
+}
+.linescore-container .total {
+	width: 15%;
+	float: left;
+}
+
+.linescore-container .team thead tr th:nth-last-child(1), .linescore-container .innings thead tr th:nth-last-child(1)  {
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+}
+.linescore-container .innings thead tr th:nth-child(1), .linescore-container .total thead tr th:nth-child(1) {
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
 table.standing tr {
 }
 table.standing td {

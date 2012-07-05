@@ -19,6 +19,8 @@ module SportsPresentation
         @last_name = stats["last_name"]
         @id = stats[":uid"]
         @hits = @singles + @doubles + @triples + @homeruns
+        batting_average = @batting_average.to_s
+        @batting_average = batting_average[1, batting_average.length - 1]
       end
 
     end
