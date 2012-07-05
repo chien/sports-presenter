@@ -10,7 +10,7 @@
 
     - if @additional_stylesheet
       %link(rel="stylesheet" href="#{SportsPresentation.presenter_base_url}/stylesheets/#{@additional_stylesheet}.css")
-
+    %script{:type => "text/javascript", :src => "#{SportsPresentation.presenter_base_url}/scripts/jquery.min.js"}
   %body
     %div.bl-bg
       %div.container
