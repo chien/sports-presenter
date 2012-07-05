@@ -10,38 +10,54 @@
     .arrow-up-b
   %br
   .linescore-container
-    %table.standing
-      %thead.linescore-header
-        %tr
-          %th.blank
-          - @statistics.total_innings.times do |index|
-            - inn = index + 1
-            %th{ :class => "inning-#{inn}"}= inn
-          %th.blank
-          %th R
-          %th.hits H
-          %th.errors.last E
-      %tbody
-        %tr.away
-          %td.first
-            .away-team-name= @statistics.away_team.display_name.upcase
-          - @statistics.total_innings.times do |index|
-            - inn = index + 1
-            %td{ :class => "inning-#{inn}"}= @statistics.away_team.innings[index].nil? ? "" : @statistics.away_team.innings[index]["score"]
-          %td.blank
-          %td.runs= @statistics.away_team.runs
-          %td.hits= @statistics.away_team.hits
-          %td.errors.last= @statistics.away_team.errors
-        %tr.home
-          %td.first
-            .home-team-name= @statistics.home_team.display_name.upcase
-          - @statistics.total_innings.times do |index|
-            - inn = index + 1
-            %td{ :class => "inning-#{inn}"}= @statistics.home_team.innings[index].nil? ? "" : @statistics.home_team.innings[index]["score"]
-          %td.blank
-          %td.runs= @statistics.home_team.runs
-          %td.hits= @statistics.home_team.hits
-          %td.errors.last= @statistics.home_team.errors
+    .team
+      %table.standing
+        %thead.linescore-header
+          %tr
+            %th.blank= "Team"
+        %tbody
+          %tr.away
+            %td.first
+              .away-team-name= @statistics.away_team.display_name
+          %tr.home
+            %td.first
+              .home-team-name= @statistics.home_team.display_name
+    .innings
+      %table.standing
+        %thead.linescore-header
+          %tr
+            - @statistics.total_innings.times do |index|
+              - inn = index + 1
+              %th{ :class => "inning-#{inn}"}= inn
+        %tbody
+          %tr.away
+            - @statistics.total_innings.times do |index|
+              - inn = index + 1
+              %td{ :class => "inning-#{inn}"}= @statistics.away_team.innings[index].nil? ? "" : @statistics.away_team.innings[index]["score"]
+          %tr.home
+            - @statistics.total_innings.times do |index|
+              - inn = index + 1
+              %td{ :class => "inning-#{inn}"}= @statistics.home_team.innings[index].nil? ? "" : @statistics.home_team.innings[index]["score"]
+    .total
+      %table.standing
+        %thead.linescore-header
+          %tr
+            %th.blank
+            %th R
+            %th.hits H
+            %th.errors.last E
+        %tbody
+          %tr.away
+            %td.blank
+            %td.runs= @statistics.away_team.runs
+            %td.hits= @statistics.away_team.hits
+            %td.errors.last= @statistics.away_team.errors
+          %tr.home
+            %td.blank
+            %td.runs= @statistics.home_team.runs
+            %td.hits= @statistics.home_team.hits
+            %td.errors.last= @statistics.home_team.errors
+
   -#.play-by-play
     -#%i play by play placeholder text
   %br
@@ -74,34 +90,34 @@
       %tbody
         - @statistics.away_team.players.each do |player|
           %tr
-            %td.first= player.display_name.upcase
-            %td= player.at_bats
-            %td= player.hits
-            %td= player.runs
-            %td= player.rbi
-            %td= player.homeruns
-            %td= player.walks
-            %td= player.strike_outs
-            %td.last= player.batting_average
+            %td.first= player.display_name
+            %td.data= player.at_bats
+            %td.data= player.hits
+            %td.data= player.runs
+            %td.data= player.rbi
+            %td.data= player.homeruns
+            %td.data= player.walks
+            %td.data= player.strike_outs
+            %td.data.last= player.batting_average
       %tfoot.boxscore-footer
         %tr
           %td.first
-            %b TOTAL
+            %b Total
           %td
-            %b= @statistics.away_team.total.at_bats
+            %b.data= @statistics.away_team.total.at_bats
           %td
-            %b= @statistics.away_team.total.hits
+            %b.data= @statistics.away_team.total.hits
           %td
-            %b= @statistics.away_team.total.runs
+            %b.data= @statistics.away_team.total.runs
           %td
-            %b= @statistics.away_team.total.rbi
+            %b.data= @statistics.away_team.total.rbi
           %td
-            %b= @statistics.away_team.total.homeruns
+            %b.data= @statistics.away_team.total.homeruns
           %td
-            %b= @statistics.away_team.total.walks
+            %b.data= @statistics.away_team.total.walks
           %td
-            %b= @statistics.away_team.total.strike_outs
-          %td.last
+            %b.data= @statistics.away_team.total.strike_outs
+          %td.data.last
             %b -
     -#.away-batting-specifics
       -#%i batting specific placeholder
@@ -127,33 +143,33 @@
       %tbody
         - @statistics.home_team.players.each do |player|
           %tr
-            %td.first= player.display_name.upcase
-            %td= player.at_bats
-            %td= player.hits
-            %td= player.runs
-            %td= player.rbi
-            %td= player.homeruns
-            %td= player.walks
-            %td= player.strike_outs
-            %td.last= player.batting_average
+            %td.first= player.display_name
+            %td.data= player.at_bats
+            %td.data= player.hits
+            %td.data= player.runs
+            %td.data= player.rbi
+            %td.data= player.homeruns
+            %td.data= player.walks
+            %td.data= player.strike_outs
+            %td.data.last= player.batting_average
       %tfoot.boxscore-footer
         %tr
           %td.first
-            %b TOTAL
+            %b Total
           %td
-            %b= @statistics.home_team.total.at_bats
+            %b.data= @statistics.home_team.total.at_bats
           %td
-            %b= @statistics.home_team.total.hits
+            %b.data= @statistics.home_team.total.hits
           %td
-            %b= @statistics.home_team.total.runs
+            %b.data= @statistics.home_team.total.runs
           %td
-            %b= @statistics.home_team.total.rbi
+            %b.data= @statistics.home_team.total.rbi
           %td
-            %b= @statistics.home_team.total.homeruns
+            %b.data= @statistics.home_team.total.homeruns
           %td
-            %b= @statistics.home_team.total.walks
+            %b.data= @statistics.home_team.total.walks
           %td
-            %b= @statistics.home_team.total.strike_outs
+            %b.data= @statistics.home_team.total.strike_outs
           %td.last
             %b -
     -#.home-batting-specifics

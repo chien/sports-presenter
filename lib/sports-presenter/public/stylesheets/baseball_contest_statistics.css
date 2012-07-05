@@ -1,4 +1,36 @@
 @charset "UTF-8";
+
+@font-face {
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 700;
+src: local('Open Sans Bold'), local('OpenSans-Bold'), url('http://themes.googleusercontent.com/static/fonts/opensans/v6/k3k702ZOKiLJc3WVjuplzInF5uFdDttMLvmWuJdhhgs.ttf') format('truetype');
+}
+@font-face {
+font-family: 'Open Sans';
+font-style: italic;
+font-weight: 400;
+src: local('Open Sans Italic'), local('OpenSans-Italic'), url('http://themes.googleusercontent.com/static/fonts/opensans/v6/xjAJXh38I15wypJXxuGMBp0EAVxt0G0biEntp43Qt6E.ttf') format('truetype');
+}
+@font-face {
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+src: local('Open Sans'), local('OpenSans'), url('http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3aCWcynf_cDxXwCLxiixG1c.ttf') format('truetype');
+}
+@font-face {
+font-family: 'Open Sans';
+font-style: italic;
+font-weight: 700;
+src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url('http://themes.googleusercontent.com/static/fonts/opensans/v6/PRmiXeptR36kaC0GEAetxp_TkvowlIOtbR7ePgFOpF4.ttf') format('truetype');
+}
+@font-face {
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 300;
+src: local('Open Sans Light'), local('OpenSans-Light'), url('http://themes.googleusercontent.com/static/fonts/opensans/v6/DXI1ORHCpsQm3Vp6mXoaTYnF5uFdDttMLvmWuJdhhgs.ttf') format('truetype');
+}
+
 /* CSS Document */
 .ui-body-c, .ui-overlay-c {
     background-color: #F7F7F4;
@@ -33,7 +65,7 @@ legend {
 }
 .ui-field-contain {
 	margin: auto;
-	width: 60%;
+	width: 100%;
 }
 .points {
     color: #FF4754;
@@ -55,7 +87,7 @@ h3 {
     margin: 0 0 0 20px;
 }
 .title {
-	line-height: 2;
+	font-size: 20px;
 }
 .baseball-container{ 
 	position: relative !important;
@@ -81,19 +113,52 @@ thead tr th:nth-child(1) {
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
 }
+.linescore-container .team {
+	width: 20%;
+	float: left;
+}
+.linescore-container .innings {
+	width: 65%;
+	float: left;
+}
+.linescore-container .total {
+	width: 15%;
+	float: left;
+}
+
+.linescore-container .team thead tr th:nth-last-child(1), .linescore-container .innings thead tr th:nth-last-child(1)  {
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+}
+.linescore-container .innings thead tr th:nth-child(1), .linescore-container .total thead tr th:nth-child(1) {
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
 table.standing tr {
 }
 table.standing td {
-    border-bottom: 1px solid #E2E1DE;
-    box-shadow: 0 1px 0 0 #FFFFFF;
-    padding: 9px 0;
-    text-align: center;
+	font-family: "Open Sans Light";
+  border-bottom: 1px solid #E2E1DE;
+  box-shadow: 0 1px 0 0 #FFFFFF;
+  padding: 9px 0;
+  text-align: center;
+	color: #686A6D;
+  min-width: 12px;
+	width: 15px;
+	max-width: 15px;
 }
-table.standing td, table.standing th {
-		font-family: "BebasNeueRegular";
-    min-width: 12px;
-		width: 15px;
-		max-width: 15px;
+
+table.standing td.data, .boxscore-footer td b.data{
+	color: #7F8183;
+	font-family: "BebasNeueRegular";
+}
+
+table.standing th {
+	font-family: "BebasNeueRegular";
+  min-width: 12px;
+	width: 15px;
+	max-width: 15px;
 }
 .hide {
 	display: none;
@@ -105,4 +170,48 @@ table.standing .first {
 }
 table.standing .last {
 		padding-right: 9px;
+}
+.ui-radio {
+	width: 50% !important;
+}
+.ui-btn.ui-btn-active {
+	color:#fff !important;
+	background: #7ea2a5 !important; /* Old browsers */
+	background: -moz-linear-gradient(top,  #7ea2a5 0%, #a7c3c3 100%) !important; /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7ea2a5), color-stop(100%,#a7c3c3)) !important; /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #7ea2a5 0%,#a7c3c3 100%) !important; /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #7ea2a5 0%,#a7c3c3 100%) !important; /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #7ea2a5 0%,#a7c3c3 100%) !important; /* IE10+ */
+	background: linear-gradient(to bottom,  #7ea2a5 0%,#a7c3c3 100%) !important; /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7ea2a5', endColorstr='#a7c3c3',GradientType=0 ); /* IE6-9 */
+	-webkit-box-shadow: inset 0px 0px 3px 3px rgba(16, 85, 85, .35) !important; 
+	box-shadow: inset 0px 0px 3px 3px rgba(16, 85, 85, .35) !important;
+
+}
+
+.ui-btn {
+	color:#686A6D;
+	background: #e7e6e4; /* Old browsers */
+	background: -moz-linear-gradient(top,  #e7e6e4 0%, #dcdad7 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e7e6e4), color-stop(100%,#dcdad7)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #e7e6e4 0%,#dcdad7 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #e7e6e4 0%,#dcdad7 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #e7e6e4 0%,#dcdad7 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #e7e6e4 0%,#dcdad7 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e7e6e4', endColorstr='#dcdad7',GradientType=0 ); /* IE6-9 */
+	width: 100% !important;
+	border-width: 0px !important;
+}
+
+.ui-corner-left {
+	-webkit-border-radius: 4px 0px 0px 4px !important; 
+	border-radius: 4px 0px 0px 4px !important;
+}
+.ui-corner-right {
+	-webkit-border-radius: 0px 4px 4px 0px;
+	border-radius: 0px 4px 4px 0px;
+}
+.ui-btn-text span {
+	font-family: "BebasNeueRegular",Arial,Helvetica,Geneva,sans-serif !important;
+	text-shadow: none !important;
 }
