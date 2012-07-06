@@ -2,6 +2,9 @@ module SportsPresentation
   module Api
     class Collection
       include Enumerable
+      def [](index)
+        @data[index]
+      end 
 
       def initialize(data)
         @data = []

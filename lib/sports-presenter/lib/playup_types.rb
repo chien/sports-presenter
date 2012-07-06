@@ -12,15 +12,17 @@ module SportsPresentation
 
       case actual
       when "vnd.playup.sport.contest.contest" then Api::Contest
-      when "vnd.playup.sport.contest.football" then Api::Contest
+      when /vnd\.playup\.sport\.contest\..*/ then Api::Contest
       when "vnd.playup.sport.contest_detail.football" then Api::ContestDetails
       when "vnd.playup.sport.contest_detail.baseball" then Api::ContestDetails
       when "vnd.playup.sport.contest_detail.player.baseball" then Api::BaseballPlayer
       when "vnd.playup.sport.contest_detail.pitcher.baseball" then Api::BaseballPitcher
       when "vnd.playup.sport.competition" then Api::Competition
+      when "vnd.playup.grouping" then Api::Grouping
       when "vnd.playup.sport.competitions" then Api::Collection
       when "vnd.playup.sport.stage.home_away" then Api::Stage
       when "vnd.playup.sport.stage.knockout" then Api::Stage
+      when "vnd.playup.sport.knockout.round" then Api::KnockoutRound
       when "vnd.playup.sport.stage.knockout.round" then Api::KnockoutRound
       when "vnd.playup.sport.ranking.statistics.football" then Api::FootballRankingStatistics
       when "vnd.playup.collection" then Api::Collection

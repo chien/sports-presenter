@@ -1,3 +1,5 @@
+require "forwardable"
+
 module SportsPresentation
   module Presentation
     module Presentable
