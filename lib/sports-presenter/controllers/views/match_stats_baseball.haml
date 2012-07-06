@@ -26,18 +26,18 @@
       %table.standing
         %thead.linescore-header
           %tr
-            - 19.times do |index|
+            - @statistics.total_innings.times do |index|
               - inn = index + 1
               %th{ :class => "inning-#{inn}"}= inn
         %tbody
           %tr.away
-            - 19.times do |index|
+            - @statistics.total_innings.times do |index|
               - inn = index + 1
-              %td{ :class => "inning-#{inn}"}= @statistics.away_team.innings[index].nil? ? "5" : @statistics.away_team.innings[index]["score"]
+              %td{ :class => "inning-#{inn}"}= @statistics.away_team.innings[index].nil? ? " " : @statistics.away_team.innings[index]["score"]
           %tr.home
-            - 19.times do |index|
+            - @statistics.total_innings.times do |index|
               - inn = index + 1
-              %td{ :class => "inning-#{inn}"}= @statistics.home_team.innings[index].nil? ? "5" : @statistics.home_team.innings[index]["score"]
+              %td{ :class => "inning-#{inn}"}= @statistics.home_team.innings[index].nil? ? " " : @statistics.home_team.innings[index]["score"]
     .total
       %table.standing
         %thead.linescore-header
