@@ -10,7 +10,7 @@ module SportsPresentation
   end
 end
 
-SportsPresentation.presenter_base_url = "http://127.0.0.1:9292"
+SportsPresentation.presenter_base_url = "http://192.168.1.139:9292"
 #SportsPresentation.sports_api_host = "http://integration.sports-api.playupdev.com/"
 #SportsPresentation.sports_api_host = "http://sports.playupgp.com/"
 SportsPresentation.sports_api_host = "http://staging.sports-api.playupdev.com/"
