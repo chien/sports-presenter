@@ -6,7 +6,7 @@ module SportsPresentation
 
       def initialize(contest)
         super
-        @assets = Asset.new(self).extend(JqueryMobileAsset).extend(PresentationAsset)
+        @assets = Asset.new(self).extend(JqueryMobileAsset).extend(SwipeAsset).extend(PresentationAsset)
         @statistics = contest.statistics
       end
 

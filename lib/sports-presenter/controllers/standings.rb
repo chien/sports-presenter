@@ -14,6 +14,7 @@ module SportsPresentation
         @title = t("tiles.knockout_standings")
       end
       @stylesheets = @standing.stylesheets
+      @javascripts = @standing.javascripts
       
       if @standing.valid?
         haml view

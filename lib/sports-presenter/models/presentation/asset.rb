@@ -40,6 +40,14 @@ module SportsPresentation
       end 
     end
     
+    module SwipeAsset
+      include JqueryAsset
+      
+      def javascripts
+        super << "#{SportsPresentation.presenter_base_url}/javascripts/swipe.js"
+      end
+    end
+    
     module PresentationAsset
 
       def javascripts

@@ -5,7 +5,7 @@ module SportsPresentation
       attr_reader :league_name, :stage_name, :rounds
 
       def initialize(stage_object)
-        @assets = Asset.new(self).extend(PresentationAsset)        
+        @assets = Asset.new(self).extend(SwipeAsset).extend(PresentationAsset)
         @group_standings = []
         @rounds = {}
 
