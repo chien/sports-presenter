@@ -8,9 +8,9 @@ ru:
     for_header: ГЗ
     against_header: ГП
     points_header: Оч
-    qf: четвертьфинал
-    sf: полуфинал
-    f: финал
+    quarter_final: четвертьфинал
+    semi_final: полуфинал
+    final: финал
   statistics:
     score: Счет
     saves: "Перехваты мяча вратарем"
@@ -20,6 +20,10 @@ ru:
     fouls: Нарушения
     possession: "Владение мячом (%)"
     shots_shots_on_goal: "Удачные/неудачные удары"
+    team_header: TEAM
+    player_header: PLAYERS
+    batting_header: BATTING
+    pitching_header: PITCHING
   tiles:
     competition_standings: Позиции
     contest_events: События

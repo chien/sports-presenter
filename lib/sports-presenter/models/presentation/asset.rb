@@ -1,3 +1,5 @@
+require "forwardable"
+
 module SportsPresentation
   module Presentation
     module Presentable
@@ -36,6 +38,14 @@ module SportsPresentation
       def stylesheets
         super << "http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css"
       end 
+    end
+    
+    module SwipeAsset
+      include JqueryAsset
+      
+      def javascripts
+        super << "#{SportsPresentation.presenter_base_url}/javascripts/swipe.js"
+      end
     end
     
     module PresentationAsset

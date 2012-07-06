@@ -8,9 +8,9 @@ fr:
     for_header: BM
     against_header: BE
     points_header: PTS
-    qf: Quarts de final
-    sf: Demi-Finales
-    f: Finale
+    quarter_final: Quarts de final
+    semi_final: Demi-Finales
+    final: Finale
   statistics:
     score: Score
     saves: Reserves
@@ -20,6 +20,10 @@ fr:
     fouls: Trucs
     possession: "Bezit (%)"
     shots_shots_on_goal: "Schoten Vanaf/Naar Doel"
+    team_header: TEAM
+    player_header: PLAYERS
+    batting_header: BATTING
+    pitching_header: PITCHING
   tiles:
     competition_standings: Classement
     contest_events: "Événements de match"

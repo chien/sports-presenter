@@ -8,9 +8,9 @@ sv:
     for_header: ~
     against_header: ~
     points_header: ~
-    qf: Quarter Finals
-    sf: Semi Finals
-    f: Finals
+    quarter_final: Quarter Finals
+    semi_final: Semi Finals
+    final: Finals
   statistics:
     score: Ställning
     saves: Räddningar
@@ -20,6 +20,10 @@ sv:
     fouls: Foul
     possession: "Bollinnehav (%)"
     shots_shots_on_goal: "Skott mot mål"
+    team_header: TEAM
+    player_header: PLAYERS
+    batting_header: BATTING
+    pitching_header: PITCHING
   tiles:
     competition_standings: Resultat
     contest_events: Matcher

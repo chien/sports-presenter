@@ -1,12 +1,12 @@
 .boxscore-pitching-home.hide
   %h3
     %span.home-team-name#home-stats= @statistics.home_team.display_name.upcase
-    PITCHING
+    = t "statistics.pitching_header"
   %table.standing
     %thead.boxscore-header
       %tr
         %th.first 
-          .home-team-name PLAYERS
+          .home-team-name= t "statistics.player_header"
         %th IP
         %th H
         %th R

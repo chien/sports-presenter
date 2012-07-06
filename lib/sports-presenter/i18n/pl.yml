@@ -8,9 +8,9 @@ pl:
     for_header: GF
     against_header: GA
     points_header: PKT
-    qf: ćwierćfinał
-    sf: półfinał
-    f: Finał
+    quarter_final: ćwierćfinał
+    semi_final: półfinał
+    final: Finał
   statistics:
     score: Wynik
     saves: "Strzały obronione"
@@ -20,6 +20,10 @@ pl:
     fouls: Faule
     possession: "Posiadanie piłki (%)"
     shots_shots_on_goal: "Strzały/strzały na bramkę"
+    team_header: TEAM
+    player_header: PLAYERS
+    batting_header: BATTING
+    pitching_header: PITCHING
   tiles:
     competition_standings: Tabele
     contest_events: Mecze

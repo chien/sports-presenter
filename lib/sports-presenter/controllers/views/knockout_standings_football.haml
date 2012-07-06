@@ -1,6 +1,3 @@
-%h1= @standing.league_name
-%h2= @standing.stage_name
-
 %div.swipe#slider
   %section.t-container
     -needed_contest_count = 0
@@ -9,10 +6,10 @@
       -current_round= i+1
       -current_round.times{|i| viewport="#{viewport}i"}
       %section{:class=>"viewport viewport-#{viewport}", :style => "display: #{i==0 ? 'block' : 'none'};"}
-        - heading = ["qf","sf","f"]
+        - heading = ["quarter_final","semi_final","final"]
         %h2= I18n.translate(heading[i], :scope => [:standings])
         -needed_contest_count = round.contests.size if i == 0
-        -round.contests.each do |contest|
+        -round.contests.sort {|a, b| a.scheduled_start_time <=> b.scheduled_start_time }.each do |contest|
           -locals = { :current_round => current_round, :round_size => @standing.rounds.size, :contest => contest}
           -partial = (i == 0 ? :first_round_contest : :contest)
           =haml(partial,:locals=> locals )

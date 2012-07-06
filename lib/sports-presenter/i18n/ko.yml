@@ -8,9 +8,9 @@ ko:
     for_header: 득점
     against_header: 실점
     points_header: 승점
-    qf: Quarter Finals
-    sf: Semi Finals
-    f: Finals
+    quarter_final: Quarter Finals
+    semi_final: Semi Finals
+    final: Finals
   statistics:
     score: 점수
     saves: 세이브
@@ -20,6 +20,10 @@ ko:
     fouls: 파울
     possession: "공 점유율 (%)"
     shots_shots_on_goal: "무효/유효 슈팅"
+    team_header: TEAM
+    player_header: PLAYERS
+    batting_header: BATTING
+    pitching_header: PITCHING
   tiles:
     competition_standings: 순위
     contest_events: "경기 이벤트"

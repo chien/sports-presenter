@@ -1,28 +1,51 @@
 module SportsPresentation
   class TileProvider
-    def self.fetch_tiles(context_url)
-      puts context_url
+    def self.fetch_tiles(subject, uid, section)
       tiles = TileList.new
-      case context_url
+      case subject
         when /\/competitions\/(\d+)$/ then 
           tiles_for_competition($1, tiles)
         when /\/contests\/(\d+)$/ then 
           tiles_for_contest($1, tiles)
-        when /welcome$/ 
-          then tiles_for_home(tiles)
-      end
+        end
+        case section
+        when "grouping" then
+          uid_array = uid.match(Api::Grouping.uid_regex)    
+          tiles_for_group(uid_array[:slug], uid_array[:id], tiles)
+        when "welcome" then
+          tiles_for_home(tiles)
+        end
 
       tiles
+    end
+
+    def self.tiles_for_group(slug, id, tiles)
+      grouping = Api::Grouping.find(slug)
+      puts slug
+      
+      grouping.competitions.each do |competition|
+        tiles.add_native_tile competition.response, Tiles::CompetitionTile.new(competition.name, competition.uid, competition.live_contests)
+      end
+
+      grouping.contests.each do |contest|
+        tiles.add_link_tile contest.url, Tiles::ContestTile.new(contest.title, contest.uid, contest.is_live?, contest.link_type)
+      end
+
+      grouping.groupings.each do |ref|
+        grouping = ref.fetch
+        tiles.add_link_tile grouping.url, Tiles::GroupingTile.new(grouping.name, grouping.uid, grouping.link_type, grouping.slug)
+      end
     end
 
     def self.tiles_for_competition(id, tiles)
       stages = Api::Stage.find_by_competition_id(id)
       stages.each do |stage|
         if stage && stage.standings 
+          stage_url = "/competitions/#{id}/stages/#{stage.id}/standings"
           if stage.is_playup_kind?("application/vnd.playup.sport.stage.home_away")
-            tiles.add_link_tile "/competitions/#{id}/stages/#{stage.id}/standings", Tiles::GroupStandingsTile.new
-          elsif stage.is_playup_kind?("application/vnd.playup.sport.stage.knockout") && id == 27 #Euros
-            tiles.add_link_tile "/competitions/#{id}/stages/#{stage.id}/standings", Tiles::KnockoutStandingsTile.new
+            tiles.add_link_tile stage_url, Tiles::GroupStandingsTile.new
+          elsif stage.is_playup_kind?("application/vnd.playup.sport.stage.knockout") && id == "27" #Euros
+            tiles.add_link_tile stage_url, Tiles::KnockoutStandingsTile.new
           end
         end
 

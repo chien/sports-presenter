@@ -23,9 +23,9 @@
 }
 /* GLOABL CSS */
 .bl-bg{
-  background-image: url('../img/bg-bl.png');
-  background-repeat: no-repeat;
-  background-position: bottom left;
+	background-image: url('../img/bg-bl.png');
+	background-repeat: no-repeat;
+	background-position: bottom left;
 }
 html{
   background-color: #F7F7F4;
@@ -49,61 +49,58 @@ body{
   padding: 10px !important;
 } 
 .graphicarrow{
-  margin-top: 9px;
-  margin-left: 48%;
+	margin-top: 9px;
+	margin-left: 48%;
 }
-  .arrow-up {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-bottom: 7px solid #e2e0de;
-  }
-  .arrow-up-a {
-    margin-top: 1px;
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-bottom: 7px solid #fff;
-  }
-  .arrow-up-b {
-    margin-top: 2px;
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-bottom: 7px solid #F7F7F4;
-  }
+	.arrow-up {
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: 7px solid transparent;
+		border-right: 7px solid transparent;
+		border-bottom: 7px solid #e2e0de;
+	}
+	.arrow-up-a {
+		margin-top: 1px;
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: 7px solid transparent;
+		border-right: 7px solid transparent;
+		border-bottom: 7px solid #fff;
+	}
+	.arrow-up-b {
+		margin-top: 2px;
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: 7px solid transparent;
+		border-right: 7px solid transparent;
+		border-bottom: 7px solid #F7F7F4;
+	}
 hr{
-  border:0; 
-  padding:0px; 
-  margin: 15px 0 5px 0; 
-  background:#E1E1E2; 
-  border-bottom:1px solid #fff; 
-  height: 1px;
-  width:100%; 
-  float:left; 
-  clear:left;
+	border:0; 
+	padding:0px; 
+	margin: 15px 0 5px 0; 
+	background:#E1E1E2; 
+	border-bottom:1px solid #fff; 
+	height: 1px;
+	width:100%; 
+	float:left; 
+	clear:left;
 }
 .points{color: #FF4754;}
 
 .logofooter{
-  background-repeat: no-repeat;
-  background-image: url('../img/footerlogo.png');
-  height: 27px;
-  width: 73px;
-  margin-left: 10px;
-  margin-top: 16px;
-  margin-bottom: 8px;
+	height: 15px;
+	width: 73px;
+	margin-left: 10px;
+	margin-top: 16px;
+	margin-bottom: 8px;
 }
 
 @media all and (-webkit-min-device-pixel-ratio : 1.5) {
-  .logofooter{
-    background-image: url('../img/footerlogo@2x.png');
-    background-size: 73px 27px;
-  }
+	.logofooter{
+		background-size: 73px 27px;
+	}
 }

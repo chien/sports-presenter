@@ -1,12 +1,12 @@
 .boxscore-pitching-away
   %h3
     %span.away-team-name#away-stats= @statistics.away_team.display_name.upcase
-    PITCHING
+    = t "statistics.pitching_header"
   %table.standing
     %thead.boxscore-header
       %tr
         %th.first
-          .away-team-name PLAYERS
+          .away-team-name= t "statistics.player_header"
         %th IP
         %th H
         %th R

@@ -8,9 +8,9 @@ de:
     for_header: ET
     against_header: GT
     points_header: PT
-    qf: Viertelfinale
-    sf: Halbfinale
-    f: Endspiel
+    quarter_final: Viertelfinale
+    semi_final: Halbfinale
+    final: Endspiel
   statistics:
     score: Spielstand
     saves: Paraden
@@ -20,6 +20,10 @@ de:
     fouls: Fouls
     possession: "Ballbesitz (%)"
     shots_shots_on_goal: "Schüsse daneben/aufs Tor"
+    team_header: TEAM
+    player_header: PLAYERS
+    batting_header: BATTING
+    pitching_header: PITCHING
   tiles:
     competition_standings: Tabelle
     contest_events: Spielereignisse

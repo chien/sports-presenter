@@ -8,9 +8,9 @@ pt-PT:
     for_header: GM
     against_header: GS
     points_header: P
-    qf: Quartos-de-final
-    sf: Meias-Finais
-    f: Final
+    quarter_final: Quartos-de-final
+    semi_final: Meias-Finais
+    final: Final
   statistics:
     score: Resultado
     saves: Defesas
@@ -20,6 +20,10 @@ pt-PT:
     fouls: Faltas
     possession: "Posse de bola (%)"
     shots_shots_on_goal: "Remates à baliza"
+    team_header: TEAM
+    player_header: PLAYERS
+    batting_header: BATTING
+    pitching_header: PITCHING
   tiles:
     competition_standings: Classificações
     contest_events: |-

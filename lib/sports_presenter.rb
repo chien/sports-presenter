@@ -10,10 +10,10 @@ module SportsPresentation
   end
 end
 
-SportsPresentation.presenter_base_url = "http://192.168.1.139:9292"
+SportsPresentation.presenter_base_url = "http://192.168.0.20:9292"
 #SportsPresentation.sports_api_host = "http://integration.sports-api.playupdev.com/"
-#SportsPresentation.sports_api_host = "http://sports.playupgp.com/"
-SportsPresentation.sports_api_host = "http://staging.sports-api.playupdev.com/"
+SportsPresentation.sports_api_host = "http://sports.playupgp.com/"
+#SportsPresentation.sports_api_host = "http://staging.sports-api.playupdev.com/"
 #SportsPresentation.sports_api_host = "http://127.0.0.1:3000/"
 SportsPresentation.assets_host = "http://sportsdata-staging.s3.amazonaws.com/"
 
@@ -26,7 +26,8 @@ require 'haml'
 require 'rest-client'
 require 'i18n'
 require 'benchmark'
-require 'pry'
+require 'airbrake'
+require 'json'
 
 Dir.glob("#{here}/sports-presenter/lib/*.rb").each { |r| require r }
 
@@ -45,6 +46,7 @@ I18n.load_path += Dir[File.join(here, "sports-presenter", "i18n", "*.yml")]
 
 module SportsPresentation
   class Application < Sinatra::Base
+
     use LocaleRequest
     use CacheSettings, {
       # Add cache headers to static files.
@@ -59,7 +61,6 @@ module SportsPresentation
         :expires => 5
       }
     }
-
     set :public_folder, Proc.new { File.join(root, "..", "public" ) }
 
     def locale
