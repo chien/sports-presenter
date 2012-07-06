@@ -22,22 +22,22 @@
           %tr.home
             %td.first
               .home-team-name= @statistics.home_team.display_name
-    .innings
+    .innings#master
       %table.standing
         %thead.linescore-header
           %tr
-            - @statistics.total_innings.times do |index|
+            - 19.times do |index|
               - inn = index + 1
               %th{ :class => "inning-#{inn}"}= inn
         %tbody
           %tr.away
-            - @statistics.total_innings.times do |index|
+            - 19.times do |index|
               - inn = index + 1
-              %td{ :class => "inning-#{inn}"}= @statistics.away_team.innings[index].nil? ? "" : @statistics.away_team.innings[index]["score"]
+              %td{ :class => "inning-#{inn}"}= @statistics.away_team.innings[index].nil? ? "5" : @statistics.away_team.innings[index]["score"]
           %tr.home
-            - @statistics.total_innings.times do |index|
+            - 19.times do |index|
               - inn = index + 1
-              %td{ :class => "inning-#{inn}"}= @statistics.home_team.innings[index].nil? ? "" : @statistics.home_team.innings[index]["score"]
+              %td{ :class => "inning-#{inn}"}= @statistics.home_team.innings[index].nil? ? "5" : @statistics.home_team.innings[index]["score"]
     .total
       %table.standing
         %thead.linescore-header
@@ -57,7 +57,11 @@
             %td.runs= @statistics.home_team.runs
             %td.hits= @statistics.home_team.hits
             %td.errors.last= @statistics.home_team.errors
-
+    %nav
+      %a(href="#" id="prev" onclick="slider.prev();return false;")
+        %em prev
+      %a(href="#" id="next" onclick="slider.next();return false;")
+        %em next
   -#.play-by-play
     -#%i play by play placeholder text
   %br
