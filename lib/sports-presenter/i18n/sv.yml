@@ -20,6 +20,10 @@ sv:
     fouls: Foul
     possession: "Bollinnehav (%)"
     shots_shots_on_goal: "Skott mot mål"
+    team_header: TEAM
+    player_header: PLAYERS
+    batting_header: BATTING
+    pitching_header: PITCHING
   tiles:
     competition_standings: Resultat
     contest_events: Matcher

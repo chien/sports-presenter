@@ -14,7 +14,7 @@
       %table.standing
         %thead.linescore-header
           %tr
-            %th.blank= "Team"
+            %th.blank.first= t "statistics.team_header"
         %tbody
           %tr.away
             %td.first
@@ -72,12 +72,12 @@
     %br
     %h3
       %span.away-team-name#away-stats= @statistics.away_team.display_name.upcase
-      BATTING
+      = t "statistics.batting_header"
     %table.standing
       %thead.boxscore-header
         %tr
           %th.first
-            %span.away-team-name PLAYERS
+            %span.away-team-name= t "statistics.player_header"
           %th AB
           %th H
           %th R
@@ -125,12 +125,12 @@
   .boxscore-batting-home
     %h3
       %span.home-team-name#home-stats= @statistics.home_team.display_name.upcase
-      BATTING
+      = t "statistics.batting_header"
     %table.standing
       %thead.boxscore-header
         %tr
           %th.first
-            .home-team-name PLAYERS
+            .home-team-name= t "statistics.player_header"
           %th AB
           %th H
           %th R
